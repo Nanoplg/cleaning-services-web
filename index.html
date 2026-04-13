@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cleaning Services | Limpieza profesional de tapizados</title>
   <meta name="description" content="Limpieza y desinfección profesional de sillones, colchones, alfombras y tapizados de autos. Atención a domicilio en CABA y GBA." />
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cleaning Services | Limpieza profesional de tapizados" />
   <meta property="og:description" content="Devolvemos la vida, el color y la frescura a tus sillones, colchones, alfombras y más." />
@@ -14,597 +13,447 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #061828;
-      --bg-2: #082035;
-      --card: #0b2642;
-      --border: rgba(255,255,255,.08);
-      --text: #e7eff8;
-      --muted: #87a3bb;
-      --accent: #14b8e6;
-      --accent-d: #0d95bb;
-      --white: #ffffff;
-      --font: "Plus Jakarta Sans", sans-serif;
-      --r: 18px;
-      --r-lg: 24px;
-      --shadow: 0 20px 50px rgba(0,0,0,.28);
+    :root{
+      --bg:#061828;
+      --bg2:#081f34;
+      --card:#0b2642;
+      --border:rgba(255,255,255,.08);
+      --text:#e8f0f8;
+      --muted:#a7bacb;
+      --accent:#14b8e6;
+      --accent-d:#0d95bb;
+      --white:#fff;
+      --font:"Plus Jakarta Sans",sans-serif;
+      --display:"Oswald",sans-serif;
+      --r:18px;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{
+      width:min(1360px,calc(100% - 32px));
+      margin-inline:auto;
     }
 
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin-inline: auto;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      font-family:var(--font);
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      cursor:pointer;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 10px 28px rgba(20,184,230,.28);
+    }
+    .btn-primary:hover{background:var(--accent-d)}
+    .btn-outline{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.26);
+      color:#fff;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 24px;
-      font-family: var(--font);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      cursor: pointer;
-      transition: .2s ease;
-      white-space: nowrap;
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:200;
+      background:rgba(6,24,40,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-row{
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand-mark{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:linear-gradient(145deg,#16c0e8 0%,#0d3f70 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:800;
+      font-size:22px;
+      flex:none;
+      box-shadow:0 4px 16px rgba(20,184,230,.24);
+    }
+    .brand-name{
+      font-size:18px;
+      font-weight:800;
+      color:#fff;
+      letter-spacing:.1em;
+      line-height:1.05;
+    }
+    .brand-sub{
+      font-size:10px;
+      font-weight:700;
+      color:var(--accent);
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      margin-top:4px;
     }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 28px rgba(20,184,230,.30);
+    .nav-desk{
+      display:flex;
+      align-items:center;
+      gap:30px;
     }
-
-    .btn-primary:hover {
-      background: var(--accent-d);
-      box-shadow: 0 14px 36px rgba(20,184,230,.40);
+    .nav-desk a{
+      font-size:13px;
+      font-weight:700;
+      color:rgba(255,255,255,.75);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      padding-bottom:3px;
+      border-bottom:2px solid transparent;
     }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255,255,255,.34);
-      color: #fff;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.58);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background: rgba(6,24,40,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .topbar-row {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #16c0e8 0%, #0d3f70 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(20,184,230,.28);
-      color: white;
-      font-weight: 800;
-      font-size: 20px;
-      flex: none;
-      overflow: hidden;
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-info {
-      line-height: 1.05;
-    }
-
-    .brand-name {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: .10em;
-    }
-
-    .brand-sub {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: .20em;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-
-    .nav-desk {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-desk a {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,.74);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-      transition: .15s ease;
-    }
-
     .nav-desk a:hover,
-    .nav-desk a.active {
-      color: #fff;
-      border-bottom-color: var(--accent);
+    .nav-desk a.active{
+      color:#fff;
+      border-bottom-color:var(--accent);
     }
 
-    .ham {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 40px;
-      height: 40px;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 10px;
-      cursor: pointer;
-      padding: 8px;
+    .ham{
+      display:none;
+      flex-direction:column;
+      justify-content:center;
+      gap:5px;
+      width:40px;
+      height:40px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:10px;
+      cursor:pointer;
+      padding:8px;
+    }
+    .ham span{
+      display:block;
+      height:2px;
+      background:#fff;
+      border-radius:2px;
+      transition:.25s ease;
+    }
+    .ham.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .ham.is-open span:nth-child(2){opacity:0}
+    .ham.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .nav-mob{
+      display:none;
+      flex-direction:column;
+      background:var(--bg2);
+      border-top:1px solid var(--border);
+      padding:8px 0 20px;
+    }
+    .nav-mob.is-open{display:flex}
+    .nav-mob a{
+      font-size:13px;
+      font-weight:700;
+      color:rgba(255,255,255,.75);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      padding:13px 20px;
+      border-bottom:1px solid var(--border);
+    }
+    .nav-mob .btn-primary{margin:16px 20px 0}
+
+    .collage{
+      padding:18px 0 28px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:2.15fr 1fr 1fr;
+      grid-template-rows:420px 350px 240px;
+      gap:2px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
 
-    .ham span {
-      display: block;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: .25s ease;
+    .tile{
+      position:relative;
+      overflow:hidden;
+      background:#111;
+    }
+    .tile img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .tile::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.75) 0%, rgba(0,0,0,.18) 45%, rgba(0,0,0,.04) 100%);
+      pointer-events:none;
     }
 
-    .ham.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .ham.is-open span:nth-child(2) { opacity: 0; }
-    .ham.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hero-tile{grid-column:1 / 3; grid-row:1 / 2;}
+    .sillones-tile{grid-column:3 / 4; grid-row:1 / 2;}
+    .colchones-tile{grid-column:1 / 2; grid-row:2 / 3;}
+    .alfombras-tile{grid-column:2 / 3; grid-row:2 / 3;}
+    .autos-tile{grid-column:3 / 4; grid-row:2 / 3;}
+    .cta-tile{grid-column:1 / 4; grid-row:3 / 4;}
 
-    .nav-mob {
-      display: none;
-      flex-direction: column;
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      padding: 8px 0 20px;
+    .hero-content{
+      position:absolute;
+      left:44px;
+      top:44px;
+      bottom:28px;
+      width:min(430px,45%);
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
     }
 
-    .nav-mob.is-open { display: flex; }
-
-    .nav-mob a {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,.74);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      padding: 13px 20px;
-      border-bottom: 1px solid var(--border);
+    .eyebrow{
+      display:inline-block;
+      color:var(--accent);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-bottom:16px;
     }
 
-    .nav-mob .btn-primary {
-      margin: 16px 20px 0;
+    .hero-title{
+      font-family:var(--display);
+      font-size:58px;
+      line-height:.95;
+      text-transform:uppercase;
+      letter-spacing:.01em;
+      color:#fff;
+      margin-bottom:14px;
+    }
+    .hero-text{
+      font-size:17px;
+      color:rgba(255,255,255,.88);
+      line-height:1.55;
+      max-width:360px;
+      margin-bottom:18px;
     }
 
-    .hero {
-      padding: 56px 0 44px;
-      background: var(--bg);
+    .hero-features{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .feature{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#fff;
+      max-width:175px;
+    }
+    .feature-icon{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex:none;
+      background:rgba(255,255,255,.05);
+    }
+    .feature strong{
+      display:block;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      line-height:1.2;
+      margin-bottom:2px;
+    }
+    .feature span{
+      display:block;
+      font-size:12px;
+      color:rgba(255,255,255,.86);
+      line-height:1.35;
     }
 
-    .hero-shell {
-      background: linear-gradient(135deg, #081e33 0%, #061828 100%);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: stretch;
-      min-height: 560px;
+    .card-overlay{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:2;
+      padding:18px 18px 16px;
+      background:linear-gradient(to top, rgba(5,12,20,.86) 0%, rgba(5,12,20,.62) 60%, rgba(5,12,20,0) 100%);
+    }
+    .card-row{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+    }
+    .circle{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:2px solid var(--accent);
+      color:var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      flex:none;
+      background:rgba(20,184,230,.08);
+    }
+    .card-overlay h3{
+      font-family:var(--display);
+      font-size:24px;
+      line-height:1;
+      text-transform:uppercase;
+      color:#fff;
+      margin-bottom:6px;
+      letter-spacing:.01em;
+    }
+    .card-overlay p{
+      font-size:13px;
+      line-height:1.45;
+      color:rgba(255,255,255,.88);
+      max-width:92%;
     }
 
-    .hero-copy {
-      padding: 64px 54px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .cta-content{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:grid;
+      grid-template-columns:420px 1fr;
+      align-items:end;
+    }
+    .cta-left{
+      height:100%;
+      padding:28px 34px;
+      background:linear-gradient(to right, rgba(0,0,0,.82) 0%, rgba(0,0,0,.68) 72%, rgba(0,0,0,0) 100%);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .cta-title{
+      font-family:var(--display);
+      font-size:48px;
+      line-height:.95;
+      text-transform:uppercase;
+      color:#fff;
+      margin-bottom:12px;
+    }
+    .cta-text{
+      color:rgba(255,255,255,.9);
+      font-size:16px;
+      line-height:1.5;
+      margin-bottom:22px;
+      max-width:320px;
+    }
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:center;
+    }
+    .cta-phone{
+      color:#fff;
+      font-size:18px;
+      font-weight:600;
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      margin-bottom: 18px;
-    }
-
-    .hero-copy h1 {
-      font-size: 56px;
-      font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -.04em;
-      color: #fff;
-      margin-bottom: 18px;
-    }
-
-    .hero-copy .lead {
-      font-size: 16px;
-      color: rgba(255,255,255,.62);
-      line-height: 1.75;
-      max-width: 470px;
-      margin-bottom: 30px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 34px;
-    }
-
-    .hero-mini {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .hero-mini-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 16px;
-      padding: 14px 16px;
-    }
-
-    .hero-mini-card strong {
-      display: block;
-      font-size: 14px;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .hero-mini-card span {
-      font-size: 12.5px;
-      color: rgba(255,255,255,.56);
-      line-height: 1.5;
-    }
-
-    .hero-media {
-      position: relative;
-      min-height: 100%;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .section {
-      padding: 84px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      margin-bottom: 42px;
-    }
-
-    .kicker {
-      display: block;
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      margin-bottom: 12px;
-    }
-
-    .section-head h2 {
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -.03em;
-      color: #fff;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .service-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      transition: .22s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 52px rgba(0,0,0,.34);
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .service-body {
-      padding: 20px 18px 22px;
-    }
-
-    .service-body h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .service-body p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .why-section {
-      background: var(--bg-2);
-    }
-
-    .why-layout {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .why-text h2 {
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      color: #fff;
-      margin: 12px 0 18px;
-    }
-
-    .why-text p {
-      font-size: 15.5px;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 470px;
-    }
-
-    .stats-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .stat-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 20px 22px;
-    }
-
-    .stat-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: rgba(20,184,230,.09);
-      border: 1px solid rgba(20,184,230,.20);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-weight: 800;
-      flex: none;
-    }
-
-    .stat-num {
-      font-size: 26px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1;
-      letter-spacing: -.03em;
-      margin-bottom: 3px;
-    }
-
-    .stat-desc {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .cta-wrap {
-      position: relative;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-photo {
-      position: absolute;
-      inset: 0;
-    }
-
-    .cta-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .cta-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(4,14,28,.92) 0%, rgba(6,18,36,.82) 100%);
-    }
-
-    .cta-body {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 80px 24px 72px;
-      max-width: 660px;
-      margin-inline: auto;
-    }
-
-    .cta-body h2 {
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-
-    .cta-body .lead {
-      font-size: 15.5px;
-      color: rgba(255,255,255,.56);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .cta-phone {
-      margin-top: 20px;
-      font-size: 13px;
-      color: rgba(255,255,255,.40);
-    }
-
-    .cta-phone a {
-      color: rgba(255,255,255,.62);
-      font-weight: 600;
-    }
-
-    footer {
-      background: #030d18;
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 12.5px;
-      color: #2d4256;
-    }
-
-    footer span {
-      margin: 0 8px;
-      color: #1f3040;
-    }
-
-    @media (max-width: 1060px) {
-      .hero-inner,
-      .why-layout {
-        grid-template-columns: 1fr;
+    @media (max-width: 1100px){
+      .grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:520px 300px 300px 300px 240px;
       }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-copy h1 {
-        font-size: 42px;
-      }
-
-      .hero-media {
-        min-height: 360px;
-      }
+      .hero-tile{grid-column:1 / 3; grid-row:1 / 2;}
+      .sillones-tile{grid-column:1 / 3; grid-row:2 / 3;}
+      .colchones-tile{grid-column:1 / 2; grid-row:3 / 4;}
+      .alfombras-tile{grid-column:2 / 3; grid-row:3 / 4;}
+      .autos-tile{grid-column:1 / 3; grid-row:4 / 5;}
+      .cta-tile{grid-column:1 / 3; grid-row:5 / 6;}
+      .hero-content{width:min(470px,80%)}
+      .cta-content{grid-template-columns:1fr}
+      .cta-left{background:linear-gradient(to top, rgba(0,0,0,.84) 0%, rgba(0,0,0,.58) 72%, rgba(0,0,0,0) 100%)}
     }
 
-    @media (max-width: 768px) {
-      .nav-desk { display: none; }
-      .ham { display: flex; }
-      .topbar-row { height: 70px; }
+    @media (max-width: 768px){
+      .nav-desk{display:none}
+      .ham{display:flex}
+      .topbar-row{height:70px}
 
-      .hero-copy {
-        padding: 42px 24px;
+      .grid{
+        grid-template-columns:1fr;
+        grid-template-rows:560px 320px 320px 320px 320px 260px;
       }
+      .hero-tile,
+      .sillones-tile,
+      .colchones-tile,
+      .alfombras-tile,
+      .autos-tile,
+      .cta-tile{
+        grid-column:1 / 2;
+      }
+      .hero-tile{grid-row:1 / 2;}
+      .sillones-tile{grid-row:2 / 3;}
+      .colchones-tile{grid-row:3 / 4;}
+      .alfombras-tile{grid-row:4 / 5;}
+      .autos-tile{grid-row:5 / 6;}
+      .cta-tile{grid-row:6 / 7;}
 
-      .hero-copy h1 {
-        font-size: 34px;
+      .hero-content{
+        left:24px;
+        right:24px;
+        top:24px;
+        bottom:20px;
+        width:auto;
       }
-
-      .hero-mini {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 64px 0;
-      }
-
-      .section-head h2,
-      .why-text h2,
-      .cta-body h2 {
-        font-size: 28px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-      }
-
-      .hero-cta .btn {
-        width: 100%;
-      }
+      .hero-title{font-size:42px}
+      .hero-text{font-size:15px}
+      .hero-features{display:none}
+      .cta-left{padding:24px}
+      .cta-title{font-size:34px}
+      .cta-text{font-size:14px}
+      .card-overlay h3{font-size:20px}
     }
   </style>
 </head>
@@ -614,7 +463,7 @@
     <div class="container topbar-row">
       <a href="#inicio" class="brand" aria-label="Cleaning Services">
         <div class="brand-mark">C</div>
-        <div class="brand-info">
+        <div>
           <div class="brand-name">CLEANING SERVICES</div>
           <div class="brand-sub">Limpieza de tapizados</div>
         </div>
@@ -625,9 +474,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#porque">Por qué elegirnos</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
-          Escribinos por WhatsApp
-        </a>
+        <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
       </nav>
 
       <button class="ham" id="hamBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -640,173 +487,114 @@
       <a href="#servicios" onclick="closeNav()">Servicios</a>
       <a href="#porque" onclick="closeNav()">Por qué elegirnos</a>
       <a href="#contacto" onclick="closeNav()">Contacto</a>
-      <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
-        Escribinos por WhatsApp
-      </a>
+      <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-shell">
-          <div class="hero-inner">
-            <div class="hero-copy">
-              <span class="eyebrow">Limpieza y desinfección profesional</span>
-              <h1>Especialistas en limpieza de tapizados</h1>
-              <p class="lead">
-                Devolvemos la vida, el color y la frescura a tus sillones, colchones,
-                alfombras y tapizados de autos. Atención a domicilio en CABA y GBA.
-              </p>
-
-              <div class="hero-cta">
-                <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
-                  Pedí tu presupuesto
-                </a>
-                <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
-                  Escribinos por WhatsApp
-                </a>
-              </div>
-
-              <div class="hero-mini">
-                <div class="hero-mini-card">
-                  <strong>Sillones</strong>
-                  <span>Limpieza profunda con mejor presencia visual.</span>
-                </div>
-                <div class="hero-mini-card">
-                  <strong>Colchones</strong>
-                  <span>Más higiene, frescura y mantenimiento real.</span>
-                </div>
-                <div class="hero-mini-card">
-                  <strong>Alfombras</strong>
-                  <span>Tratamiento profesional para uso diario.</span>
-                </div>
-                <div class="hero-mini-card">
-                  <strong>Autos</strong>
-                  <span>Interior más prolijo y sin malos olores.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-media">
-              <img src="hero.png" alt="Limpieza profesional de sillón con extractor">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Nuestros servicios</span>
-          <h2>Cuidado profesional para cada superficie</h2>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <img src="sillones.png" alt="Limpieza de sillones">
-            <div class="service-body">
-              <h3>Limpieza de sillones</h3>
-              <p>Eliminamos manchas, suciedad acumulada y olores para recuperar frescura, color y mejor imagen del tapizado.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img src="colchones.png" alt="Limpieza de colchones">
-            <div class="service-body">
-              <h3>Limpieza de colchones</h3>
-              <p>Desinfección profunda orientada a mejorar higiene, frescura y mantenimiento de una superficie clave del descanso.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img src="alfombras.png" alt="Limpieza de alfombras">
-            <div class="service-body">
-              <h3>Limpieza de alfombras</h3>
-              <p>Recuperamos mejor aspecto, textura y limpieza en superficies textiles de alto uso dentro del hogar.</p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img src="autos.png" alt="Limpieza de tapizados de autos">
-            <div class="service-body">
-              <h3>Limpieza de autos</h3>
-              <p>Tratamiento especializado para butacas, cielo raso y laterales, con foco en tapizados e interior del vehículo.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why-section" id="porque">
-      <div class="container">
-        <div class="why-layout">
-          <div class="why-text">
-            <span class="kicker">¿Por qué elegirnos?</span>
-            <h2>Resultados que se ven, cuidado que se siente.</h2>
-            <p>
-              Trabajamos con equipamiento de extracción profesional y productos seguros
-              para lograr una limpieza profunda, cuidada y alineada a la calidad que tu
-              tapizado necesita.
-            </p>
-          </div>
-
-          <div class="stats-list">
-            <div class="stat-row">
-              <div class="stat-badge">+5</div>
-              <div>
-                <div class="stat-num">+5 años</div>
-                <div class="stat-desc">de experiencia en limpieza de tapizados</div>
-              </div>
-            </div>
-
-            <div class="stat-row">
-              <div class="stat-badge">2.5K</div>
-              <div>
-                <div class="stat-num">+2.500</div>
-                <div class="stat-desc">clientes atendidos en CABA y GBA</div>
-              </div>
-            </div>
-
-            <div class="stat-row">
-              <div class="stat-badge">100%</div>
-              <div>
-                <div class="stat-num">100%</div>
-                <div class="stat-desc">compromiso con cada servicio realizado</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-wrap">
-          <div class="cta-photo">
-            <img src="cta.png" alt="Ambiente premium con sillón limpio">
-          </div>
-          <div class="cta-body">
-            <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
-            <p class="lead">
-              Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.
-            </p>
-            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
-              Escribinos por WhatsApp
-            </a>
-            <p class="cta-phone">o llamanos al <a href="tel:+541160114067">11 6011-4067</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <main class="collage">
     <div class="container">
-      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
+      <section class="grid">
+
+        <article class="tile hero-tile">
+          <img src="hero.png" alt="Limpieza profesional de sillón con extractor" />
+          <div class="hero-content">
+            <span class="eyebrow">Limpieza y desinfección profesional</span>
+            <h1 class="hero-title">Especialistas en limpieza de tapizados</h1>
+            <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
+
+            <div class="hero-features">
+              <div class="feature">
+                <div class="feature-icon">✦</div>
+                <div>
+                  <strong>Limpieza profunda</strong>
+                  <span>Eliminamos suciedad, manchas y olores.</span>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">⬢</div>
+                <div>
+                  <strong>Resultados que se ven</strong>
+                  <span>Más higiene, mejor apariencia y mayor durabilidad.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
+              <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile sillones-tile" id="servicios">
+          <img src="sillones.png" alt="Limpieza de sillones" />
+          <div class="card-overlay">
+            <div class="card-row">
+              <div class="circle">🛋</div>
+              <div>
+                <h3>Limpieza de sillones</h3>
+                <p>Recuperamos el color, eliminamos manchas y olores para que tus sillones luzcan como nuevos.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile colchones-tile">
+          <img src="colchones.png" alt="Limpieza de colchones" />
+          <div class="card-overlay">
+            <div class="card-row">
+              <div class="circle">🛏</div>
+              <div>
+                <h3>Limpieza de colchones</h3>
+                <p>Desinfección profunda para eliminar ácaros, manchas y olores, mejorando tu descanso.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile alfombras-tile">
+          <img src="alfombras.png" alt="Limpieza de alfombras" />
+          <div class="card-overlay">
+            <div class="card-row">
+              <div class="circle">🧶</div>
+              <div>
+                <h3>Limpieza de alfombras</h3>
+                <p>Eliminamos la suciedad profunda y recuperamos la textura y el color de tus alfombras.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile autos-tile">
+          <img src="autos.png" alt="Limpieza de autos" />
+          <div class="card-overlay">
+            <div class="card-row">
+              <div class="circle">🚘</div>
+              <div>
+                <h3>Limpieza de autos</h3>
+                <p>Limpiamos tapizados, butacas y alfombras del auto, eliminando manchas y malos olores.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile cta-tile" id="contacto">
+          <img src="cta.png" alt="Living premium con sillón limpio" />
+          <div class="cta-content">
+            <div class="cta-left">
+              <h2 class="cta-title">Transformamos tus espacios, mejoramos tu bienestar.</h2>
+              <p class="cta-text">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+                <div class="cta-phone">o llamanos al 11 6011-4067</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
     </div>
-  </footer>
+  </main>
 
   <script>
     (function () {

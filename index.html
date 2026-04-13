@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaning Services | Limpieza y desinfección profesional</title>
+  <meta name="description" content="Limpieza profesional de tapizados, sillones, colchones, alfombras y autos. Atención a domicilio." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #071a2c;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: #ffffff;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo-wrap img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #10233b;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .btn-header {
+      background: #082340;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 640px;
+      background: linear-gradient(rgba(5, 18, 34, 0.55), rgba(5, 18, 34, 0.55)),
+        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 70px 40px;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      margin-left: 40px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #e8eef5;
+      margin-bottom: 30px;
+      max-width: 560px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #16b8e7;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.85);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .benefits {
+      background: #07203b;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 26px 40px;
+    }
+
+    .benefit {
+      color: #dce7f1;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 70px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      color: #55d7f2;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #0b2746;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #d7e4ef;
+      font-size: 17px;
+    }
+
+    .why {
+      background: #071f39;
+      margin-top: 10px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .why-text h2 {
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 54px;
+    }
+
+    .why-text p {
+      color: #d7e4ef;
+      font-size: 22px;
+      max-width: 650px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .stat-text {
+      color: #d7e4ef;
+      font-size: 20px;
+    }
+
+    .cta {
+      min-height: 420px;
+      background: linear-gradient(rgba(7, 18, 30, 0.50), rgba(7, 18, 30, 0.50)),
+        url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 30px;
+    }
+
+    .cta-box {
+      max-width: 850px;
+    }
+
+    .cta h2 {
+      font-size: 54px;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      font-size: 24px;
+      color: #edf4fa;
+      margin-bottom: 28px;
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 18px;
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    footer {
+      background: #051322;
+      color: #9bb0c4;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 1100px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 50px 20px;
+        min-height: auto;
+      }
+
+      .hero-content {
+        margin-left: 0;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .section {
+        padding: 50px 20px;
+      }
+
+      .section h2,
+      .why-text h2,
+      .cta h2 {
+        font-size: 34px;
+      }
+
+      .services,
+      .benefits,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .card h3 {
+        font-size: 24px;
+      }
+
+      .cta p,
+      .why-text p,
+      .stat-text,
+      .cta small {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo-wrap">
+      <img src="https://i.imgur.com/Qm5m6Qy.png" alt="Cleaning Services">
+    </div>
+
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn-header" href="https://wa.me/5491100000000" target="_blank">PEDÍ TU PRESUPUESTO</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Limpieza y desinfección profesional de tapizados</h1>
+      <p>Devolvemos la vida, color y frescura a tus sillones, colchones, alfombras y más.</p>
+      <div class="hero-buttons">
+        <a class="btn-primary" href="https://wa.me/5491100000000" target="_blank">PEDÍ TU PRESUPUESTO</a>
+        <a class="btn-secondary" href="https://wa.me/5491100000000" target="_blank">ESCRIBINOS POR WHATSAPP</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" id="beneficios">
+    <div class="benefit">Eliminamos ácaros, bacterias y malos olores</div>
+    <div class="benefit">Productos seguros y biodegradables</div>
+    <div class="benefit">Secado rápido</div>
+    <div class="benefit">Atención a domicilio</div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="section-label">Nuestros servicios</div>
+    <h2>Cuidado profesional para cada superficie</h2>
+
+    <div class="services">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Limpieza de sillones">
+        <div class="card-body">
+          <h3>Limpieza de sillones</h3>
+          <p>Eliminamos manchas, suciedad y olores. Recuperá la frescura y la imagen de tus sillones.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Limpieza de colchones">
+        <div class="card-body">
+          <h3>Limpieza de colchones</h3>
+          <p>Desinfección profunda para mejorar higiene, frescura y descanso en tu hogar.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?auto=format&fit=crop&w=900&q=80" alt="Limpieza de alfombras">
+        <div class="card-body">
+          <h3>Limpieza de alfombras</h3>
+          <p>Quitamos polvo, manchas y suciedad acumulada con una terminación prolija y profesional.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=900&q=80" alt="Limpieza de autos">
+        <div class="card-body">
+          <h3>Limpieza de autos</h3>
+          <p>Tapizados más limpios, prolijos y libres de olores para renovar el interior del vehículo.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section why" id="nosotros">
+    <div class="why-grid">
+      <div class="why-text">
+        <div class="section-label" style="text-align:left;">¿Por qué elegirnos?</div>
+        <h2>Resultados que se ven, cuidado que se siente.</h2>
+        <p>Utilizamos procesos profesionales para lograr una limpieza profunda, segura y pensada para mejorar la imagen y la higiene real de cada tapizado.</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <div class="stat-number">+5</div>
+          <div class="stat-text">Años de experiencia</div>
+        </div>
+        <div>
+          <div class="stat-number">+2500</div>
+          <div class="stat-text">Clientes satisfechos</div>
+        </div>
+        <div>
+          <div class="stat-number">100%</div>
+          <div class="stat-text">Compromiso con el servicio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="cta-box">
+      <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
+      <p>Contactanos hoy y descubrí la diferencia de una limpieza profesional.</p>
+      <a class="btn-primary" href="https://wa.me/5491100000000" target="_blank">ESCRIBINOS POR WHATSAPP</a>
+      <small>o llamanos al 11 1234 5678</small>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Cleaning Services · Limpieza y desinfección profesional
+  </footer>
+
+</body>
+</html>

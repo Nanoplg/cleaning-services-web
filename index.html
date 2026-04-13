@@ -6,225 +6,259 @@
   <title>Cleaning Services | Limpieza profesional de tapizados</title>
   <meta name="description" content="Limpieza y desinfección profesional de sillones, colchones, alfombras y tapizados de autos. Atención a domicilio en CABA y GBA." />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Cleaning Services | Limpieza profesional de tapizados" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cleaning Services | Limpieza profesional de tapizados" />
   <meta property="og:description" content="Devolvemos la vida, el color y la frescura a tus sillones, colchones, alfombras y más." />
-  <meta property="og:image"       content="og-image.jpg" />
-  <meta property="og:url"         content="https://tusitio.com.ar" />
+  <meta property="og:image" content="hero.png" />
+  <meta property="og:url" content="https://cleaningservices.com.ar" />
 
-  <!-- Favicon — reemplazar con archivos reales -->
-  <link rel="icon"             type="image/png" sizes="32x32" href="favicon-32.png" />
-  <link rel="icon"             type="image/png" sizes="16x16" href="favicon-16.png" />
-  <link rel="apple-touch-icon"                              href="apple-touch-icon.png" />
-
-  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── Variables ─────────────────────────────── */
     :root {
-      --navy:     #061828;
-      --navy-2:   #082035;
-      --navy-3:   #0a2540;
-      --card-bg:  #0b2642;
-      --border:   rgba(255,255,255,.08);
-      --text:     #e4eef8;
-      --muted:    #7496b2;
-      --accent:   #14b8e6;
+      --bg: #061828;
+      --bg-2: #082035;
+      --card: #0b2642;
+      --border: rgba(255,255,255,.08);
+      --text: #e7eff8;
+      --muted: #87a3bb;
+      --accent: #14b8e6;
       --accent-d: #0d95bb;
-      --white:    #ffffff;
-      --font:     "Plus Jakarta Sans", sans-serif;
-      --r:        16px;
-      --r-lg:     22px;
+      --white: #ffffff;
+      --font: "Plus Jakarta Sans", sans-serif;
+      --r: 18px;
+      --r-lg: 24px;
+      --shadow: 0 20px 50px rgba(0,0,0,.28);
     }
 
-    /* ─── Reset ─────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html  { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body  { font-family: var(--font); background: var(--navy); color: var(--text); line-height: 1.6; }
-    img   { max-width: 100%; display: block; }
-    a     { text-decoration: none; color: inherit; }
-    ul    { list-style: none; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
 
     .container {
-      width: min(1200px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin-inline: auto;
     }
 
-    /* ─── Botones ────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 10px;
       border: none;
       border-radius: 999px;
-      padding: 13px 26px;
+      padding: 14px 24px;
       font-family: var(--font);
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: .03em;
       text-transform: uppercase;
+      letter-spacing: .04em;
       cursor: pointer;
+      transition: .2s ease;
       white-space: nowrap;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .btn:hover  { transform: translateY(-2px); }
-    .btn svg    { width: 17px; height: 17px; fill: currentColor; flex: none; }
 
-    .btn-teal {
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 8px 24px rgba(20,184,230,.32);
+      box-shadow: 0 10px 28px rgba(20,184,230,.30);
     }
-    .btn-teal:hover  { background: var(--accent-d); box-shadow: 0 12px 32px rgba(20,184,230,.42); }
+
+    .btn-primary:hover {
+      background: var(--accent-d);
+      box-shadow: 0 14px 36px rgba(20,184,230,.40);
+    }
 
     .btn-outline {
       background: transparent;
-      border: 1.5px solid rgba(255,255,255,.42);
+      border: 1.5px solid rgba(255,255,255,.34);
       color: #fff;
     }
-    .btn-outline:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.65); }
 
-    /* ─── Barra superior (dark) ─────────────────── */
+    .btn-outline:hover {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.58);
+    }
+
     .topbar {
       position: sticky;
       top: 0;
       z-index: 200;
-      background: var(--navy);
+      background: rgba(6,24,40,.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
+
     .topbar-row {
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
-      gap: 24px;
+      gap: 20px;
     }
 
-    /* Logo */
-    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .brand-mark {
-      width: 52px; height: 52px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: linear-gradient(145deg, #16c0e8 0%, #0d3f70 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 4px 16px rgba(20,184,230,.28);
+      color: white;
+      font-weight: 800;
+      font-size: 20px;
+      flex: none;
       overflow: hidden;
     }
-    /*
-      LOGO REAL: reemplazar el contenido de .brand-mark por:
-      <img src="logo.svg" alt="Cleaning Services" width="32">
-    */
-    .brand-mark svg { width: 28px; height: 28px; }
 
-    .brand-info { line-height: 1.05; }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-info {
+      line-height: 1.05;
+    }
+
     .brand-name {
       font-size: 18px;
       font-weight: 800;
       color: var(--white);
       letter-spacing: .10em;
     }
+
     .brand-sub {
       font-size: 10px;
       font-weight: 700;
       color: var(--accent);
       letter-spacing: .20em;
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    /* Nav links */
     .nav-desk {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
     }
+
     .nav-desk a {
       font-size: 13px;
       font-weight: 700;
-      color: rgba(255,255,255,.72);
+      color: rgba(255,255,255,.74);
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: .05em;
       padding-bottom: 3px;
       border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
+      transition: .15s ease;
     }
-    .nav-desk a:hover,
-    .nav-desk a.active { color: var(--white); border-bottom-color: var(--accent); }
 
-    /* Hamburger */
+    .nav-desk a:hover,
+    .nav-desk a.active {
+      color: #fff;
+      border-bottom-color: var(--accent);
+    }
+
     .ham {
       display: none;
       flex-direction: column;
       justify-content: center;
       gap: 5px;
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       background: transparent;
       border: 1px solid rgba(255,255,255,.14);
       border-radius: 10px;
       cursor: pointer;
       padding: 8px;
     }
+
     .ham span {
       display: block;
       height: 2px;
-      background: var(--white);
+      background: #fff;
       border-radius: 2px;
-      transition: transform .25s ease, opacity .25s ease;
-      transform-origin: center;
+      transition: .25s ease;
     }
+
     .ham.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .ham.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .ham.is-open span:nth-child(2) { opacity: 0; }
     .ham.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile drawer */
     .nav-mob {
       display: none;
       flex-direction: column;
-      background: var(--navy-2);
+      background: var(--bg-2);
       border-top: 1px solid var(--border);
       padding: 8px 0 20px;
     }
+
     .nav-mob.is-open { display: flex; }
+
     .nav-mob a {
       font-size: 13px;
       font-weight: 700;
-      color: rgba(255,255,255,.72);
+      color: rgba(255,255,255,.74);
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: .05em;
       padding: 13px 20px;
       border-bottom: 1px solid var(--border);
-      transition: color .12s, background .12s;
     }
-    .nav-mob a:hover { color: var(--white); background: rgba(255,255,255,.04); }
-    .nav-mob .btn-teal { margin: 16px 20px 0; border-radius: 999px; }
 
-    /* ═══════════════════════════════════════════
-       HERO — split: texto izq | foto der
-    ═══════════════════════════════════════════ */
-    .hero {
-      background: var(--navy);
-      overflow: hidden;
+    .nav-mob .btn-primary {
+      margin: 16px 20px 0;
     }
+
+    .hero {
+      padding: 56px 0 44px;
+      background: var(--bg);
+    }
+
+    .hero-shell {
+      background: linear-gradient(135deg, #081e33 0%, #061828 100%);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: stretch;
       min-height: 560px;
     }
 
-    /* Columna izquierda: texto */
-    .hero-text {
+    .hero-copy {
+      padding: 64px 54px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 72px 48px 72px 0;
     }
+
     .eyebrow {
+      display: inline-block;
       font-size: 11px;
       font-weight: 800;
       color: var(--accent);
@@ -232,96 +266,78 @@
       letter-spacing: .16em;
       margin-bottom: 18px;
     }
-    .hero-text h1 {
-      font-size: 52px;
+
+    .hero-copy h1 {
+      font-size: 56px;
       font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -.03em;
-      color: var(--white);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      color: #fff;
       margin-bottom: 18px;
     }
-    .hero-text .lead {
+
+    .hero-copy .lead {
       font-size: 16px;
-      color: rgba(255,255,255,.60);
-      line-height: 1.70;
-      margin-bottom: 32px;
-      max-width: 460px;
+      color: rgba(255,255,255,.62);
+      line-height: 1.75;
+      max-width: 470px;
+      margin-bottom: 30px;
     }
+
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 40px;
+      margin-bottom: 34px;
     }
 
-    /* Beneficios dentro del hero */
-    .hero-benefits {
+    .hero-mini {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      border-top: 1px solid var(--border);
-      padding-top: 28px;
+      gap: 12px;
     }
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+
+    .hero-mini-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px;
+      padding: 14px 16px;
     }
-    .b-ico {
-      width: 34px; height: 34px;
-      flex: none;
-      border-radius: 9px;
-      background: rgba(20,184,230,.10);
-      border: 1px solid rgba(20,184,230,.22);
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 1px;
+
+    .hero-mini-card strong {
+      display: block;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
     }
-    .b-ico svg {
-      width: 17px; height: 17px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .b-text {
+
+    .hero-mini-card span {
       font-size: 12.5px;
-      font-weight: 500;
-      color: rgba(255,255,255,.60);
+      color: rgba(255,255,255,.56);
       line-height: 1.5;
     }
 
-    /* Columna derecha: foto */
-    .hero-photo {
+    .hero-media {
       position: relative;
-      overflow: hidden;
+      min-height: 100%;
     }
-    .hero-photo img {
-      position: absolute;
-      inset: 0;
+
+    .hero-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
-    }
-    /* Degradado suave en el borde izquierdo para fusionar con fondo */
-    .hero-photo::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, var(--navy) 0%, transparent 22%);
-      z-index: 1;
+      object-position: center;
     }
 
-    /* ═══════════════════════════════════════════
-       SERVICIOS
-    ═══════════════════════════════════════════ */
-    .section { padding: 88px 0; }
+    .section {
+      padding: 84px 0;
+    }
 
     .section-head {
       text-align: center;
-      margin-bottom: 44px;
+      margin-bottom: 42px;
     }
+
     .kicker {
       display: block;
       font-size: 11px;
@@ -331,264 +347,273 @@
       letter-spacing: .16em;
       margin-bottom: 12px;
     }
+
     .section-head h2 {
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -.03em;
-      color: var(--white);
+      color: #fff;
     }
 
-    /* Grid de servicios */
-    .svc-grid {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .svc-card {
-      background: var(--card-bg);
+    .service-card {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--r-lg);
       overflow: hidden;
-      transition: transform .22s ease, box-shadow .22s ease;
+      transition: .22s ease;
     }
-    .svc-card:hover {
+
+    .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 22px 52px rgba(0,0,0,.36);
+      box-shadow: 0 22px 52px rgba(0,0,0,.34);
     }
 
-    .svc-img {
+    .service-card img {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
-      display: block;
     }
 
-    .svc-footer {
+    .service-body {
       padding: 20px 18px 22px;
     }
-    .svc-title-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .svc-ico {
-      width: 40px; height: 40px;
-      flex: none;
-      border-radius: 50%;
-      background: rgba(20,184,230,.14);
-      border: 1px solid rgba(20,184,230,.26);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .svc-ico svg {
-      width: 20px; height: 20px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .svc-footer h3 {
-      font-size: 15.5px;
+
+    .service-body h3 {
+      font-size: 16px;
       font-weight: 700;
-      color: var(--white);
-      letter-spacing: -.01em;
-    }
-    .svc-footer p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.62;
+      color: #fff;
+      margin-bottom: 8px;
     }
 
-    /* ═══════════════════════════════════════════
-       POR QUÉ ELEGIRNOS
-    ═══════════════════════════════════════════ */
-    .why-section { background: var(--navy-2); }
+    .service-body p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .why-section {
+      background: var(--bg-2);
+    }
+
     .why-layout {
       display: grid;
       grid-template-columns: 1.15fr .85fr;
-      gap: 64px;
+      gap: 60px;
       align-items: center;
     }
-    .why-text .kicker { text-align: left; }
+
     .why-text h2 {
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -.04em;
-      color: var(--white);
+      color: #fff;
       margin: 12px 0 18px;
     }
+
     .why-text p {
       font-size: 15.5px;
       color: var(--muted);
-      line-height: 1.74;
-      max-width: 460px;
+      line-height: 1.75;
+      max-width: 470px;
     }
 
-    .stats-list { display: grid; gap: 14px; }
+    .stats-list {
+      display: grid;
+      gap: 14px;
+    }
+
     .stat-row {
       display: flex;
       align-items: center;
       gap: 16px;
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: var(--r-lg);
+      border-radius: 20px;
       padding: 20px 22px;
     }
-    .stat-ico {
-      width: 48px; height: 48px;
-      flex: none;
+
+    .stat-badge {
+      width: 48px;
+      height: 48px;
       border-radius: 14px;
       background: rgba(20,184,230,.09);
       border: 1px solid rgba(20,184,230,.20);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 800;
+      flex: none;
     }
-    .stat-ico svg {
-      width: 22px; height: 22px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .stat-num  { font-size: 26px; font-weight: 800; color: var(--white); letter-spacing: -.03em; line-height: 1; margin-bottom: 3px; }
-    .stat-desc { font-size: 13px; color: var(--muted); }
 
-    /* ═══════════════════════════════════════════
-       CTA FINAL
-    ═══════════════════════════════════════════ */
+    .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -.03em;
+      margin-bottom: 3px;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     .cta-wrap {
       position: relative;
       border-radius: 28px;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
+
     .cta-photo {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1400&auto=format&fit=crop&q=80');
-      background-size: cover;
-      background-position: center;
     }
+
+    .cta-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .cta-photo::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(4,14,28,.92) 0%, rgba(6,18,36,.82) 100%);
     }
+
     .cta-body {
       position: relative;
       z-index: 2;
       text-align: center;
       padding: 80px 24px 72px;
-      max-width: 640px;
+      max-width: 660px;
       margin-inline: auto;
     }
+
     .cta-body h2 {
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 800;
-      line-height: 1.10;
+      line-height: 1.08;
       letter-spacing: -.04em;
-      color: var(--white);
+      color: #fff;
       margin-bottom: 14px;
     }
+
     .cta-body .lead {
       font-size: 15.5px;
-      color: rgba(255,255,255,.54);
-      line-height: 1.68;
+      color: rgba(255,255,255,.56);
+      line-height: 1.7;
       margin-bottom: 28px;
     }
-    .cta-acts { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
     .cta-phone {
       margin-top: 20px;
       font-size: 13px;
-      color: rgba(255,255,255,.36);
+      color: rgba(255,255,255,.40);
     }
-    .cta-phone a {
-      color: rgba(255,255,255,.56);
-      font-weight: 600;
-      transition: color .15s;
-    }
-    .cta-phone a:hover { color: var(--accent); }
 
-    /* ═══════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════ */
+    .cta-phone a {
+      color: rgba(255,255,255,.62);
+      font-weight: 600;
+    }
+
     footer {
       background: #030d18;
       border-top: 1px solid var(--border);
       padding: 28px 0;
       text-align: center;
     }
-    footer p { font-size: 12.5px; color: #2d4256; }
-    footer span { margin: 0 8px; color: #1f3040; }
 
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
+    footer p {
+      font-size: 12.5px;
+      color: #2d4256;
+    }
+
+    footer span {
+      margin: 0 8px;
+      color: #1f3040;
+    }
+
     @media (max-width: 1060px) {
-      .hero-inner   { grid-template-columns: 1fr; min-height: auto; }
-      .hero-text    { padding: 68px 0 48px; }
-      .hero-photo   { height: 380px; position: relative; }
-      .hero-photo img { position: absolute; }
-      .hero-photo::before { background: linear-gradient(to bottom, var(--navy) 0%, transparent 20%); }
+      .hero-inner,
+      .why-layout {
+        grid-template-columns: 1fr;
+      }
 
-      .svc-grid     { grid-template-columns: repeat(2, 1fr); }
-      .why-layout   { grid-template-columns: 1fr; gap: 44px; }
-      .hero-text h1 { font-size: 42px; }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-copy h1 {
+        font-size: 42px;
+      }
+
+      .hero-media {
+        min-height: 360px;
+      }
     }
 
     @media (max-width: 768px) {
       .nav-desk { display: none; }
-      .ham      { display: flex; }
+      .ham { display: flex; }
       .topbar-row { height: 70px; }
 
-      .hero-text    { padding: 56px 0 40px; }
-      .hero-text h1 { font-size: 34px; }
-      .hero-text .lead { font-size: 15px; }
-      .hero-benefits { grid-template-columns: repeat(2, 1fr); }
-      .hero-photo   { height: 300px; }
+      .hero-copy {
+        padding: 42px 24px;
+      }
 
-      .section      { padding: 64px 0; }
+      .hero-copy h1 {
+        font-size: 34px;
+      }
+
+      .hero-mini {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
       .section-head h2,
       .why-text h2,
-      .cta-body h2  { font-size: 28px; }
-      .cta-body     { padding: 60px 20px 52px; }
+      .cta-body h2 {
+        font-size: 28px;
+      }
     }
 
     @media (max-width: 520px) {
-      .svc-grid       { grid-template-columns: 1fr; }
-      .hero-benefits  { grid-template-columns: 1fr; }
-      .hero-cta       { flex-direction: column; }
-      .hero-cta .btn  { width: 100%; justify-content: center; }
-      .cta-acts       { flex-direction: column; align-items: center; }
-      .cta-acts .btn  { width: 100%; max-width: 320px; }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════
-       NAVBAR  (fondo oscuro)
-  ══════════════════════════════════ -->
   <header class="topbar" id="inicio">
     <div class="container topbar-row">
-
-      <a href="#inicio" class="brand" aria-label="Cleaning Services — inicio">
-        <div class="brand-mark">
-          <!--
-            LOGO REAL: reemplazar SVG por <img src="logo.svg" alt="" width="30">
-          -->
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Ícono de sillón simplificado -->
-            <rect x="5" y="14" width="22" height="8" rx="3" fill="white"/>
-            <rect x="8" y="20" width="16" height="5" rx="2" fill="white" opacity=".7"/>
-            <rect x="5" y="11" width="4" height="7" rx="2" fill="white"/>
-            <rect x="23" y="11" width="4" height="7" rx="2" fill="white"/>
-          </svg>
-        </div>
+      <a href="#inicio" class="brand" aria-label="Cleaning Services">
+        <div class="brand-mark">C</div>
         <div class="brand-info">
           <div class="brand-name">CLEANING SERVICES</div>
           <div class="brand-sub">Limpieza de tapizados</div>
@@ -600,10 +625,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#porque">Por qué elegirnos</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn btn-teal"
-           href="https://wa.me/5491160114067"
-           target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zm-8.52 18.4a9.93 9.93 0 0 1-5.06-1.38l-.36-.22-3.69.93.98-3.6-.24-.37A9.93 9.93 0 0 1 2.07 12c0-5.48 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51H7.5c-.17 0-.45.07-.69.35-.23.27-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.18 1.81 2.76 4.39 3.87.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.27-.17-.57-.32z"/></svg>
+        <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
           Escribinos por WhatsApp
         </a>
       </nav>
@@ -614,98 +636,66 @@
     </div>
 
     <nav class="nav-mob" id="mobNav" aria-label="Menú móvil">
-      <a href="#inicio"    onclick="closeNav()">Inicio</a>
+      <a href="#inicio" onclick="closeNav()">Inicio</a>
       <a href="#servicios" onclick="closeNav()">Servicios</a>
-      <a href="#porque"    onclick="closeNav()">Por qué elegirnos</a>
-      <a href="#contacto"  onclick="closeNav()">Contacto</a>
-      <a class="btn btn-teal"
-         href="https://wa.me/5491160114067"
-         target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zm-8.52 18.4a9.93 9.93 0 0 1-5.06-1.38l-.36-.22-3.69.93.98-3.6-.24-.37A9.93 9.93 0 0 1 2.07 12c0-5.48 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51H7.5c-.17 0-.45.07-.69.35-.23.27-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.18 1.81 2.76 4.39 3.87.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.27-.17-.57-.32z"/></svg>
+      <a href="#porque" onclick="closeNav()">Por qué elegirnos</a>
+      <a href="#contacto" onclick="closeNav()">Contacto</a>
+      <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
         Escribinos por WhatsApp
       </a>
     </nav>
   </header>
 
   <main>
-
-    <!-- ══════════════════════════════════
-         HERO  (split: texto izq | foto der)
-    ══════════════════════════════════ -->
-    <section class="hero" aria-label="Portada">
+    <section class="hero">
       <div class="container">
-        <div class="hero-inner">
+        <div class="hero-shell">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <span class="eyebrow">Limpieza y desinfección profesional</span>
+              <h1>Especialistas en limpieza de tapizados</h1>
+              <p class="lead">
+                Devolvemos la vida, el color y la frescura a tus sillones, colchones,
+                alfombras y tapizados de autos. Atención a domicilio en CABA y GBA.
+              </p>
 
-          <!-- Columna izquierda: texto -->
-          <div class="hero-text">
-            <p class="eyebrow">Limpieza y desinfección profesional</p>
-            <h1>Especialistas en limpieza de tapizados</h1>
-            <p class="lead">Devolvemos la vida, el color y la frescura a tus sillones, colchones, alfombras y tapizados de autos. Atención a domicilio en CABA y GBA.</p>
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
+                  Pedí tu presupuesto
+                </a>
+                <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
+                  Escribinos por WhatsApp
+                </a>
+              </div>
 
-            <div class="hero-cta">
-              <a class="btn btn-teal"
-                 href="https://wa.me/5491160114067"
-                 target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zm-8.52 18.4a9.93 9.93 0 0 1-5.06-1.38l-.36-.22-3.69.93.98-3.6-.24-.37A9.93 9.93 0 0 1 2.07 12c0-5.48 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51H7.5c-.17 0-.45.07-.69.35-.23.27-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.18 1.81 2.76 4.39 3.87.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.27-.17-.57-.32z"/></svg>
-                Pedí tu presupuesto
-              </a>
-              <a class="btn btn-outline"
-                 href="https://wa.me/5491160114067"
-                 target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zm-8.52 18.4a9.93 9.93 0 0 1-5.06-1.38l-.36-.22-3.69.93.98-3.6-.24-.37A9.93 9.93 0 0 1 2.07 12c0-5.48 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51H7.5c-.17 0-.45.07-.69.35-.23.27-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.18 1.81 2.76 4.39 3.87.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.27-.17-.57-.32z"/></svg>
-                Escribinos por WhatsApp
-              </a>
-            </div>
-
-            <!-- Beneficios -->
-            <div class="hero-benefits">
-              <div class="benefit-item">
-                <div class="b-ico">
-                  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="hero-mini">
+                <div class="hero-mini-card">
+                  <strong>Sillones</strong>
+                  <span>Limpieza profunda con mejor presencia visual.</span>
                 </div>
-                <span class="b-text">Eliminamos ácaros, bacterias y olores</span>
-              </div>
-              <div class="benefit-item">
-                <div class="b-ico">
-                  <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 3.5-5 11-5 11S7 10.5 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/></svg>
+                <div class="hero-mini-card">
+                  <strong>Colchones</strong>
+                  <span>Más higiene, frescura y mantenimiento real.</span>
                 </div>
-                <span class="b-text">Productos seguros y biodegradables</span>
-              </div>
-              <div class="benefit-item">
-                <div class="b-ico">
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div class="hero-mini-card">
+                  <strong>Alfombras</strong>
+                  <span>Tratamiento profesional para uso diario.</span>
                 </div>
-                <span class="b-text">Secado rápido y eficiente</span>
-              </div>
-              <div class="benefit-item">
-                <div class="b-ico">
-                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <div class="hero-mini-card">
+                  <strong>Autos</strong>
+                  <span>Interior más prolijo y sin malos olores.</span>
                 </div>
-                <span class="b-text">Atención a domicilio</span>
               </div>
             </div>
-          </div>
 
-          <!-- Columna derecha: foto limpieza de tapizado -->
-          <div class="hero-photo">
-            <!--
-              Foto: manos con guantes usando extractor profesional sobre sillón gris.
-              Reemplazar src por foto propia para resultado óptimo.
-            -->
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=85"
-              alt="Profesional limpiando tapizado de sillón con extractor"
-              loading="eager"
-            />
+            <div class="hero-media">
+              <img src="hero.png" alt="Limpieza profesional de sillón con extractor">
+            </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         SERVICIOS
-    ══════════════════════════════════ -->
     <section class="section" id="servicios">
       <div class="container">
         <div class="section-head">
@@ -713,217 +703,126 @@
           <h2>Cuidado profesional para cada superficie</h2>
         </div>
 
-        <div class="svc-grid">
-
-          <!-- Sillones -->
-          <article class="svc-card">
-            <img
-              class="svc-img"
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&auto=format&fit=crop&q=80"
-              alt="Sillón beige tapizado en sala de estar"
-              loading="lazy" width="700" height="180"
-            />
-            <div class="svc-footer">
-              <div class="svc-title-row">
-                <div class="svc-ico" aria-hidden="true">
-                  <!-- Ícono sillón -->
-                  <svg viewBox="0 0 24 24">
-                    <rect x="3" y="10" width="18" height="7" rx="2.5"/>
-                    <rect x="5" y="15" width="14" height="4" rx="1.5"/>
-                    <rect x="3" y="8"  width="3"  height="6" rx="1.5"/>
-                    <rect x="18" y="8" width="3"  height="6" rx="1.5"/>
-                  </svg>
-                </div>
-                <h3>Limpieza de sillones</h3>
-              </div>
-              <p>Eliminamos manchas, suciedad acumulada y olores. Tu tapizado recupera color, textura y vida útil.</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="sillones.png" alt="Limpieza de sillones">
+            <div class="service-body">
+              <h3>Limpieza de sillones</h3>
+              <p>Eliminamos manchas, suciedad acumulada y olores para recuperar frescura, color y mejor imagen del tapizado.</p>
             </div>
           </article>
 
-          <!-- Colchones -->
-          <article class="svc-card">
-            <img
-              class="svc-img"
-              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&auto=format&fit=crop&q=80"
-              alt="Colchón blanco sobre sommier en dormitorio"
-              loading="lazy" width="700" height="180"
-            />
-            <div class="svc-footer">
-              <div class="svc-title-row">
-                <div class="svc-ico" aria-hidden="true">
-                  <!-- Ícono cama/colchón -->
-                  <svg viewBox="0 0 24 24">
-                    <path d="M2 7v10"/>
-                    <path d="M22 7v10"/>
-                    <path d="M2 12h20"/>
-                    <rect x="2" y="12" width="20" height="5" rx="1.5"/>
-                    <rect x="5" y="9"  width="6"  height="3" rx="1"/>
-                    <rect x="13" y="9" width="6"  height="3" rx="1"/>
-                  </svg>
-                </div>
-                <h3>Limpieza de colchones</h3>
-              </div>
-              <p>Desinfección profunda que elimina ácaros, bacterias y hongos para un descanso seguro y saludable.</p>
+          <article class="service-card">
+            <img src="colchones.png" alt="Limpieza de colchones">
+            <div class="service-body">
+              <h3>Limpieza de colchones</h3>
+              <p>Desinfección profunda orientada a mejorar higiene, frescura y mantenimiento de una superficie clave del descanso.</p>
             </div>
           </article>
 
-          <!-- Alfombras -->
-          <article class="svc-card">
-            <img
-              class="svc-img"
-              src="https://images.unsplash.com/photo-1600573472591-ee6981cf35b6?w=700&auto=format&fit=crop&q=80"
-              alt="Alfombra clara y esponjosa en interior luminoso"
-              loading="lazy" width="700" height="180"
-            />
-            <div class="svc-footer">
-              <div class="svc-title-row">
-                <div class="svc-ico" aria-hidden="true">
-                  <!-- Ícono alfombra / trama -->
-                  <svg viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="18" height="16" rx="2"/>
-                    <line x1="3"  y1="9"  x2="21" y2="9"/>
-                    <line x1="3"  y1="14" x2="21" y2="14"/>
-                    <line x1="9"  y1="4"  x2="9"  y2="20"/>
-                    <line x1="15" y1="4"  x2="15" y2="20"/>
-                  </svg>
-                </div>
-                <h3>Limpieza de alfombras</h3>
-              </div>
-              <p>Recuperamos color, textura y profundidad. Menos polvo, menos alérgenos, ambientes más sanos.</p>
+          <article class="service-card">
+            <img src="alfombras.png" alt="Limpieza de alfombras">
+            <div class="service-body">
+              <h3>Limpieza de alfombras</h3>
+              <p>Recuperamos mejor aspecto, textura y limpieza en superficies textiles de alto uso dentro del hogar.</p>
             </div>
           </article>
 
-          <!-- Autos: interior -->
-          <article class="svc-card">
-            <img
-              class="svc-img"
-              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&auto=format&fit=crop&q=80&crop=focalpoint&fp-y=0.6"
-              alt="Interior de automóvil con tapizados de cuero"
-              loading="lazy" width="700" height="180"
-            />
-            <div class="svc-footer">
-              <div class="svc-title-row">
-                <div class="svc-ico" aria-hidden="true">
-                  <!-- Ícono asiento de auto -->
-                  <svg viewBox="0 0 24 24">
-                    <path d="M4 17l2-8h12l2 8H4z"/>
-                    <path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
-                    <rect x="6" y="17" width="3" height="3" rx="1"/>
-                    <rect x="15" y="17" width="3" height="3" rx="1"/>
-                  </svg>
-                </div>
-                <h3>Limpieza de autos</h3>
-              </div>
-              <p>Tapizados interiores impecables y sin olores. Tratamiento especializado en butacas, cielo raso y laterales.</p>
+          <article class="service-card">
+            <img src="autos.png" alt="Limpieza de tapizados de autos">
+            <div class="service-body">
+              <h3>Limpieza de autos</h3>
+              <p>Tratamiento especializado para butacas, cielo raso y laterales, con foco en tapizados e interior del vehículo.</p>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         POR QUÉ ELEGIRNOS
-    ══════════════════════════════════ -->
     <section class="section why-section" id="porque">
       <div class="container">
         <div class="why-layout">
-
           <div class="why-text">
             <span class="kicker">¿Por qué elegirnos?</span>
             <h2>Resultados que se ven, cuidado que se siente.</h2>
-            <p>Trabajamos con equipamiento de extracción profesional y productos certificados para garantizar una limpieza profunda, segura y sin daño en los materiales. Cada servicio se realiza a domicilio con puntualidad y compromiso real.</p>
+            <p>
+              Trabajamos con equipamiento de extracción profesional y productos seguros
+              para lograr una limpieza profunda, cuidada y alineada a la calidad que tu
+              tapizado necesita.
+            </p>
           </div>
 
           <div class="stats-list">
             <div class="stat-row">
-              <div class="stat-ico" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
+              <div class="stat-badge">+5</div>
               <div>
                 <div class="stat-num">+5 años</div>
                 <div class="stat-desc">de experiencia en limpieza de tapizados</div>
               </div>
             </div>
+
             <div class="stat-row">
-              <div class="stat-ico" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
+              <div class="stat-badge">2.5K</div>
               <div>
                 <div class="stat-num">+2.500</div>
-                <div class="stat-desc">clientes satisfechos en CABA y GBA</div>
+                <div class="stat-desc">clientes atendidos en CABA y GBA</div>
               </div>
             </div>
+
             <div class="stat-row">
-              <div class="stat-ico" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
+              <div class="stat-badge">100%</div>
               <div>
                 <div class="stat-num">100%</div>
-                <div class="stat-desc">garantía de satisfacción en cada trabajo</div>
+                <div class="stat-desc">compromiso con cada servicio realizado</div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════
-         CTA FINAL
-    ══════════════════════════════════ -->
     <section class="section" id="contacto">
       <div class="container">
         <div class="cta-wrap">
-          <div class="cta-photo" role="img" aria-label="Sala con sillones tapizados"></div>
+          <div class="cta-photo">
+            <img src="cta.png" alt="Ambiente premium con sillón limpio">
+          </div>
           <div class="cta-body">
             <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
-            <p class="lead">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
-            <div class="cta-acts">
-              <a class="btn btn-teal"
-                 href="https://wa.me/5491160114067"
-                 target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zm-8.52 18.4a9.93 9.93 0 0 1-5.06-1.38l-.36-.22-3.69.93.98-3.6-.24-.37A9.93 9.93 0 0 1 2.07 12c0-5.48 4.46-9.93 9.93-9.93 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 0 1 2.9 7.02c0 5.48-4.45 9.93-9.92 9.93zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51H7.5c-.17 0-.45.07-.69.35-.23.27-.9.88-.9 2.14s.92 2.48 1.05 2.65c.13.18 1.81 2.76 4.39 3.87.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.1.5-.07 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.27-.17-.57-.32z"/></svg>
-                Escribinos por WhatsApp
-              </a>
-            </div>
+            <p class="lead">
+              Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.
+            </p>
+            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">
+              Escribinos por WhatsApp
+            </a>
             <p class="cta-phone">o llamanos al <a href="tel:+541160114067">11 6011-4067</a></p>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ══════════════════════════════════
-       FOOTER
-  ══════════════════════════════════ -->
   <footer>
     <div class="container">
-      <p>© 2026 Cleaning Services<span>·</span>Limpieza y desinfección profesional de tapizados<span>·</span>CABA y GBA</p>
+      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════
-       JS — Hamburger
-  ══════════════════════════════════ -->
   <script>
     (function () {
-      var btn    = document.getElementById('hamBtn');
+      var btn = document.getElementById('hamBtn');
       var drawer = document.getElementById('mobNav');
 
       function openNav() {
         btn.classList.add('is-open');
         drawer.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
-        btn.setAttribute('aria-label', 'Cerrar menú');
       }
 
       function closeNav() {
         btn.classList.remove('is-open');
         drawer.classList.remove('is-open');
         btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Abrir menú');
       }
 
       window.closeNav = closeNav;
@@ -931,35 +830,7 @@
       btn.addEventListener('click', function () {
         btn.classList.contains('is-open') ? closeNav() : openNav();
       });
-
-      /* Cerrar con scroll */
-      window.addEventListener('scroll', function () {
-        if (drawer.classList.contains('is-open')) closeNav();
-      }, { passive: true });
-
-      /* Cerrar con Escape */
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeNav();
-      });
-
-      /* Nav activo por scroll */
-      var sections = document.querySelectorAll('section[id], header[id]');
-      var links    = document.querySelectorAll('.nav-desk a[href^="#"]');
-
-      function setActive() {
-        var scrollY = window.scrollY + 120;
-        sections.forEach(function (sec) {
-          if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
-            links.forEach(function (l) { l.classList.remove('active'); });
-            var match = document.querySelector('.nav-desk a[href="#' + sec.id + '"]');
-            if (match) match.classList.add('active');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', setActive, { passive: true });
     })();
   </script>
-
 </body>
 </html>

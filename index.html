@@ -202,7 +202,7 @@
 
     .hero{
       position:relative;
-      min-height:720px;
+      min-height:680px;
       display:flex;
       align-items:center;
       overflow:hidden;
@@ -211,8 +211,7 @@
     .hero-bg{
       position:absolute;
       inset:0;
-      background:url('hero.png') 68% center / cover no-repeat;
-      transform:scale(1);
+      background:url('hero.png') 72% center / cover no-repeat;
     }
     .hero-bg::after{
       content:"";
@@ -220,9 +219,9 @@
       inset:0;
       background:linear-gradient(
         to right,
-        rgba(2,8,16,.88) 0%,
-        rgba(2,8,16,.72) 32%,
-        rgba(2,8,16,.38) 62%,
+        rgba(2,8,16,.86) 0%,
+        rgba(2,8,16,.68) 32%,
+        rgba(2,8,16,.34) 60%,
         rgba(2,8,16,.12) 100%
       );
     }
@@ -231,7 +230,7 @@
       position:relative;
       z-index:2;
       max-width:560px;
-      padding:80px 0;
+      padding:86px 0;
     }
 
     .eyebrow{
@@ -241,25 +240,25 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.16em;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
 
     .hero-title{
       font-family:var(--display);
-      font-size:64px;
-      line-height:1;
+      font-size:58px;
+      line-height:1.02;
       text-transform:uppercase;
       letter-spacing:.01em;
       color:#fff;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
 
     .hero-text{
       font-size:17px;
-      color:rgba(255,255,255,.90);
+      color:rgba(255,255,255,.92);
       line-height:1.65;
-      max-width:440px;
-      margin-bottom:28px;
+      max-width:460px;
+      margin-bottom:30px;
     }
 
     .hero-actions{
@@ -469,10 +468,10 @@
         grid-template-columns:repeat(2,1fr);
       }
       .hero{
-        min-height:620px;
+        min-height:600px;
       }
       .hero-title{
-        font-size:50px;
+        font-size:48px;
       }
     }
 
@@ -483,17 +482,17 @@
       .brand-mark img{height:36px}
 
       .hero{
-        min-height:580px;
+        min-height:560px;
       }
       .hero-bg{
-        background-position:62% center;
+        background-position:66% center;
       }
       .hero-bg::after{
         background:linear-gradient(
           to right,
-          rgba(2,8,16,.90) 0%,
-          rgba(2,8,16,.78) 52%,
-          rgba(2,8,16,.46) 100%
+          rgba(2,8,16,.88) 0%,
+          rgba(2,8,16,.72) 48%,
+          rgba(2,8,16,.42) 100%
         );
       }
       .hero-content{
@@ -501,7 +500,7 @@
       }
       .hero-title{
         font-size:38px;
-        line-height:1.02;
+        line-height:1.04;
       }
       .hero-text{
         font-size:15px;
@@ -534,7 +533,7 @@
 </head>
 <body>
 
-  <header class="topbar" id="inicio">
+  <header class="topbar">
     <div class="container topbar-row">
       <a href="#inicio" class="brand" aria-label="Cleaning Services">
         <div class="brand-mark">
@@ -551,7 +550,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#porque">Por qué elegirnos</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
       </nav>
 
       <button class="ham" id="hamBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -564,12 +563,12 @@
       <a href="#servicios" onclick="closeNav()">Servicios</a>
       <a href="#porque" onclick="closeNav()">Por qué elegirnos</a>
       <a href="#contacto" onclick="closeNav()">Contacto</a>
-      <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="hero-bg"></div>
       <div class="container">
         <div class="hero-content">
@@ -577,8 +576,8 @@
           <h1 class="hero-title">Especialistas en limpieza de tapizados</h1>
           <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
-            <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
+            <a class="btn btn-outline" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
           </div>
         </div>
       </div>
@@ -596,7 +595,7 @@
             <img src="sillones.png" alt="Limpieza de sillones">
             <div class="service-body">
               <h3>Limpieza de sillones</h3>
-              <p>Recuperamos el color, eliminamos manchas y olores para que tus sillones luzcan como nuevos.</p>
+              <p>Recuperamos el color, mejoramos la presencia del tapizado y eliminamos manchas y olores de uso diario.</p>
             </div>
           </article>
 
@@ -604,7 +603,7 @@
             <img src="colchones.png" alt="Limpieza de colchones">
             <div class="service-body">
               <h3>Limpieza de colchones</h3>
-              <p>Desinfección profunda para eliminar ácaros, manchas y olores, mejorando tu descanso.</p>
+              <p>Tratamiento profundo orientado a higiene real, frescura y mejor mantenimiento de una superficie clave del descanso.</p>
             </div>
           </article>
 
@@ -612,7 +611,7 @@
             <img src="alfombras.png" alt="Limpieza de alfombras">
             <div class="service-body">
               <h3>Limpieza de alfombras</h3>
-              <p>Eliminamos la suciedad profunda y recuperamos la textura y el color de tus alfombras.</p>
+              <p>Quitamos suciedad acumulada y ayudamos a recuperar textura, color y mejor aspecto en superficies textiles de alto uso.</p>
             </div>
           </article>
 
@@ -620,7 +619,7 @@
             <img src="autos.png" alt="Limpieza de autos">
             <div class="service-body">
               <h3>Limpieza de autos</h3>
-              <p>Limpiamos tapizados, butacas y alfombras del auto, eliminando manchas y malos olores.</p>
+              <p>Servicio enfocado en butacas, tapizados, laterales y alfombras interiores para renovar la higiene del vehículo.</p>
             </div>
           </article>
         </div>
@@ -632,8 +631,8 @@
         <div class="why-layout">
           <div class="why-text">
             <span class="kicker">¿Por qué elegirnos?</span>
-            <h2>Resultados que se ven, cuidado que se siente.</h2>
-            <p>Trabajamos con equipamiento profesional y procesos pensados para lograr una limpieza profunda, segura y efectiva en cada tipo de tapizado.</p>
+            <h2>Más que limpieza: mejor imagen, mejor higiene y más vida útil.</h2>
+            <p>Trabajamos cada tapizado con criterio profesional, cuidando materiales, mejorando la presentación visual y apuntando a una limpieza profunda que realmente se note en el uso diario.</p>
           </div>
 
           <div class="stats-list">
@@ -641,7 +640,7 @@
               <div class="stat-badge">+5</div>
               <div>
                 <div class="stat-num">+5 años</div>
-                <div class="stat-desc">de experiencia en limpieza de tapizados</div>
+                <div class="stat-desc">de experiencia aplicada a tapizados de hogar y auto</div>
               </div>
             </div>
 
@@ -649,15 +648,15 @@
               <div class="stat-badge">2.5K</div>
               <div>
                 <div class="stat-num">+2.500</div>
-                <div class="stat-desc">clientes satisfechos en CABA y GBA</div>
+                <div class="stat-desc">servicios realizados con foco en detalle, prolijidad e higiene</div>
               </div>
             </div>
 
             <div class="stat-row">
               <div class="stat-badge">100%</div>
               <div>
-                <div class="stat-num">100%</div>
-                <div class="stat-desc">compromiso con cada trabajo realizado</div>
+                <div class="stat-num">Atención</div>
+                <div class="stat-desc">a domicilio, cuidada y orientada a cada superficie</div>
               </div>
             </div>
           </div>
@@ -674,8 +673,8 @@
           <div class="cta-body">
             <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
             <p class="lead">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
-            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
-            <p class="cta-phone">o llamanos al <a href="tel:+541160114067">11 6011-4067</a></p>
+            <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+            <p class="cta-phone">o llamanos al <a href="tel:+5491158817248">11 5881-7248</a></p>
           </div>
         </div>
       </div>

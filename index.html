@@ -295,6 +295,13 @@
       letter-spacing:-.03em;
       color:#fff;
     }
+    .section-head p{
+      max-width:760px;
+      margin:14px auto 0;
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.8;
+    }
 
     .services-grid{
       display:grid;
@@ -399,6 +406,70 @@
       line-height:1.55;
     }
 
+    .tips-section{
+      background:var(--bg);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+    .tips-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .tip-card{
+      background:linear-gradient(180deg, rgba(6,34,58,.98) 0%, rgba(5,27,48,.98) 100%);
+      border:1px solid rgba(20,184,230,.20);
+      border-radius:26px;
+      padding:28px 24px 24px;
+      box-shadow:var(--shadow);
+      transition:.22s ease;
+    }
+    .tip-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 22px 52px rgba(0,0,0,.34);
+    }
+    .tip-icon{
+      width:66px;
+      height:66px;
+      border-radius:50%;
+      border:2px solid rgba(20,184,230,.75);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+      margin-bottom:20px;
+    }
+    .tip-icon svg{
+      width:30px;
+      height:30px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .tip-card h3{
+      font-size:20px;
+      font-weight:800;
+      line-height:1.18;
+      letter-spacing:-.02em;
+      color:#fff;
+      margin-bottom:14px;
+      min-height:76px;
+    }
+    .tip-divider{
+      width:66px;
+      height:3px;
+      border-radius:999px;
+      background:var(--accent);
+      margin-bottom:18px;
+    }
+    .tip-card p{
+      font-size:15px;
+      color:#d1e0ee;
+      line-height:1.85;
+    }
+
     .cta-wrap{
       position:relative;
       border-radius:28px;
@@ -467,9 +538,24 @@
       color:#1f3040;
     }
 
+    @media (max-width: 1180px){
+      .nav-desk{
+        gap:20px;
+      }
+      .nav-desk a{
+        font-size:12px;
+      }
+      .brand-name{
+        font-size:17px;
+      }
+    }
+
     @media (max-width: 1060px){
       .services-grid,
       .why-layout{
+        grid-template-columns:1fr 1fr;
+      }
+      .tips-grid{
         grid-template-columns:1fr 1fr;
       }
       .hero{
@@ -531,8 +617,14 @@
       }
 
       .services-grid,
-      .why-layout{
+      .why-layout,
+      .tips-grid{
         grid-template-columns:1fr;
+      }
+
+      .tip-card h3{
+        min-height:auto;
+        font-size:24px;
       }
 
       .cta-actions{
@@ -549,6 +641,17 @@
       }
       .hero-actions .btn{
         width:100%;
+      }
+
+      .tip-card{
+        padding:24px 20px 22px;
+      }
+      .tip-card h3{
+        font-size:22px;
+      }
+      .tip-card p{
+        font-size:14px;
+        line-height:1.8;
       }
     }
   </style>
@@ -568,6 +671,7 @@
         <a href="#inicio" data-target="inicio">Inicio</a>
         <a href="#servicios" data-target="servicios">Servicios</a>
         <a href="#porque" data-target="porque">Por qué elegirnos</a>
+        <a href="#tips" data-target="tips">Cleaning Tips</a>
         <a href="#contacto" data-target="contacto">Contacto</a>
         <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
       </nav>
@@ -581,6 +685,7 @@
       <a href="#inicio" data-target="inicio" onclick="closeNav()">Inicio</a>
       <a href="#servicios" data-target="servicios" onclick="closeNav()">Servicios</a>
       <a href="#porque" data-target="porque" onclick="closeNav()">Por qué elegirnos</a>
+      <a href="#tips" data-target="tips" onclick="closeNav()">Cleaning Tips</a>
       <a href="#contacto" data-target="contacto" onclick="closeNav()">Contacto</a>
       <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
     </nav>
@@ -683,6 +788,99 @@
       </div>
     </section>
 
+    <section class="section tips-section" id="tips">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Cleaning Tips</span>
+          <h2>Información útil para el cuidado de tus tapizados</h2>
+          <p>Conocé más sobre limpieza profunda, manchas difíciles, vapor para desinfección y ozono en ambientes.</p>
+        </div>
+
+        <div class="tips-grid">
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                <path d="M16 3v4M8 3v4M3 10h18"></path>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+              </svg>
+            </div>
+            <h3>Cuándo es momento de hacer una limpieza profunda de tapizados</h3>
+            <div class="tip-divider"></div>
+            <p>La frecuencia no depende solo del uso. También influyen mascotas, chicos, humedad, polvo y ventilación del ambiente. Mantener una limpieza periódica ayuda a conservar mejor la higiene, la frescura y el estado general de sillones, colchones y alfombras.</p>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l1.6 3.7L17 8.3l-3.4 1.7L12 14l-1.6-4-3.4-1.7 3.4-1.6L12 3z"></path>
+                <path d="M5 14c1.5-.8 2.7-.7 4 0 1.4.7 2.6.8 4 0 1.3-.7 2.5-.8 4 0"></path>
+                <path d="M7 17c1.1-.5 1.9-.5 3 0 1.1.5 1.9.5 3 0 1.1-.5 1.9-.5 3 0"></path>
+              </svg>
+            </div>
+            <h3>Manchas que persisten: por qué a veces empeoran con el intento incorrecto</h3>
+            <div class="tip-divider"></div>
+            <p>No todas las manchas se resuelven frotando más. En muchos casos, insistir con productos caseros o exceso de agua termina fijando la suciedad, marcando la tela o empeorando el problema. Saber cuándo frenar también es parte de cuidar el tapizado.</p>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="5"></circle>
+                <path d="M8 14l-2 7 6-3 6 3-2-7"></path>
+              </svg>
+            </div>
+            <h3>Por qué un servicio profesional logra mejores resultados</h3>
+            <div class="tip-divider"></div>
+            <p>La diferencia no está solo en limpiar más, sino en trabajar cada superficie según su material, su uso y el nivel de suciedad acumulada. Un servicio profesional permite lograr un resultado más parejo, más profundo y con mejor duración en el tiempo.</p>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 15a4 4 0 1 1 1-7.9A5 5 0 0 1 18 9a3 3 0 1 1 0 6H7z"></path>
+                <path d="M12 11v7"></path>
+                <path d="M9.5 15.5L12 18l2.5-2.5"></path>
+              </svg>
+            </div>
+            <h3>Vapor para desinfección: un diferencial real en higiene</h3>
+            <div class="tip-divider"></div>
+            <p>No todos los servicios trabajan con el mismo nivel de tratamiento. El uso de vapor aporta un plus real en desinfección y ayuda a mejorar la higiene de superficies textiles y zonas de contacto frecuente, elevando el resultado final del servicio.</p>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v4"></path>
+                <path d="M12 17v4"></path>
+                <path d="M4.9 4.9l2.8 2.8"></path>
+                <path d="M16.3 16.3l2.8 2.8"></path>
+                <path d="M3 12h4"></path>
+                <path d="M17 12h4"></path>
+                <path d="M4.9 19.1l2.8-2.8"></path>
+                <path d="M16.3 7.7l2.8-2.8"></path>
+                <circle cx="12" cy="12" r="3.5"></circle>
+              </svg>
+            </div>
+            <h3>¿La limpieza de tapizados ayuda con ácaros, bacterias y pulgas?</h3>
+            <div class="tip-divider"></div>
+            <p>Cuando un tapizado acumula suciedad, humedad y restos orgánicos, también puede convertirse en un entorno favorable para agentes no deseados. Una limpieza profesional con vapor ayuda a mejorar la higiene y a reducir esa carga en sillones, colchones y alfombras.</p>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <text x="4" y="16" fill="currentColor" stroke="none" font-size="11" font-family="Arial, sans-serif" font-weight="700">O₃</text>
+              </svg>
+            </div>
+            <h3>Ozono en ambientes: qué aporta después de la limpieza</h3>
+            <div class="tip-divider"></div>
+            <p>El tratamiento con ozono suma un diferencial importante en ambientes cerrados, vehículos y espacios de uso frecuente. Es un complemento ideal para reforzar la sensación de frescura, mejorar el entorno y acompañar un servicio más completo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contacto">
       <div class="container">
         <div class="cta-wrap">
@@ -690,7 +888,7 @@
             <img src="cta.png" alt="Living premium con sillón limpio">
           </div>
           <div class="cta-body">
-            <h2>Hogares o Empresas: elegí el canal adecuado y hablá con nosotros.</h2>
+            <h2>Hogares o empresas: elegí el canal adecuado y hablá con nosotros.</h2>
             <p class="lead">Te ayudamos a encontrar la mejor solución según el tipo de espacio y el servicio que necesitás.</p>
 
             <div class="cta-actions">

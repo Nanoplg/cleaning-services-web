@@ -153,6 +153,40 @@
       border-bottom-color:var(--accent);
     }
 
+    .social-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .social-link{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      transition:.2s ease;
+      flex:none;
+    }
+
+    .social-link:hover{
+      transform:translateY(-2px);
+      background:rgba(20,184,230,.16);
+      border-color:rgba(20,184,230,.55);
+      color:var(--accent);
+    }
+
+    .social-link svg{
+      width:20px;
+      height:20px;
+      fill:currentColor;
+      stroke:none;
+    }
+
     .ham{
       display:none;
       flex-direction:column;
@@ -198,7 +232,10 @@
       color:#fff;
       border-bottom-color:var(--accent);
     }
-    .nav-mob .btn-primary{margin:16px 20px 0}
+    .nav-mob .social-links{
+      margin:16px 20px 0;
+      justify-content:flex-start;
+    }
 
     section[id]{
       scroll-margin-top: calc(var(--header-h) - 40px);
@@ -279,7 +316,7 @@
       font-size:17px;
       color:rgba(255,255,255,.92);
       line-height:1.65;
-      max-width:460px;
+      max-width:520px;
       margin-bottom:30px;
     }
 
@@ -558,13 +595,17 @@
 
     @media (max-width: 1180px){
       .nav-desk{
-        gap:20px;
+        gap:16px;
       }
       .nav-desk a{
         font-size:12px;
       }
       .brand-name{
         font-size:17px;
+      }
+      .social-link{
+        width:40px;
+        height:40px;
       }
     }
 
@@ -691,7 +732,26 @@
         <a href="#porque" data-target="porque">Por qué elegirnos</a>
         <a href="#tips" data-target="tips">Cleaning Tips</a>
         <a href="#contacto" data-target="contacto">Contacto</a>
-        <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+
+        <div class="social-links" aria-label="Redes sociales">
+          <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/>
+            </svg>
+          </a>
+
+          <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/>
+            </svg>
+          </a>
+
+          <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/>
+            </svg>
+          </a>
+        </div>
       </nav>
 
       <button class="ham" id="hamBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -705,7 +765,26 @@
       <a href="#porque" data-target="porque" onclick="closeNav()">Por qué elegirnos</a>
       <a href="#tips" data-target="tips" onclick="closeNav()">Cleaning Tips</a>
       <a href="#contacto" data-target="contacto" onclick="closeNav()">Contacto</a>
-      <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+
+      <div class="social-links" aria-label="Redes sociales">
+        <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/>
+          </svg>
+        </a>
+
+        <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/>
+          </svg>
+        </a>
+
+        <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/>
+          </svg>
+        </a>
+      </div>
     </nav>
   </header>
 
@@ -722,7 +801,7 @@
         <div class="hero-content">
           <span class="eyebrow">Limpieza y desinfección profesional</span>
           <h1 class="hero-title">Especialistas en limpieza de tapizados</h1>
-          <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
+          <p class="hero-text">Brindamos un servicio profesional para sillones, colchones, alfombras y más, combinando limpieza profunda, vapor para desinfección y resultados visibles.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
             <a class="btn btn-outline" href="#contacto">Ver contactos</a>

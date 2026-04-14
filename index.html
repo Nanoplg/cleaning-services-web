@@ -29,7 +29,6 @@
       --white:#fff;
       --font:"Plus Jakarta Sans",sans-serif;
       --display:"Oswald",sans-serif;
-      --r:18px;
       --r-lg:24px;
       --shadow:0 20px 50px rgba(0,0,0,.28);
     }
@@ -106,6 +105,7 @@
       display:flex;
       align-items:center;
       gap:12px;
+      min-width:0;
     }
     .brand-mark{
       height:44px;
@@ -200,10 +200,9 @@
     }
     .nav-mob .btn-primary{margin:16px 20px 0}
 
-    /* ── HERO ── */
     .hero{
       position:relative;
-      min-height:840px;
+      min-height:720px;
       display:flex;
       align-items:center;
       overflow:hidden;
@@ -212,25 +211,27 @@
     .hero-bg{
       position:absolute;
       inset:0;
-      background:url('hero.png') center center / cover no-repeat;
+      background:url('hero.png') 68% center / cover no-repeat;
+      transform:scale(1);
     }
     .hero-bg::after{
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(to right,
-          rgba(2,8,16,.96) 0%,
-          rgba(2,8,16,.88) 30%,
-          rgba(2,8,16,.55) 60%,
-          rgba(2,8,16,.18) 100%);
+      background:linear-gradient(
+        to right,
+        rgba(2,8,16,.88) 0%,
+        rgba(2,8,16,.72) 32%,
+        rgba(2,8,16,.38) 62%,
+        rgba(2,8,16,.12) 100%
+      );
     }
 
     .hero-content{
       position:relative;
       z-index:2;
       max-width:560px;
-      padding:110px 0;
+      padding:80px 0;
     }
 
     .eyebrow{
@@ -240,34 +241,33 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.16em;
-      margin-bottom:24px;
+      margin-bottom:20px;
     }
 
     .hero-title{
       font-family:var(--display);
-      font-size:80px;
-      line-height:.94;
+      font-size:64px;
+      line-height:1;
       text-transform:uppercase;
       letter-spacing:.01em;
       color:#fff;
-      margin-bottom:28px;
+      margin-bottom:20px;
     }
 
     .hero-text{
-      font-size:18px;
-      color:rgba(255,255,255,.88);
-      line-height:1.6;
-      max-width:400px;
-      margin-bottom:40px;
+      font-size:17px;
+      color:rgba(255,255,255,.90);
+      line-height:1.65;
+      max-width:440px;
+      margin-bottom:28px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
     }
 
-    /* ── SECTIONS ── */
     .section{
       padding:84px 0;
     }
@@ -469,10 +469,10 @@
         grid-template-columns:repeat(2,1fr);
       }
       .hero{
-        min-height:700px;
+        min-height:620px;
       }
       .hero-title{
-        font-size:62px;
+        font-size:50px;
       }
     }
 
@@ -480,30 +480,33 @@
       .nav-desk{display:none}
       .ham{display:flex}
       .topbar-row{height:70px}
-
       .brand-mark img{height:36px}
 
       .hero{
-        min-height:640px;
+        min-height:580px;
       }
       .hero-bg{
-        background-position:center center;
+        background-position:62% center;
       }
       .hero-bg::after{
-        background:linear-gradient(to right,
-          rgba(2,8,16,.94) 0%,
-          rgba(2,8,16,.82) 50%,
-          rgba(2,8,16,.55) 100%);
+        background:linear-gradient(
+          to right,
+          rgba(2,8,16,.90) 0%,
+          rgba(2,8,16,.78) 52%,
+          rgba(2,8,16,.46) 100%
+        );
       }
       .hero-content{
-        padding:80px 0;
+        padding:64px 0;
       }
       .hero-title{
-        font-size:46px;
+        font-size:38px;
+        line-height:1.02;
       }
       .hero-text{
         font-size:15px;
         max-width:320px;
+        margin-bottom:24px;
       }
 
       .section{
@@ -525,9 +528,6 @@
       }
       .hero-actions .btn{
         width:100%;
-      }
-      .hero-title{
-        font-size:40px;
       }
     }
   </style>
@@ -646,4 +646,71 @@
             </div>
 
             <div class="stat-row">
-              <div class="stat-badge">2.5K
+              <div class="stat-badge">2.5K</div>
+              <div>
+                <div class="stat-num">+2.500</div>
+                <div class="stat-desc">clientes satisfechos en CABA y GBA</div>
+              </div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-badge">100%</div>
+              <div>
+                <div class="stat-num">100%</div>
+                <div class="stat-desc">compromiso con cada trabajo realizado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta-wrap">
+          <div class="cta-photo">
+            <img src="cta.png" alt="Living premium con sillón limpio">
+          </div>
+          <div class="cta-body">
+            <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
+            <p class="lead">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
+            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+            <p class="cta-phone">o llamanos al <a href="tel:+541160114067">11 6011-4067</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('hamBtn');
+      var drawer = document.getElementById('mobNav');
+
+      function openNav() {
+        btn.classList.add('is-open');
+        drawer.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeNav() {
+        btn.classList.remove('is-open');
+        drawer.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      window.closeNav = closeNav;
+
+      btn.addEventListener('click', function () {
+        btn.classList.contains('is-open') ? closeNav() : openNav();
+      });
+    })();
+  </script>
+</body>
+</html>

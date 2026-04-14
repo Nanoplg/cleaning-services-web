@@ -212,15 +212,33 @@
       overflow:hidden;
       border-bottom:1px solid var(--border);
     }
-    .hero-bg{
+
+    .hero-slider{
       position:absolute;
       inset:0;
-      background:url('hero.png') 72% center / cover no-repeat;
+      z-index:0;
     }
-    .hero-bg::after{
-      content:"";
+
+    .hero-slide{
       position:absolute;
       inset:0;
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:72% center;
+      opacity:0;
+      transform:scale(1.03);
+      transition:opacity 1.2s ease, transform 7s ease;
+    }
+
+    .hero-slide.active{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      z-index:1;
       background:linear-gradient(
         to right,
         rgba(2,8,16,.84) 0%,
@@ -583,10 +601,10 @@
       .hero{
         min-height:560px;
       }
-      .hero-bg{
+      .hero-slide{
         background-position:66% center;
       }
-      .hero-bg::after{
+      .hero-overlay{
         background:linear-gradient(
           to right,
           rgba(2,8,16,.88) 0%,
@@ -693,7 +711,13 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-bg"></div>
+      <div class="hero-slider">
+        <div class="hero-slide active" style="background-image:url('hero.png');"></div>
+        <div class="hero-slide" style="background-image:url('hero-2.png');"></div>
+        <div class="hero-slide" style="background-image:url('hero-3.png');"></div>
+      </div>
+      <div class="hero-overlay"></div>
+
       <div class="container">
         <div class="hero-content">
           <span class="eyebrow">Limpieza y desinfección profesional</span>
@@ -914,6 +938,9 @@
       var desktopLinks = document.querySelectorAll('#desktopNav a[data-target]');
       var mobileLinks = document.querySelectorAll('#mobNav a[data-target]');
       var sections = document.querySelectorAll('section[id]');
+      var slides = document.querySelectorAll('.hero-slide');
+      var currentSlide = 0;
+      var sliderInterval;
 
       function openNav() {
         btn.classList.add('is-open');
@@ -952,6 +979,20 @@
         setActive(current);
       }
 
+      function showSlide(index) {
+        slides.forEach(function(slide, i){
+          slide.classList.toggle('active', i === index);
+        });
+      }
+
+      function startHeroSlider() {
+        if (!slides.length) return;
+        sliderInterval = setInterval(function(){
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }, 5500);
+      }
+
       window.closeNav = closeNav;
 
       btn.addEventListener('click', function () {
@@ -959,7 +1000,11 @@
       });
 
       window.addEventListener('scroll', updateActiveSection);
-      window.addEventListener('load', updateActiveSection);
+      window.addEventListener('load', function () {
+        updateActiveSection();
+        showSlide(0);
+        startHeroSlider();
+      });
     })();
   </script>
 </body>

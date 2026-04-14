@@ -108,24 +108,17 @@
       gap:12px;
     }
     .brand-mark{
-      width:52px;
-      height:52px;
-      border-radius:50%;
-      background:linear-gradient(145deg,#16c0e8 0%,#0d3f70 100%);
+      height:44px;
+      width:auto;
       display:flex;
       align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-weight:800;
-      font-size:22px;
       flex:none;
-      box-shadow:0 4px 16px rgba(20,184,230,.24);
-      overflow:hidden;
     }
     .brand-mark img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+      height:44px;
+      width:auto;
+      object-fit:contain;
+      display:block;
     }
     .brand-name{
       font-size:18px;
@@ -207,20 +200,19 @@
     }
     .nav-mob .btn-primary{margin:16px 20px 0}
 
+    /* ── HERO ── */
     .hero{
       position:relative;
-      min-height:760px;
+      min-height:840px;
       display:flex;
       align-items:center;
       overflow:hidden;
       border-bottom:1px solid var(--border);
-      background:#081722;
     }
     .hero-bg{
       position:absolute;
       inset:0;
       background:url('hero.png') center center / cover no-repeat;
-      transform:scale(1.02);
     }
     .hero-bg::after{
       content:"";
@@ -228,17 +220,17 @@
       inset:0;
       background:
         linear-gradient(to right,
-          rgba(2,10,18,.90) 0%,
-          rgba(2,10,18,.78) 28%,
-          rgba(2,10,18,.42) 58%,
-          rgba(2,10,18,.16) 100%);
+          rgba(2,8,16,.96) 0%,
+          rgba(2,8,16,.88) 30%,
+          rgba(2,8,16,.55) 60%,
+          rgba(2,8,16,.18) 100%);
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:520px;
-      padding:70px 0;
+      max-width:560px;
+      padding:110px 0;
     }
 
     .eyebrow{
@@ -248,33 +240,34 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.16em;
-      margin-bottom:16px;
+      margin-bottom:24px;
     }
 
     .hero-title{
       font-family:var(--display);
-      font-size:78px;
-      line-height:.92;
+      font-size:80px;
+      line-height:.94;
       text-transform:uppercase;
       letter-spacing:.01em;
       color:#fff;
-      margin-bottom:18px;
+      margin-bottom:28px;
     }
 
     .hero-text{
       font-size:18px;
-      color:rgba(255,255,255,.92);
-      line-height:1.55;
-      max-width:390px;
-      margin-bottom:28px;
+      color:rgba(255,255,255,.88);
+      line-height:1.6;
+      max-width:400px;
+      margin-bottom:40px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:14px;
     }
 
+    /* ── SECTIONS ── */
     .section{
       padding:84px 0;
     }
@@ -476,10 +469,10 @@
         grid-template-columns:repeat(2,1fr);
       }
       .hero{
-        min-height:640px;
+        min-height:700px;
       }
       .hero-title{
-        font-size:58px;
+        font-size:62px;
       }
     }
 
@@ -488,20 +481,25 @@
       .ham{display:flex}
       .topbar-row{height:70px}
 
+      .brand-mark img{height:36px}
+
       .hero{
-        min-height:620px;
+        min-height:640px;
       }
       .hero-bg{
         background-position:center center;
       }
       .hero-bg::after{
         background:linear-gradient(to right,
-          rgba(2,10,18,.88) 0%,
-          rgba(2,10,18,.74) 45%,
-          rgba(2,10,18,.48) 100%);
+          rgba(2,8,16,.94) 0%,
+          rgba(2,8,16,.82) 50%,
+          rgba(2,8,16,.55) 100%);
+      }
+      .hero-content{
+        padding:80px 0;
       }
       .hero-title{
-        font-size:44px;
+        font-size:46px;
       }
       .hero-text{
         font-size:15px;
@@ -529,7 +527,7 @@
         width:100%;
       }
       .hero-title{
-        font-size:38px;
+        font-size:40px;
       }
     }
   </style>
@@ -539,7 +537,9 @@
   <header class="topbar" id="inicio">
     <div class="container topbar-row">
       <a href="#inicio" class="brand" aria-label="Cleaning Services">
-        <div class="brand-mark">C</div>
+        <div class="brand-mark">
+          <img src="logo.png" alt="Cleaning Services logo" />
+        </div>
         <div>
           <div class="brand-name">CLEANING SERVICES</div>
           <div class="brand-sub">Limpieza de tapizados</div>
@@ -576,7 +576,6 @@
           <span class="eyebrow">Limpieza y desinfección profesional</span>
           <h1 class="hero-title">Especialistas en limpieza de tapizados</h1>
           <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
-
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
             <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
@@ -647,71 +646,4 @@
             </div>
 
             <div class="stat-row">
-              <div class="stat-badge">2.5K</div>
-              <div>
-                <div class="stat-num">+2.500</div>
-                <div class="stat-desc">clientes satisfechos en CABA y GBA</div>
-              </div>
-            </div>
-
-            <div class="stat-row">
-              <div class="stat-badge">100%</div>
-              <div>
-                <div class="stat-num">100%</div>
-                <div class="stat-desc">compromiso con cada trabajo realizado</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-wrap">
-          <div class="cta-photo">
-            <img src="cta.png" alt="Living premium con sillón limpio">
-          </div>
-          <div class="cta-body">
-            <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
-            <p class="lead">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
-            <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
-            <p class="cta-phone">o llamanos al <a href="tel:+541160114067">11 6011-4067</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var btn = document.getElementById('hamBtn');
-      var drawer = document.getElementById('mobNav');
-
-      function openNav() {
-        btn.classList.add('is-open');
-        drawer.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeNav() {
-        btn.classList.remove('is-open');
-        drawer.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-
-      window.closeNav = closeNav;
-
-      btn.addEventListener('click', function () {
-        btn.classList.contains('is-open') ? closeNav() : openNav();
-      });
-    })();
-  </script>
-</body>
-</html>
+              <div class="stat-badge">2.5K

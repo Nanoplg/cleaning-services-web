@@ -363,6 +363,12 @@
       grid-template-columns:repeat(4,1fr);
       gap:18px;
     }
+
+    .service-link{
+      display:block;
+      color:inherit;
+    }
+
     .service-card{
       background:var(--card);
       border:1px solid var(--border);
@@ -370,10 +376,12 @@
       overflow:hidden;
       transition:.22s ease;
       box-shadow:var(--shadow);
+      height:100%;
     }
-    .service-card:hover{
+    .service-link:hover .service-card{
       transform:translateY(-5px);
       box-shadow:0 22px 52px rgba(0,0,0,.34);
+      border-color:rgba(20,184,230,.28);
     }
     .service-card img{
       width:100%;
@@ -818,37 +826,45 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card">
-            <img src="sillones.png" alt="Limpieza de sillones">
-            <div class="service-body">
-              <h3>Limpieza de sillones</h3>
-              <p>Recuperamos color, frescura e higiene para que tu sillón vuelva a lucir prolijo y renovado.</p>
-            </div>
-          </article>
+          <a class="service-link" href="sillones.html" aria-label="Ver más sobre limpieza de sillones">
+            <article class="service-card">
+              <img src="sillones.png" alt="Limpieza de sillones">
+              <div class="service-body">
+                <h3>Limpieza de sillones</h3>
+                <p>Recuperamos color, frescura e higiene para que tu sillón vuelva a lucir prolijo y renovado.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="service-card">
-            <img src="colchones.png" alt="Limpieza de colchones">
-            <div class="service-body">
-              <h3>Limpieza de colchones</h3>
-              <p>Eliminamos suciedad, manchas y olores para mejorar la higiene de una superficie clave para tu descanso.</p>
-            </div>
-          </article>
+          <a class="service-link" href="colchones.html" aria-label="Ver más sobre limpieza de colchones">
+            <article class="service-card">
+              <img src="colchones.png" alt="Limpieza de colchones">
+              <div class="service-body">
+                <h3>Limpieza de colchones</h3>
+                <p>Eliminamos suciedad, manchas y olores para mejorar la higiene de una superficie clave para tu descanso.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="service-card">
-            <img src="alfombras.png" alt="Limpieza de alfombras">
-            <div class="service-body">
-              <h3>Limpieza de alfombras</h3>
-              <p>Removemos suciedad acumulada y ayudamos a recuperar mejor aspecto, color y presencia en zonas de alto uso.</p>
-            </div>
-          </article>
+          <a class="service-link" href="alfombras.html" aria-label="Ver más sobre limpieza de alfombras">
+            <article class="service-card">
+              <img src="alfombras.png" alt="Limpieza de alfombras">
+              <div class="service-body">
+                <h3>Limpieza de alfombras</h3>
+                <p>Removemos suciedad acumulada y ayudamos a recuperar mejor aspecto, color y presencia en zonas de alto uso.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="service-card">
-            <img src="autos.png" alt="Limpieza de autos">
-            <div class="service-body">
-              <h3>Limpieza de autos</h3>
-              <p>Limpieza profunda de butacas y tapizados para renovar la higiene interior y mejorar la imagen del vehículo.</p>
-            </div>
-          </article>
+          <a class="service-link" href="autos.html" aria-label="Ver más sobre limpieza de autos">
+            <article class="service-card">
+              <img src="autos.png" alt="Limpieza de autos">
+              <div class="service-body">
+                <h3>Limpieza de autos</h3>
+                <p>Limpieza profunda de butacas y tapizados para renovar la higiene interior y mejorar la imagen del vehículo.</p>
+              </div>
+            </article>
+          </a>
         </div>
       </div>
     </section>

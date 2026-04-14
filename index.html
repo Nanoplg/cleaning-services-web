@@ -147,8 +147,7 @@
       border-bottom:2px solid transparent;
       transition:.15s ease;
     }
-    .nav-desk a:hover,
-    .nav-desk a.active{
+    .nav-desk a:hover{
       color:#fff;
       border-bottom-color:var(--accent);
     }
@@ -197,7 +196,7 @@
     .nav-mob .btn-primary{margin:16px 20px 0}
 
     section[id]{
-      scroll-margin-top: calc(var(--header-h) + 16px);
+      scroll-margin-top: calc(var(--header-h) + 56px);
     }
 
     .hero{
@@ -333,47 +332,23 @@
       background:var(--bg2);
     }
     .why-layout{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:60px;
-      align-items:start;
+      display:block;
+      max-width:900px;
     }
     .why-text h2{
-      font-size:40px;
+      font-size:32px;
       font-weight:800;
-      line-height:1.08;
-      letter-spacing:-.04em;
+      line-height:1.15;
+      letter-spacing:-.03em;
       color:#fff;
-      margin:12px 0 18px;
+      margin:10px 0 18px;
     }
     .why-text p{
-      font-size:15.5px;
+      font-size:16px;
       color:var(--muted);
-      line-height:1.8;
-      max-width:620px;
-      margin-bottom:16px;
-    }
-
-    .values-list{
-      display:grid;
-      gap:14px;
-    }
-    .value-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:20px 22px;
-      box-shadow:var(--shadow);
-    }
-    .value-card h3{
-      font-size:18px;
-      color:#fff;
-      margin-bottom:6px;
-    }
-    .value-card p{
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.65;
+      line-height:1.9;
+      max-width:860px;
+      margin-bottom:18px;
     }
 
     .cta-wrap{
@@ -426,16 +401,7 @@
       justify-content:center;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:18px;
-    }
-
-    .instagram-line{
-      font-size:14px;
-      color:rgba(255,255,255,.84);
-    }
-    .instagram-line a{
-      color:#fff;
-      font-weight:700;
+      margin-bottom:0;
     }
 
     footer{
@@ -454,9 +420,6 @@
     }
 
     @media (max-width: 1060px){
-      .why-layout{
-        grid-template-columns:1fr;
-      }
       .services-grid{
         grid-template-columns:repeat(2,1fr);
       }
@@ -551,7 +514,7 @@
       </a>
 
       <nav class="nav-desk" aria-label="Menú principal">
-        <a href="#inicio" class="active">Inicio</a>
+        <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#porque">Por qué elegirnos</a>
         <a href="#contacto">Contacto</a>
@@ -640,23 +603,6 @@
             <p>En Cleaning entendemos que cada tapizado forma parte del lugar donde vivís, trabajás o recibís clientes. Por eso brindamos un servicio profesional que busca mejorar la limpieza, la presentación y el cuidado de cada superficie.</p>
             <p>Trabajamos tanto en domicilios como en empresas, adaptando cada servicio al tipo de uso, material y nivel de suciedad. Ya sea en un hogar, una oficina, un local o un vehículo, buscamos siempre un resultado visible, prolijo y duradero.</p>
           </div>
-
-          <div class="values-list">
-            <div class="value-card">
-              <h3>Atención a medida</h3>
-              <p>Adaptamos cada servicio según el tipo de tapizado, el uso cotidiano y el nivel de suciedad real de la superficie.</p>
-            </div>
-
-            <div class="value-card">
-              <h3>Resultado visible</h3>
-              <p>Buscamos que la mejora se note en la higiene, la presentación y la sensación general del ambiente o vehículo.</p>
-            </div>
-
-            <div class="value-card">
-              <h3>Hogares y empresas</h3>
-              <p>Trabajamos tanto en domicilios como en espacios corporativos, manteniendo criterio profesional y prolijidad en cada visita.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -674,10 +620,6 @@
             <div class="cta-actions">
               <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Hogares</a>
               <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Corporativo</a>
-            </div>
-
-            <div class="instagram-line">
-              Instagram: <a href="https://instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a>
             </div>
           </div>
         </div>

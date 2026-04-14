@@ -110,34 +110,26 @@
       min-width:0;
     }
     .brand-mark{
-      height:44px;
-      width:auto;
+      width:42px;
+      height:42px;
       display:flex;
       align-items:center;
+      justify-content:center;
       flex:none;
     }
     .brand-mark img{
-      height:44px;
-      width:auto;
+      width:42px;
+      height:42px;
       object-fit:contain;
       display:block;
-    }
-    .brand-info{
-      line-height:1.05;
     }
     .brand-name{
       font-size:18px;
       font-weight:800;
       color:#fff;
-      letter-spacing:.10em;
-    }
-    .brand-sub{
-      font-size:10px;
-      font-weight:700;
-      color:var(--accent);
-      letter-spacing:.20em;
-      text-transform:uppercase;
-      margin-top:4px;
+      letter-spacing:.08em;
+      line-height:1;
+      white-space:nowrap;
     }
 
     .nav-desk{
@@ -220,7 +212,6 @@
       position:absolute;
       inset:0;
       background:url('hero.png') 72% center / cover no-repeat;
-      transform:scale(1);
     }
     .hero-bg::after{
       content:"";
@@ -435,18 +426,16 @@
       justify-content:center;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:22px;
+      margin-bottom:18px;
     }
 
-    .contact-lines{
-      display:grid;
-      gap:8px;
+    .instagram-line{
       font-size:14px;
-      color:rgba(255,255,255,.78);
+      color:rgba(255,255,255,.84);
     }
-    .contact-lines a{
+    .instagram-line a{
       color:#fff;
-      font-weight:600;
+      font-weight:700;
     }
 
     footer{
@@ -485,9 +474,13 @@
       .nav-desk{display:none}
       .ham{display:flex}
       .topbar-row{height:var(--header-h)}
-      .brand-mark img{height:36px}
-      .brand-name{font-size:15px}
-      .brand-sub{font-size:9px}
+      .brand-mark img{
+        width:36px;
+        height:36px;
+      }
+      .brand-name{
+        font-size:16px;
+      }
 
       .hero{
         min-height:560px;
@@ -552,12 +545,9 @@
     <div class="container topbar-row">
       <a href="#inicio" class="brand" aria-label="Cleaning Services">
         <div class="brand-mark">
-          <img src="logo-header.png" alt="Cleaning Services logo" />
+          <img src="isotipo.png" alt="Cleaning Services isotipo" />
         </div>
-        <div class="brand-info">
-          <div class="brand-name">CLEANING SERVICES</div>
-          <div class="brand-sub">Limpieza de tapizados</div>
-        </div>
+        <div class="brand-name">CLEANING SERVICES</div>
       </a>
 
       <nav class="nav-desk" aria-label="Menú principal">
@@ -647,7 +637,7 @@
           <div class="why-text">
             <span class="kicker">¿Por qué elegirnos?</span>
             <h2>Más que limpieza: mejor imagen, mejor higiene y atención para cada espacio.</h2>
-            <p>En Cleaning entendemos que cada tapizado forma parte del lugar donde vivís, trabajás o recibís clientes. Por eso brindamos un servicio profesional orientado a mejorar la limpieza, la presentación y el cuidado de cada superficie.</p>
+            <p>En Cleaning entendemos que cada tapizado forma parte del lugar donde vivís, trabajás o recibís clientes. Por eso brindamos un servicio profesional que busca mejorar la limpieza, la presentación y el cuidado de cada superficie.</p>
             <p>Trabajamos tanto en domicilios como en empresas, adaptando cada servicio al tipo de uso, material y nivel de suciedad. Ya sea en un hogar, una oficina, un local o un vehículo, buscamos siempre un resultado visible, prolijo y duradero.</p>
           </div>
 
@@ -686,10 +676,8 @@
               <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Corporativo</a>
             </div>
 
-            <div class="contact-lines">
-              <div>WhatsApp hogares: <a href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11 5881-7248</a></div>
-              <div>Contacto empresas: <a href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11 6011-4067</a></div>
-              <div>Instagram: <a href="https://instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a></div>
+            <div class="instagram-line">
+              Instagram: <a href="https://instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a>
             </div>
           </div>
         </div>

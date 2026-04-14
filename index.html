@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cleaning Services | Limpieza profesional de tapizados</title>
-  <meta name="description" content="Limpieza y desinfección profesional de sillones, colchones, alfombras y tapizados de autos. Atención a domicilio en CABA y GBA." />
+  <meta name="description" content="Limpieza y desinfección profesional de sillones, colchones, alfombras y tapizados de autos. Atención a domicilio y soluciones corporativas." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cleaning Services | Limpieza profesional de tapizados" />
@@ -31,6 +31,7 @@
       --display:"Oswald",sans-serif;
       --r-lg:24px;
       --shadow:0 20px 50px rgba(0,0,0,.28);
+      --header-h:82px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -41,6 +42,7 @@
       color:var(--text);
       line-height:1.6;
     }
+
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
@@ -94,7 +96,7 @@
       border-bottom:1px solid var(--border);
     }
     .topbar-row{
-      height:82px;
+      height:var(--header-h);
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -104,7 +106,7 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       min-width:0;
     }
     .brand-mark{
@@ -120,12 +122,14 @@
       object-fit:contain;
       display:block;
     }
+    .brand-info{
+      line-height:1.05;
+    }
     .brand-name{
       font-size:18px;
       font-weight:800;
       color:#fff;
       letter-spacing:.10em;
-      line-height:1.05;
     }
     .brand-sub{
       font-size:10px;
@@ -144,7 +148,7 @@
     .nav-desk a{
       font-size:13px;
       font-weight:700;
-      color:rgba(255,255,255,.74);
+      color:rgba(255,255,255,.78);
       text-transform:uppercase;
       letter-spacing:.05em;
       padding-bottom:3px;
@@ -192,13 +196,17 @@
     .nav-mob a{
       font-size:13px;
       font-weight:700;
-      color:rgba(255,255,255,.74);
+      color:rgba(255,255,255,.78);
       text-transform:uppercase;
       letter-spacing:.05em;
       padding:13px 20px;
       border-bottom:1px solid var(--border);
     }
     .nav-mob .btn-primary{margin:16px 20px 0}
+
+    section[id]{
+      scroll-margin-top: calc(var(--header-h) + 16px);
+    }
 
     .hero{
       position:relative;
@@ -212,6 +220,7 @@
       position:absolute;
       inset:0;
       background:url('hero.png') 72% center / cover no-repeat;
+      transform:scale(1);
     }
     .hero-bg::after{
       content:"";
@@ -219,10 +228,10 @@
       inset:0;
       background:linear-gradient(
         to right,
-        rgba(2,8,16,.86) 0%,
-        rgba(2,8,16,.68) 32%,
-        rgba(2,8,16,.34) 60%,
-        rgba(2,8,16,.12) 100%
+        rgba(2,8,16,.84) 0%,
+        rgba(2,8,16,.66) 32%,
+        rgba(2,8,16,.32) 60%,
+        rgba(2,8,16,.10) 100%
       );
     }
 
@@ -230,7 +239,7 @@
       position:relative;
       z-index:2;
       max-width:560px;
-      padding:86px 0;
+      padding:92px 0;
     }
 
     .eyebrow{
@@ -334,9 +343,9 @@
     }
     .why-layout{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.1fr .9fr;
       gap:60px;
-      align-items:center;
+      align-items:start;
     }
     .why-text h2{
       font-size:40px;
@@ -349,47 +358,31 @@
     .why-text p{
       font-size:15.5px;
       color:var(--muted);
-      line-height:1.75;
-      max-width:470px;
+      line-height:1.8;
+      max-width:620px;
+      margin-bottom:16px;
     }
 
-    .stats-list{
+    .values-list{
       display:grid;
       gap:14px;
     }
-    .stat-row{
-      display:flex;
-      align-items:center;
-      gap:16px;
+    .value-card{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:20px;
       padding:20px 22px;
+      box-shadow:var(--shadow);
     }
-    .stat-badge{
-      width:48px;
-      height:48px;
-      border-radius:14px;
-      background:rgba(20,184,230,.09);
-      border:1px solid rgba(20,184,230,.20);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--accent);
-      font-weight:800;
-      flex:none;
-    }
-    .stat-num{
-      font-size:26px;
-      font-weight:800;
+    .value-card h3{
+      font-size:18px;
       color:#fff;
-      line-height:1;
-      letter-spacing:-.03em;
-      margin-bottom:3px;
+      margin-bottom:6px;
     }
-    .stat-desc{
+    .value-card p{
       font-size:13px;
       color:var(--muted);
+      line-height:1.65;
     }
 
     .cta-wrap{
@@ -406,19 +399,20 @@
       width:100%;
       height:100%;
       object-fit:cover;
+      filter:brightness(1.14);
     }
     .cta-photo::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(135deg, rgba(4,14,28,.92) 0%, rgba(6,18,36,.82) 100%);
+      background:linear-gradient(135deg, rgba(4,14,28,.78) 0%, rgba(6,18,36,.64) 100%);
     }
     .cta-body{
       position:relative;
       z-index:2;
       text-align:center;
-      padding:80px 24px 72px;
-      max-width:660px;
+      padding:82px 24px 74px;
+      max-width:760px;
       margin-inline:auto;
     }
     .cta-body h2{
@@ -431,17 +425,27 @@
     }
     .cta-body .lead{
       font-size:15.5px;
-      color:rgba(255,255,255,.56);
+      color:rgba(255,255,255,.78);
       line-height:1.7;
       margin-bottom:28px;
     }
-    .cta-phone{
-      margin-top:20px;
-      font-size:13px;
-      color:rgba(255,255,255,.40);
+
+    .cta-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:22px;
     }
-    .cta-phone a{
-      color:rgba(255,255,255,.62);
+
+    .contact-lines{
+      display:grid;
+      gap:8px;
+      font-size:14px;
+      color:rgba(255,255,255,.78);
+    }
+    .contact-lines a{
+      color:#fff;
       font-weight:600;
     }
 
@@ -476,10 +480,14 @@
     }
 
     @media (max-width: 768px){
+      :root{ --header-h: 70px; }
+
       .nav-desk{display:none}
       .ham{display:flex}
-      .topbar-row{height:70px}
+      .topbar-row{height:var(--header-h)}
       .brand-mark img{height:36px}
+      .brand-name{font-size:15px}
+      .brand-sub{font-size:9px}
 
       .hero{
         min-height:560px;
@@ -519,6 +527,13 @@
       .services-grid{
         grid-template-columns:1fr;
       }
+
+      .cta-actions{
+        flex-direction:column;
+      }
+      .cta-actions .btn{
+        width:100%;
+      }
     }
 
     @media (max-width: 520px){
@@ -537,9 +552,9 @@
     <div class="container topbar-row">
       <a href="#inicio" class="brand" aria-label="Cleaning Services">
         <div class="brand-mark">
-          <img src="logo.png" alt="Cleaning Services logo" />
+          <img src="logo-header.png" alt="Cleaning Services logo" />
         </div>
-        <div>
+        <div class="brand-info">
           <div class="brand-name">CLEANING SERVICES</div>
           <div class="brand-sub">Limpieza de tapizados</div>
         </div>
@@ -577,7 +592,7 @@
           <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
-            <a class="btn btn-outline" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
+            <a class="btn btn-outline" href="#contacto">Ver contactos</a>
           </div>
         </div>
       </div>
@@ -631,33 +646,25 @@
         <div class="why-layout">
           <div class="why-text">
             <span class="kicker">¿Por qué elegirnos?</span>
-            <h2>Más que limpieza: mejor imagen, mejor higiene y más vida útil.</h2>
-            <p>Trabajamos cada tapizado con criterio profesional, cuidando materiales, mejorando la presentación visual y apuntando a una limpieza profunda que realmente se note en el uso diario.</p>
+            <h2>Más que limpieza: mejor imagen, mejor higiene y atención para cada espacio.</h2>
+            <p>En Cleaning entendemos que cada tapizado forma parte del lugar donde vivís, trabajás o recibís clientes. Por eso brindamos un servicio profesional orientado a mejorar la limpieza, la presentación y el cuidado de cada superficie.</p>
+            <p>Trabajamos tanto en domicilios como en empresas, adaptando cada servicio al tipo de uso, material y nivel de suciedad. Ya sea en un hogar, una oficina, un local o un vehículo, buscamos siempre un resultado visible, prolijo y duradero.</p>
           </div>
 
-          <div class="stats-list">
-            <div class="stat-row">
-              <div class="stat-badge">+5</div>
-              <div>
-                <div class="stat-num">+5 años</div>
-                <div class="stat-desc">de experiencia aplicada a tapizados de hogar y auto</div>
-              </div>
+          <div class="values-list">
+            <div class="value-card">
+              <h3>Atención a medida</h3>
+              <p>Adaptamos cada servicio según el tipo de tapizado, el uso cotidiano y el nivel de suciedad real de la superficie.</p>
             </div>
 
-            <div class="stat-row">
-              <div class="stat-badge">2.5K</div>
-              <div>
-                <div class="stat-num">+2.500</div>
-                <div class="stat-desc">servicios realizados con foco en detalle, prolijidad e higiene</div>
-              </div>
+            <div class="value-card">
+              <h3>Resultado visible</h3>
+              <p>Buscamos que la mejora se note en la higiene, la presentación y la sensación general del ambiente o vehículo.</p>
             </div>
 
-            <div class="stat-row">
-              <div class="stat-badge">100%</div>
-              <div>
-                <div class="stat-num">Atención</div>
-                <div class="stat-desc">a domicilio, cuidada y orientada a cada superficie</div>
-              </div>
+            <div class="value-card">
+              <h3>Hogares y empresas</h3>
+              <p>Trabajamos tanto en domicilios como en espacios corporativos, manteniendo criterio profesional y prolijidad en cada visita.</p>
             </div>
           </div>
         </div>
@@ -672,9 +679,18 @@
           </div>
           <div class="cta-body">
             <h2>Transformamos tus espacios, mejoramos tu bienestar.</h2>
-            <p class="lead">Contactanos hoy y descubrí la diferencia de una limpieza profesional de tapizados.</p>
-            <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
-            <p class="cta-phone">o llamanos al <a href="tel:+5491158817248">11 5881-7248</a></p>
+            <p class="lead">Contactanos hoy y elegí el canal que mejor se adapte a tu necesidad.</p>
+
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Hogares</a>
+              <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Corporativo</a>
+            </div>
+
+            <div class="contact-lines">
+              <div>WhatsApp hogares: <a href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11 5881-7248</a></div>
+              <div>Contacto empresas: <a href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11 6011-4067</a></div>
+              <div>Instagram: <a href="https://instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a></div>
+            </div>
           </div>
         </div>
       </div>

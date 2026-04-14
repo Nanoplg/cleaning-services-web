@@ -8,7 +8,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cleaning Services | Limpieza profesional de tapizados" />
-  <meta property="og:description" content="Devolvemos la vida, el color y la frescura a tus sillones, colchones, alfombras y más." />
+  <meta property="og:description" content="Devolvemos la vida, el color y la frescura a tus espacios." />
   <meta property="og:image" content="hero.png" />
   <meta property="og:url" content="https://cleaningservices.com.ar" />
 
@@ -23,7 +23,7 @@
       --card:#0b2642;
       --border:rgba(255,255,255,.08);
       --text:#e7eff8;
-      --muted:#92aac0;
+      --muted:#90a9c0;
       --accent:#14b8e6;
       --accent-d:#0d95bb;
       --white:#fff;
@@ -120,6 +120,12 @@
       font-size:22px;
       flex:none;
       box-shadow:0 4px 16px rgba(20,184,230,.24);
+      overflow:hidden;
+    }
+    .brand-mark img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
     .brand-name{
       font-size:18px;
@@ -203,30 +209,36 @@
 
     .hero{
       position:relative;
-      min-height:720px;
+      min-height:760px;
       display:flex;
       align-items:center;
       overflow:hidden;
       border-bottom:1px solid var(--border);
+      background:#081722;
     }
     .hero-bg{
       position:absolute;
       inset:0;
       background:url('hero.png') center center / cover no-repeat;
+      transform:scale(1.02);
     }
     .hero-bg::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to right, rgba(2,10,18,.86) 0%, rgba(2,10,18,.70) 35%, rgba(2,10,18,.20) 72%, rgba(2,10,18,.08) 100%);
+        linear-gradient(to right,
+          rgba(2,10,18,.90) 0%,
+          rgba(2,10,18,.78) 28%,
+          rgba(2,10,18,.42) 58%,
+          rgba(2,10,18,.16) 100%);
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:560px;
-      padding:54px 0;
+      max-width:520px;
+      padding:70px 0;
     }
 
     .eyebrow{
@@ -241,7 +253,7 @@
 
     .hero-title{
       font-family:var(--display);
-      font-size:82px;
+      font-size:78px;
       line-height:.92;
       text-transform:uppercase;
       letter-spacing:.01em;
@@ -251,51 +263,10 @@
 
     .hero-text{
       font-size:18px;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.92);
       line-height:1.55;
-      max-width:420px;
-      margin-bottom:20px;
-    }
-
-    .hero-features{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-bottom:24px;
-    }
-    .feature{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      color:#fff;
-      max-width:200px;
-    }
-    .feature-icon{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.35);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:18px;
-      flex:none;
-      background:rgba(255,255,255,.05);
-    }
-    .feature strong{
-      display:block;
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      line-height:1.2;
-      margin-bottom:2px;
-    }
-    .feature span{
-      display:block;
-      font-size:13px;
-      color:rgba(255,255,255,.88);
-      line-height:1.35;
+      max-width:390px;
+      margin-bottom:28px;
     }
 
     .hero-actions{
@@ -504,11 +475,11 @@
       .services-grid{
         grid-template-columns:repeat(2,1fr);
       }
+      .hero{
+        min-height:640px;
+      }
       .hero-title{
         font-size:58px;
-      }
-      .hero{
-        min-height:620px;
       }
     }
 
@@ -520,15 +491,21 @@
       .hero{
         min-height:620px;
       }
+      .hero-bg{
+        background-position:center center;
+      }
+      .hero-bg::after{
+        background:linear-gradient(to right,
+          rgba(2,10,18,.88) 0%,
+          rgba(2,10,18,.74) 45%,
+          rgba(2,10,18,.48) 100%);
+      }
       .hero-title{
         font-size:44px;
       }
       .hero-text{
         font-size:15px;
-        max-width:340px;
-      }
-      .hero-features{
-        display:none;
+        max-width:320px;
       }
 
       .section{
@@ -599,23 +576,6 @@
           <span class="eyebrow">Limpieza y desinfección profesional</span>
           <h1 class="hero-title">Especialistas en limpieza de tapizados</h1>
           <p class="hero-text">Devolvemos la vida, el color y la frescura a tus espacios.</p>
-
-          <div class="hero-features">
-            <div class="feature">
-              <div class="feature-icon">✦</div>
-              <div>
-                <strong>Limpieza profunda</strong>
-                <span>Eliminamos suciedad, manchas y olores.</span>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">⬢</div>
-              <div>
-                <strong>Resultados que se ven</strong>
-                <span>Más higiene, mejor apariencia y mayor durabilidad.</span>
-              </div>
-            </div>
-          </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>

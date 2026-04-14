@@ -147,7 +147,8 @@
       border-bottom:2px solid transparent;
       transition:.15s ease;
     }
-    .nav-desk a:hover{
+    .nav-desk a:hover,
+    .nav-desk a.active{
       color:#fff;
       border-bottom-color:var(--accent);
     }
@@ -192,6 +193,10 @@
       letter-spacing:.05em;
       padding:13px 20px;
       border-bottom:1px solid var(--border);
+    }
+    .nav-mob a.active{
+      color:#fff;
+      border-bottom-color:var(--accent);
     }
     .nav-mob .btn-primary{margin:16px 20px 0}
 
@@ -332,8 +337,10 @@
       background:var(--bg2);
     }
     .why-layout{
-      display:block;
-      max-width:900px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:60px;
+      align-items:start;
     }
     .why-text h2{
       font-size:32px;
@@ -349,6 +356,47 @@
       line-height:1.9;
       max-width:860px;
       margin-bottom:18px;
+    }
+
+    .stats-list{
+      display:grid;
+      gap:14px;
+    }
+    .stat-row{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:20px 22px;
+      box-shadow:var(--shadow);
+    }
+    .stat-badge{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      background:rgba(20,184,230,.09);
+      border:1px solid rgba(20,184,230,.20);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+      font-weight:800;
+      flex:none;
+    }
+    .stat-num{
+      font-size:26px;
+      font-weight:800;
+      color:#fff;
+      line-height:1;
+      letter-spacing:-.03em;
+      margin-bottom:3px;
+    }
+    .stat-desc{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.55;
     }
 
     .cta-wrap{
@@ -420,8 +468,9 @@
     }
 
     @media (max-width: 1060px){
-      .services-grid{
-        grid-template-columns:repeat(2,1fr);
+      .services-grid,
+      .why-layout{
+        grid-template-columns:1fr 1fr;
       }
       .hero{
         min-height:600px;
@@ -480,7 +529,9 @@
       .cta-body h2{
         font-size:28px;
       }
-      .services-grid{
+
+      .services-grid,
+      .why-layout{
         grid-template-columns:1fr;
       }
 
@@ -513,11 +564,11 @@
         <div class="brand-name">CLEANING SERVICES</div>
       </a>
 
-      <nav class="nav-desk" aria-label="Menú principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#porque">Por qué elegirnos</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="nav-desk" aria-label="Menú principal" id="desktopNav">
+        <a href="#inicio" data-target="inicio">Inicio</a>
+        <a href="#servicios" data-target="servicios">Servicios</a>
+        <a href="#porque" data-target="porque">Por qué elegirnos</a>
+        <a href="#contacto" data-target="contacto">Contacto</a>
         <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
       </nav>
 
@@ -527,10 +578,10 @@
     </div>
 
     <nav class="nav-mob" id="mobNav" aria-label="Menú móvil">
-      <a href="#inicio" onclick="closeNav()">Inicio</a>
-      <a href="#servicios" onclick="closeNav()">Servicios</a>
-      <a href="#porque" onclick="closeNav()">Por qué elegirnos</a>
-      <a href="#contacto" onclick="closeNav()">Contacto</a>
+      <a href="#inicio" data-target="inicio" onclick="closeNav()">Inicio</a>
+      <a href="#servicios" data-target="servicios" onclick="closeNav()">Servicios</a>
+      <a href="#porque" data-target="porque" onclick="closeNav()">Por qué elegirnos</a>
+      <a href="#contacto" data-target="contacto" onclick="closeNav()">Contacto</a>
       <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp</a>
     </nav>
   </header>
@@ -603,6 +654,32 @@
             <p>En Cleaning entendemos que cada tapizado forma parte del lugar donde vivís, trabajás o recibís clientes. Por eso brindamos un servicio profesional que busca mejorar la limpieza, la presentación y el cuidado de cada superficie.</p>
             <p>Trabajamos tanto en domicilios como en empresas, adaptando cada servicio al tipo de uso, material y nivel de suciedad. Ya sea en un hogar, una oficina, un local o un vehículo, buscamos siempre un resultado visible, prolijo y duradero.</p>
           </div>
+
+          <div class="stats-list">
+            <div class="stat-row">
+              <div class="stat-badge">+5</div>
+              <div>
+                <div class="stat-num">+5 años</div>
+                <div class="stat-desc">de experiencia en limpieza profesional de tapizados.</div>
+              </div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-badge">2500</div>
+              <div>
+                <div class="stat-num">+2500</div>
+                <div class="stat-desc">servicios realizados en hogares, empresas y vehículos.</div>
+              </div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-badge">DOM</div>
+              <div>
+                <div class="stat-num">A domicilio</div>
+                <div class="stat-desc">atención práctica, prolija y adaptada a cada espacio.</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -637,6 +714,9 @@
     (function () {
       var btn = document.getElementById('hamBtn');
       var drawer = document.getElementById('mobNav');
+      var desktopLinks = document.querySelectorAll('#desktopNav a[data-target]');
+      var mobileLinks = document.querySelectorAll('#mobNav a[data-target]');
+      var sections = document.querySelectorAll('section[id]');
 
       function openNav() {
         btn.classList.add('is-open');
@@ -650,11 +730,39 @@
         btn.setAttribute('aria-expanded', 'false');
       }
 
+      function clearActive() {
+        desktopLinks.forEach(function(link){ link.classList.remove('active'); });
+        mobileLinks.forEach(function(link){ link.classList.remove('active'); });
+      }
+
+      function setActive(id) {
+        clearActive();
+        document.querySelectorAll('[data-target="' + id + '"]').forEach(function(link){
+          link.classList.add('active');
+        });
+      }
+
+      function updateActiveSection() {
+        var fromTop = window.scrollY + 140;
+        var current = 'inicio';
+
+        sections.forEach(function(section){
+          if (section.offsetTop <= fromTop) {
+            current = section.id;
+          }
+        });
+
+        setActive(current);
+      }
+
       window.closeNav = closeNav;
 
       btn.addEventListener('click', function () {
         btn.classList.contains('is-open') ? closeNav() : openNav();
       });
+
+      window.addEventListener('scroll', updateActiveSection);
+      window.addEventListener('load', updateActiveSection);
     })();
   </script>
 </body>

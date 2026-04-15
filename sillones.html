@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Limpieza de Sillones | Cleaning Services</title>
-  <meta
-    name="description"
-    content="Servicio profesional de limpieza de sillones a domicilio con aspirado profundo, vapor, inyección y extracción."
-  />
+  <meta name="description" content="Servicio profesional de limpieza de sillones a domicilio con aspirado profundo, vapor, inyección y extracción." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,16 +24,14 @@
       --display:"Oswald",sans-serif;
       --shadow:0 20px 50px rgba(0,0,0,.28);
       --header-h:82px;
+      --section-offset:140px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:var(--font);
-      background:
-        radial-gradient(circle at top left, rgba(20,184,230,.10), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(20,184,230,.08), transparent 26%),
-        var(--bg);
+      background:var(--bg);
       color:var(--text);
       line-height:1.6;
       overflow-x:hidden;
@@ -46,53 +41,14 @@
     a{text-decoration:none;color:inherit}
 
     .container{
-      width:min(1280px,calc(100% - 40px));
+      width:min(1180px,calc(100% - 40px));
       margin-inline:auto;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border:none;
-      border-radius:999px;
-      padding:14px 24px;
-      font-family:var(--font);
-      font-size:13px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      cursor:pointer;
-      transition:.2s ease;
-      white-space:nowrap;
-    }
-
-    .btn:hover{transform:translateY(-2px)}
-
-    .btn-primary{
-      background:var(--accent);
-      color:#fff;
-      box-shadow:0 10px 28px rgba(20,184,230,.30);
-    }
-
-    .btn-primary:hover{background:var(--accent-d)}
-
-    .btn-outline{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.28);
-      color:#fff;
-    }
-
-    .btn-outline:hover{
-      background:rgba(255,255,255,.12);
-      border-color:rgba(255,255,255,.45);
     }
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:300;
+      z-index:500;
       background:rgba(6,24,40,.94);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--border);
@@ -254,22 +210,21 @@
 
     .hero{
       min-height:calc(100vh - var(--header-h));
+      display:grid;
+      grid-template-columns:42% 58%;
       border-bottom:1px solid var(--border);
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:42% 58%;
-      min-height:calc(100vh - var(--header-h));
-      align-items:stretch;
+    .hero-left{
+      background:linear-gradient(90deg, rgba(4,20,34,.99) 0%, rgba(5,24,40,.97) 75%, rgba(5,24,40,.90) 100%);
+      display:flex;
+      align-items:center;
     }
 
-    .hero-copy{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:58px 44px 58px 0;
-      background:linear-gradient(90deg, rgba(6,24,40,.99) 0%, rgba(6,24,40,.97) 72%, rgba(6,24,40,.88) 100%);
+    .hero-left-inner{
+      width:100%;
+      max-width:560px;
+      padding:40px 36px 40px 32px;
     }
 
     .eyebrow{
@@ -279,41 +234,38 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.16em;
-      margin-bottom:20px;
+      margin-bottom:16px;
     }
 
     .hero-title{
       font-family:var(--display);
-      font-size:78px;
+      font-size:72px;
       line-height:.92;
       text-transform:uppercase;
-      letter-spacing:.01em;
       color:#fff;
-      margin-bottom:24px;
-      max-width:560px;
+      margin-bottom:22px;
     }
 
     .hero-text{
       font-size:17px;
       color:rgba(255,255,255,.92);
       line-height:1.7;
-      max-width:540px;
-      margin-bottom:30px;
+      margin-bottom:28px;
+      max-width:520px;
     }
 
-    .hero-section-nav{
+    .hero-nav{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
-      max-width:470px;
     }
 
-    .section-pill{
-      display:inline-flex;
+    .hero-nav a{
+      min-height:52px;
+      display:flex;
       align-items:center;
       justify-content:center;
-      min-height:52px;
-      padding:0 18px;
+      padding:0 16px;
       border-radius:999px;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.18);
@@ -322,32 +274,22 @@
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:.05em;
-      transition:.2s ease;
       text-align:center;
+      transition:.2s ease;
     }
 
-    .section-pill:hover{
+    .hero-nav a:hover{
       transform:translateY(-2px);
       background:rgba(20,184,230,.16);
       border-color:rgba(20,184,230,.55);
       color:var(--accent);
     }
 
-    .hero-image{
+    .hero-right{
       min-height:calc(100vh - var(--header-h));
-      height:100%;
     }
 
-    .hero-card{
-      width:100%;
-      height:100%;
-      min-height:calc(100vh - var(--header-h));
-      overflow:hidden;
-      background:#071a2d;
-      border-left:1px solid rgba(255,255,255,.08);
-    }
-
-    .hero-card img{
+    .hero-right img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -355,8 +297,8 @@
     }
 
     .page-section{
-      padding:140px 0 100px;
-      scroll-margin-top:170px;
+      padding:120px 0 96px;
+      scroll-margin-top:var(--section-offset);
       border-bottom:1px solid rgba(255,255,255,.04);
     }
 
@@ -478,20 +420,13 @@
       border-radius:26px;
       padding:28px 24px 24px;
       box-shadow:var(--shadow);
-      transition:.22s ease;
       height:100%;
-    }
-
-    .benefit-card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 22px 52px rgba(0,0,0,.34);
     }
 
     .benefit-card h3{
       font-size:20px;
       font-weight:800;
       line-height:1.18;
-      letter-spacing:-.02em;
       color:#fff;
       margin-bottom:14px;
     }
@@ -511,7 +446,6 @@
     }
 
     .cta-wrap{
-      position:relative;
       border-radius:28px;
       overflow:hidden;
       box-shadow:var(--shadow);
@@ -530,7 +464,6 @@
       font-size:40px;
       font-weight:800;
       line-height:1.08;
-      letter-spacing:-.04em;
       color:#fff;
       margin-bottom:14px;
     }
@@ -549,26 +482,50 @@
       gap:14px;
     }
 
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 24px;
+      border-radius:999px;
+      font-family:var(--font);
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 10px 28px rgba(20,184,230,.30);
+    }
+
+    .btn-outline{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.28);
+      color:#fff;
+    }
+
     .back-top{
       position:fixed;
       right:18px;
       bottom:18px;
-      height:58px;
-      padding:0 18px;
-      border-radius:999px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
       background:rgba(20,184,230,.98);
       color:#fff;
       box-shadow:0 12px 30px rgba(20,184,230,.30);
       border:1px solid rgba(255,255,255,.18);
       z-index:999;
-      font-size:13px;
+      font-size:24px;
       font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.04em;
       transition:.2s ease;
     }
 
@@ -597,23 +554,23 @@
       .hero-title{font-size:62px}
     }
 
-    @media (max-width: 1060px){
-      .hero,
-      .hero-grid{
+    @media (max-width: 1024px){
+      .hero{
+        grid-template-columns:1fr;
         min-height:auto;
       }
 
-      .hero-grid{
-        grid-template-columns:1fr;
+      .hero-left-inner{
+        max-width:none;
+        padding:42px 20px 28px;
       }
 
-      .hero-copy{
-        padding:42px 0 28px;
+      .hero-title{
+        font-size:52px;
       }
 
-      .hero-image,
-      .hero-card{
-        min-height:560px;
+      .hero-right{
+        min-height:480px;
       }
 
       .chips-grid,
@@ -629,6 +586,7 @@
     @media (max-width: 768px){
       :root{
         --header-h:70px;
+        --section-offset:120px;
       }
 
       .nav-desk{display:none}
@@ -645,27 +603,19 @@
       }
 
       .hero-title{
-        font-size:46px;
-        line-height:.96;
+        font-size:44px;
       }
 
       .hero-text{
         font-size:15px;
-        max-width:100%;
       }
 
-      .hero-copy{
-        padding:34px 0 24px;
-      }
-
-      .hero-image,
-      .hero-card{
-        min-height:360px;
-      }
-
-      .hero-section-nav{
+      .hero-nav{
         grid-template-columns:1fr;
-        max-width:none;
+      }
+
+      .hero-right{
+        min-height:340px;
       }
 
       .section-head h2,
@@ -682,17 +632,15 @@
         flex-direction:column;
       }
 
-      .cta-actions .btn,
-      .section-pill{
+      .cta-actions .btn{
         width:100%;
       }
 
       .back-top{
         right:14px;
         bottom:14px;
-        height:52px;
-        padding:0 16px;
-        font-size:12px;
+        width:56px;
+        height:56px;
       }
     }
 
@@ -710,9 +658,8 @@
         font-size:14px;
       }
 
-      .hero-image,
-      .hero-card{
-        min-height:300px;
+      .hero-right{
+        min-height:280px;
       }
     }
   </style>
@@ -780,8 +727,8 @@
 
   <main>
     <section class="hero" id="inicio-sillones">
-      <div class="container hero-grid">
-        <div class="hero-copy">
+      <div class="hero-left">
+        <div class="hero-left-inner">
           <span class="eyebrow">Servicio premium para sillones</span>
           <h1 class="hero-title">Limpieza profesional de sillones a domicilio</h1>
           <p class="hero-text">
@@ -790,19 +737,17 @@
             con equipamiento profesional.
           </p>
 
-          <div class="hero-section-nav">
-            <a href="#diferenciales" class="section-pill">Diferenciales</a>
-            <a href="#incluye" class="section-pill">Qué incluye</a>
-            <a href="#beneficios" class="section-pill">Beneficios</a>
-            <a href="#contacto" class="section-pill">Cotizar servicio</a>
+          <div class="hero-nav">
+            <a href="#diferenciales">Diferenciales</a>
+            <a href="#incluye">Qué incluye</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#contacto">Cotizar servicio</a>
           </div>
         </div>
+      </div>
 
-        <div class="hero-image">
-          <div class="hero-card">
-            <img src="sillones-hero.png" alt="Limpieza profesional de sillones Cleaning Services" />
-          </div>
-        </div>
+      <div class="hero-right">
+        <img src="sillones-hero.png" alt="Limpieza profesional de sillones Cleaning Services" />
       </div>
     </section>
 
@@ -957,7 +902,7 @@
     </section>
   </main>
 
-  <a href="#inicio-sillones" class="back-top" aria-label="Volver al inicio">Inicio ↑</a>
+  <a href="#inicio-sillones" class="back-top" aria-label="Volver al inicio">↑</a>
 
   <footer>
     <div class="container">

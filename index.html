@@ -237,8 +237,14 @@
       justify-content:flex-start;
     }
 
-    section[id]{
+    #servicios{
       scroll-margin-top: calc(var(--header-h) - 50px);
+    }
+
+    #porque,
+    #tips,
+    #contacto{
+      scroll-margin-top: calc(var(--header-h) + 10px);
     }
 
     .hero{
@@ -377,158 +383,6 @@
       transition:.22s ease;
       box-shadow:var(--shadow);
       height:100%;
-      .more-services{
-  margin-top:32px;
-  background:linear-gradient(180deg, rgba(5,24,42,.98) 0%, rgba(4,18,34,.98) 100%);
-  border:1px solid rgba(20,184,230,.32);
-  border-radius:22px;
-  padding:34px 30px 30px;
-  box-shadow:var(--shadow);
-}
-
-.more-services-head{
-  text-align:center;
-  margin-bottom:28px;
-}
-
-.more-services-head h3{
-  font-size:34px;
-  font-weight:800;
-  line-height:1.08;
-  letter-spacing:-.03em;
-  color:#fff;
-  margin-bottom:8px;
-  text-transform:uppercase;
-}
-
-.more-services-head p{
-  font-size:15px;
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.more-services-divider{
-  width:54px;
-  height:3px;
-  border-radius:999px;
-  background:var(--accent);
-  margin:14px auto 0;
-}
-
-.more-services-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-}
-
-.more-service-item{
-  display:flex;
-  gap:14px;
-  padding:18px 18px 18px 0;
-  min-height:118px;
-}
-
-.more-service-item:nth-child(1),
-.more-service-item:nth-child(2),
-.more-service-item:nth-child(3),
-.more-service-item:nth-child(4){
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.more-service-item:not(:nth-child(4n)){
-  border-right:1px solid rgba(255,255,255,.08);
-  padding-right:18px;
-}
-
-.more-service-icon{
-  width:42px;
-  height:42px;
-  flex:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--accent);
-}
-
-.more-service-icon svg{
-  width:34px;
-  height:34px;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.more-service-item h4{
-  font-size:14px;
-  font-weight:800;
-  color:#fff;
-  line-height:1.3;
-  margin-bottom:6px;
-  text-transform:uppercase;
-}
-
-.more-service-item p{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-@media (max-width: 1060px){
-  .more-services-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .more-service-item{
-    padding:18px 16px;
-  }
-
-  .more-service-item:nth-child(1),
-  .more-service-item:nth-child(2),
-  .more-service-item:nth-child(3),
-  .more-service-item:nth-child(4),
-  .more-service-item:nth-child(5),
-  .more-service-item:nth-child(6){
-    border-bottom:1px solid rgba(255,255,255,.08);
-  }
-
-  .more-service-item:not(:nth-child(4n)){
-    border-right:none;
-    padding-right:16px;
-  }
-
-  .more-service-item:nth-child(odd){
-    border-right:1px solid rgba(255,255,255,.08);
-  }
-}
-
-@media (max-width: 768px){
-  .more-services{
-    padding:26px 20px 22px;
-  }
-
-  .more-services-head h3{
-    font-size:26px;
-  }
-
-  .more-services-grid{
-    grid-template-columns:1fr;
-  }
-
-  .more-service-item,
-  .more-service-item:nth-child(odd){
-    border-right:none !important;
-  }
-
-  .more-service-item:not(:last-child){
-    border-bottom:1px solid rgba(255,255,255,.08);
-  }
-
-  .more-service-item{
-    padding:16px 0;
-    min-height:auto;
-  }
     }
     .service-link:hover .service-card{
       transform:translateY(-5px);
@@ -555,12 +409,109 @@
       line-height:1.65;
     }
 
+    .more-services{
+      margin-top:32px;
+      background:linear-gradient(180deg, rgba(5,24,42,.98) 0%, rgba(4,18,34,.98) 100%);
+      border:1px solid rgba(20,184,230,.32);
+      border-radius:22px;
+      padding:34px 30px 30px;
+      box-shadow:var(--shadow);
+    }
+
+    .more-services-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .more-services-head h3{
+      font-size:34px;
+      font-weight:800;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      color:#fff;
+      margin-bottom:8px;
+      text-transform:uppercase;
+    }
+
+    .more-services-head p{
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .more-services-divider{
+      width:54px;
+      height:3px;
+      border-radius:999px;
+      background:var(--accent);
+      margin:14px auto 0;
+    }
+
+    .more-services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+    }
+
+    .more-service-item{
+      display:flex;
+      gap:14px;
+      padding:18px 18px 18px 0;
+      min-height:118px;
+    }
+
+    .more-service-item:nth-child(1),
+    .more-service-item:nth-child(2),
+    .more-service-item:nth-child(3),
+    .more-service-item:nth-child(4){
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .more-service-item:not(:nth-child(4n)){
+      border-right:1px solid rgba(255,255,255,.08);
+      padding-right:18px;
+    }
+
+    .more-service-icon{
+      width:42px;
+      height:42px;
+      flex:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+    }
+
+    .more-service-icon svg{
+      width:34px;
+      height:34px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .more-service-item h4{
+      font-size:14px;
+      font-weight:800;
+      color:#fff;
+      line-height:1.3;
+      margin-bottom:6px;
+      text-transform:uppercase;
+    }
+
+    .more-service-item p{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
     .why-section{
-  background:var(--bg2);
-  min-height:calc(100vh - var(--header-h));
-  display:flex;
-  align-items:center;
-      
+      background:var(--bg2);
+      min-height:calc(100vh - var(--header-h));
+      display:flex;
+      align-items:center;
     }
     .why-layout{
       display:grid;
@@ -778,14 +729,38 @@
       .why-layout{
         grid-template-columns:1fr 1fr;
       }
-      .tips-grid{
+      .tips-grid,
+      .more-services-grid{
         grid-template-columns:1fr 1fr;
       }
+
       .hero{
         min-height:600px;
       }
       .hero-title{
         font-size:48px;
+      }
+
+      .more-service-item{
+        padding:18px 16px;
+      }
+
+      .more-service-item:nth-child(1),
+      .more-service-item:nth-child(2),
+      .more-service-item:nth-child(3),
+      .more-service-item:nth-child(4),
+      .more-service-item:nth-child(5),
+      .more-service-item:nth-child(6){
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .more-service-item:not(:nth-child(4n)){
+        border-right:none;
+        padding-right:16px;
+      }
+
+      .more-service-item:nth-child(odd){
+        border-right:1px solid rgba(255,255,255,.08);
       }
     }
 
@@ -835,19 +810,39 @@
       }
       .section-head h2,
       .why-text h2,
-      .cta-body h2{
+      .cta-body h2,
+      .more-services-head h3{
         font-size:28px;
       }
 
       .services-grid,
       .why-layout,
-      .tips-grid{
+      .tips-grid,
+      .more-services-grid{
         grid-template-columns:1fr;
       }
 
       .tip-card h3{
         min-height:auto;
         font-size:24px;
+      }
+
+      .more-services{
+        padding:26px 20px 22px;
+      }
+
+      .more-service-item,
+      .more-service-item:nth-child(odd){
+        border-right:none !important;
+      }
+
+      .more-service-item:not(:last-child){
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .more-service-item{
+        padding:16px 0;
+        min-height:auto;
       }
 
       .cta-actions{
@@ -1021,6 +1016,132 @@
               </div>
             </article>
           </a>
+        </div>
+
+        <div class="more-services">
+          <div class="more-services-head">
+            <h3>Otros servicios que realizamos</h3>
+            <p>También trabajamos otras superficies y tapizados para hogares, empresas y espacios especiales.</p>
+            <div class="more-services-divider"></div>
+          </div>
+
+          <div class="more-services-grid">
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 20v-4M17 20v-4M5 16h14"></path>
+                  <path d="M7 16V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v7"></path>
+                  <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Sillas</h4>
+                <p>Limpieza de sillas de comedor, oficina y todo tipo de tapizados.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 19v-6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6"></path>
+                  <path d="M8 10V8a4 4 0 0 1 8 0v2"></path>
+                  <path d="M6 19h12"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Puffs y butacas</h4>
+                <p>Recuperamos frescura, higiene y mejor aspecto en piezas de uso diario.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 18h14"></path>
+                  <path d="M7 18v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"></path>
+                  <path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Respaldos y pie de cama</h4>
+                <p>Limpieza profunda de respaldos y pie de cama tapizados para mejorar higiene, frescura y presencia.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 4v16"></path>
+                  <path d="M18 4v16"></path>
+                  <path d="M8 6c2 1 2 3 0 4 2 1 2 3 0 4 2 1 2 3 0 4"></path>
+                  <path d="M16 6c-2 1-2 3 0 4-2 1-2 3 0 4-2 1-2 3 0 4"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Limpieza de cortinados</h4>
+                <p>Tratamiento orientado a remover suciedad acumulada y mejorar frescura textil.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 18v-5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v5"></path>
+                  <path d="M9 11V8a3 3 0 0 1 6 0v3"></path>
+                  <path d="M5 18h14"></path>
+                  <path d="M4 20h16"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Cochecitos y sillitas de bebé</h4>
+                <p>Limpieza de superficies textiles de alto contacto con foco en higiene real.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 20v-3M17 20v-3"></path>
+                  <path d="M5 17h14"></path>
+                  <path d="M7 17v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"></path>
+                  <path d="M9 9V7a3 3 0 0 1 6 0v2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Sillas de oficina</h4>
+                <p>Ideal para puestos de trabajo, salas de reunión y espacios de uso frecuente.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 6h16"></path>
+                  <path d="M4 12h16"></path>
+                  <path d="M4 18h16"></path>
+                  <path d="M8 4v16"></path>
+                  <path d="M16 4v16"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Paneles divisores tapizados</h4>
+                <p>Limpieza profesional para paneles de oficina y superficies textiles verticales.</p>
+              </div>
+            </div>
+
+            <div class="more-service-item">
+              <div class="more-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"></path>
+                  <path d="M9.5 12l1.7 1.7L14.8 10"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Tratamientos especiales</h4>
+                <p>Vapor para desinfección, ozono en ambientes y cuidados complementarios.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

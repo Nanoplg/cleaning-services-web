@@ -27,7 +27,6 @@
       --display:"Oswald",sans-serif;
       --shadow:0 20px 50px rgba(0,0,0,.28);
       --header-h:82px;
-      --section-space:72px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -251,16 +250,12 @@
 
     .hero{
       min-height:calc(100vh - var(--header-h));
-      display:flex;
-      align-items:stretch;
       border-bottom:1px solid var(--border);
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:0;
-      width:100%;
+      grid-template-columns:.82fr 1.18fr;
       min-height:calc(100vh - var(--header-h));
     }
 
@@ -268,8 +263,8 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
-      padding:48px 44px 48px 8px;
-      background:linear-gradient(90deg, rgba(6,24,40,.98) 0%, rgba(6,24,40,.96) 72%, rgba(6,24,40,.88) 100%);
+      padding:48px 36px 48px 0;
+      background:linear-gradient(90deg, rgba(6,24,40,.98) 0%, rgba(6,24,40,.96) 75%, rgba(6,24,40,.90) 100%);
     }
 
     .eyebrow{
@@ -289,37 +284,30 @@
       text-transform:uppercase;
       letter-spacing:.01em;
       color:#fff;
-      margin-bottom:20px;
-      max-width:560px;
+      margin-bottom:22px;
+      max-width:520px;
     }
 
     .hero-text{
       font-size:17px;
       color:rgba(255,255,255,.92);
       line-height:1.7;
-      max-width:560px;
-      margin-bottom:28px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:18px;
+      max-width:520px;
+      margin-bottom:26px;
     }
 
     .hero-section-nav{
-      display:flex;
-      flex-wrap:wrap;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
-      max-width:620px;
+      max-width:420px;
     }
 
     .section-pill{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:44px;
+      min-height:48px;
       padding:0 18px;
       border-radius:999px;
       background:rgba(255,255,255,.06);
@@ -330,6 +318,7 @@
       text-transform:uppercase;
       letter-spacing:.05em;
       transition:.2s ease;
+      text-align:center;
     }
 
     .section-pill:hover{
@@ -340,11 +329,11 @@
     }
 
     .hero-image{
-      position:relative;
       min-height:calc(100vh - var(--header-h));
     }
 
     .hero-card{
+      width:100%;
       height:100%;
       min-height:calc(100vh - var(--header-h));
       overflow:hidden;
@@ -363,8 +352,8 @@
       min-height:calc(100vh - var(--header-h));
       display:flex;
       align-items:center;
-      padding:var(--section-space) 0;
-      scroll-margin-top:calc(var(--header-h) + 18px);
+      padding:84px 0;
+      scroll-margin-top:calc(var(--header-h) + 34px);
       border-bottom:1px solid rgba(255,255,255,.04);
     }
 
@@ -557,6 +546,31 @@
       gap:14px;
     }
 
+    .back-top{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(20,184,230,.95);
+      color:#fff;
+      box-shadow:0 12px 30px rgba(20,184,230,.30);
+      border:1px solid rgba(255,255,255,.18);
+      z-index:400;
+      font-size:24px;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .back-top:hover{
+      transform:translateY(-3px);
+      background:var(--accent-d);
+    }
+
     footer{
       background:#030d18;
       border-top:1px solid var(--border);
@@ -593,7 +607,7 @@
 
       .hero-image,
       .hero-card{
-        min-height:520px;
+        min-height:560px;
       }
 
       .chips-grid,
@@ -613,7 +627,6 @@
     @media (max-width: 768px){
       :root{
         --header-h:70px;
-        --section-space:56px;
       }
 
       .nav-desk{display:none}
@@ -648,6 +661,11 @@
         min-height:360px;
       }
 
+      .hero-section-nav{
+        grid-template-columns:1fr;
+        max-width:none;
+      }
+
       .section-head h2,
       .cta-body h2{
         font-size:28px;
@@ -658,16 +676,20 @@
         grid-template-columns:1fr;
       }
 
-      .hero-actions,
-      .cta-actions,
-      .hero-section-nav{
+      .cta-actions{
         flex-direction:column;
       }
 
-      .hero-actions .btn,
       .cta-actions .btn,
       .section-pill{
         width:100%;
+      }
+
+      .back-top{
+        width:50px;
+        height:50px;
+        right:16px;
+        bottom:16px;
       }
     }
 
@@ -696,7 +718,7 @@
 
   <header class="topbar">
     <div class="container topbar-row">
-      <a href="index.html#inicio" class="brand" aria-label="Cleaning Services">
+      <a href="#inicio-sillones" class="brand" aria-label="Cleaning Services">
         <div class="brand-mark">
           <img src="isotipo.png" alt="Cleaning Services isotipo" />
         </div>
@@ -754,7 +776,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio-sillones">
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Servicio premium para sillones</span>
@@ -764,11 +786,6 @@
             pensado para actuar en profundidad, respetando cada tipo de tapizado y trabajando
             con equipamiento profesional.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Pedí asesoramiento</a>
-            <a class="btn btn-outline" href="#incluye">Ver qué incluye</a>
-          </div>
 
           <div class="hero-section-nav">
             <a href="#diferenciales" class="section-pill">Diferenciales</a>
@@ -929,13 +946,15 @@
 
             <div class="cta-actions">
               <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
-              <a class="btn btn-outline" href="index.html#servicios">Volver a servicios</a>
+              <a class="btn btn-outline" href="#inicio-sillones">Volver al inicio</a>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <a href="#inicio-sillones" class="back-top" aria-label="Volver al inicio">↑</a>
 
   <footer>
     <div class="container">

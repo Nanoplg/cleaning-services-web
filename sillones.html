@@ -24,224 +24,112 @@
       --display:"Oswald",sans-serif;
       --shadow:0 20px 50px rgba(0,0,0,.28);
       --header-h:82px;
-      --section-offset:140px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{
-      font-family:var(--font);
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
+    body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
-    .container{
-      width:min(1180px,calc(100% - 40px));
-      margin-inline:auto;
+    .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:none;border-radius:999px;padding:14px 24px;font-family:var(--font);
+      font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+      transition:.2s ease;white-space:nowrap;
     }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 28px rgba(20,184,230,.30)}
+    .btn-primary:hover{background:var(--accent-d)}
+    .btn-outline{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.28);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45)}
 
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:500;
-      background:rgba(6,24,40,.94);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:200;background:rgba(6,24,40,.94);
+      backdrop-filter:blur(14px);border-bottom:1px solid var(--border);
     }
+    .topbar-row{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand-mark,.brand-mark img{width:42px;height:42px}
+    .brand-mark img{object-fit:contain}
+    .brand-name{font-size:18px;font-weight:800;color:#fff;letter-spacing:.08em;line-height:1;white-space:nowrap}
 
-    .topbar-row{
-      height:var(--header-h);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
-
-    .brand-mark{
-      width:42px;
-      height:42px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex:none;
-    }
-
-    .brand-mark img{
-      width:42px;
-      height:42px;
-      object-fit:contain;
-      display:block;
-    }
-
-    .brand-name{
-      font-size:18px;
-      font-weight:800;
-      color:#fff;
-      letter-spacing:.08em;
-      line-height:1;
-      white-space:nowrap;
-      text-transform:uppercase;
-    }
-
-    .nav-desk{
-      display:flex;
-      align-items:center;
-      gap:30px;
-    }
-
+    .nav-desk{display:flex;align-items:center;gap:30px}
     .nav-desk a{
-      font-size:13px;
-      font-weight:700;
-      color:rgba(255,255,255,.78);
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      padding-bottom:3px;
-      border-bottom:2px solid transparent;
-      transition:.15s ease;
+      font-size:13px;font-weight:700;color:rgba(255,255,255,.78);
+      text-transform:uppercase;letter-spacing:.05em;padding-bottom:3px;
+      border-bottom:2px solid transparent;transition:.15s ease;
     }
+    .nav-desk a:hover,.nav-desk a.active{color:#fff;border-bottom-color:var(--accent)}
 
-    .nav-desk a:hover,
-    .nav-desk a.active{
-      color:#fff;
-      border-bottom-color:var(--accent);
-    }
-
-    .social-links{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
+    .social-links{display:flex;align-items:center;gap:10px}
     .social-link{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;
-      transition:.2s ease;
-      flex:none;
+      width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
+      color:#fff;transition:.2s ease;flex:none;
     }
+    .social-link:hover{transform:translateY(-2px);background:rgba(20,184,230,.16);border-color:rgba(20,184,230,.55);color:var(--accent)}
+    .social-link svg{width:20px;height:20px;fill:currentColor;stroke:none}
 
-    .social-link:hover{
-      transform:translateY(-2px);
-      background:rgba(20,184,230,.16);
-      border-color:rgba(20,184,230,.55);
-      color:var(--accent);
-    }
-
-    .social-link svg{
-      width:20px;
-      height:20px;
-      fill:currentColor;
-      stroke:none;
-    }
-
-    .ham{
-      display:none;
-      flex-direction:column;
-      justify-content:center;
-      gap:5px;
-      width:40px;
-      height:40px;
-      background:transparent;
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:10px;
-      cursor:pointer;
-      padding:8px;
-    }
-
-    .ham span{
-      display:block;
-      height:2px;
-      background:#fff;
-      border-radius:2px;
-      transition:.25s ease;
-    }
-
+    .ham{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:10px;cursor:pointer;padding:8px}
+    .ham span{display:block;height:2px;background:#fff;border-radius:2px;transition:.25s ease}
     .ham.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .ham.is-open span:nth-child(2){opacity:0}
     .ham.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-    .nav-mob{
-      display:none;
-      flex-direction:column;
-      background:var(--bg2);
-      border-top:1px solid var(--border);
-      padding:8px 0 20px;
-    }
-
+    .nav-mob{display:none;flex-direction:column;background:var(--bg2);border-top:1px solid var(--border);padding:8px 0 20px}
     .nav-mob.is-open{display:flex}
-
-    .nav-mob a{
-      font-size:13px;
-      font-weight:700;
-      color:rgba(255,255,255,.78);
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      padding:13px 20px;
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav-mob a.active{
-      color:#fff;
-      border-bottom-color:var(--accent);
-    }
-
-    .nav-mob .social-links{
-      margin:16px 20px 0;
-      justify-content:flex-start;
-    }
+    .nav-mob a{font-size:13px;font-weight:700;color:rgba(255,255,255,.78);text-transform:uppercase;letter-spacing:.05em;padding:13px 20px;border-bottom:1px solid var(--border)}
+    .nav-mob a.active{color:#fff;border-bottom-color:var(--accent)}
+    .nav-mob .social-links{margin:16px 20px 0;justify-content:flex-start}
 
     .hero{
-      min-height:calc(100vh - var(--header-h));
-      display:grid;
-      grid-template-columns:42% 58%;
-      border-bottom:1px solid var(--border);
-    }
-
-    .hero-left{
-      background:linear-gradient(90deg, rgba(4,20,34,.99) 0%, rgba(5,24,40,.97) 75%, rgba(5,24,40,.90) 100%);
+      position:relative;
+      min-height:680px;
       display:flex;
       align-items:center;
+      overflow:hidden;
+      border-bottom:1px solid var(--border);
+      background-image:url('sillones-hero.png');
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:72% center;
     }
 
-    .hero-left-inner{
-      width:100%;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(
+        to right,
+        rgba(2,8,16,.88) 0%,
+        rgba(2,8,16,.72) 34%,
+        rgba(2,8,16,.34) 62%,
+        rgba(2,8,16,.08) 100%
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
       max-width:560px;
-      padding:40px 36px 40px 32px;
+      padding:92px 0;
     }
 
     .eyebrow{
-      display:inline-block;
-      color:var(--accent);
-      font-size:11px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      margin-bottom:16px;
+      display:inline-block;color:var(--accent);font-size:11px;font-weight:800;
+      text-transform:uppercase;letter-spacing:.16em;margin-bottom:22px;
     }
 
     .hero-title{
       font-family:var(--display);
-      font-size:72px;
-      line-height:.92;
+      font-size:58px;
+      line-height:1.02;
       text-transform:uppercase;
+      letter-spacing:.01em;
       color:#fff;
       margin-bottom:22px;
     }
@@ -249,33 +137,34 @@
     .hero-text{
       font-size:17px;
       color:rgba(255,255,255,.92);
-      line-height:1.7;
-      margin-bottom:28px;
+      line-height:1.65;
       max-width:520px;
+      margin-bottom:28px;
     }
 
     .hero-nav{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
+      max-width:520px;
     }
 
     .hero-nav a{
-      min-height:52px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:0 16px;
+      min-height:50px;
+      padding:0 18px;
       border-radius:999px;
       background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.28);
       color:#fff;
       font-size:12px;
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:.05em;
-      text-align:center;
       transition:.2s ease;
+      text-align:center;
     }
 
     .hero-nav a:hover{
@@ -285,236 +174,49 @@
       color:var(--accent);
     }
 
-    .hero-right{
-      min-height:calc(100vh - var(--header-h));
-    }
-
-    .hero-right img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-    }
-
     .page-section{
-      padding:120px 0 96px;
-      scroll-margin-top:var(--section-offset);
+      padding:96px 0;
+      scroll-margin-top:calc(var(--header-h) + 26px);
       border-bottom:1px solid rgba(255,255,255,.04);
     }
 
-    .section-head{
-      text-align:center;
-      margin-bottom:34px;
-    }
+    .section-head{text-align:center;margin-bottom:42px}
+    .kicker{display:block;font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;margin-bottom:12px}
+    .section-head h2{font-size:40px;font-weight:800;line-height:1.08;letter-spacing:-.03em;color:#fff}
+    .section-head p{max-width:760px;margin:14px auto 0;font-size:15px;color:var(--muted);line-height:1.8}
 
-    .kicker{
-      display:block;
-      font-size:11px;
-      font-weight:800;
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      margin-bottom:12px;
-    }
+    .chips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .chip-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px 18px;text-align:center;box-shadow:var(--shadow);height:100%}
+    .chip-card h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+    .chip-card p{font-size:13px;color:var(--muted);line-height:1.65}
 
-    .section-head h2{
-      font-size:40px;
-      font-weight:800;
-      line-height:1.08;
-      letter-spacing:-.03em;
-      color:#fff;
-    }
+    .includes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .include-item{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:24px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+    .include-icon{width:44px;height:44px;min-width:44px;border-radius:14px;background:rgba(20,184,230,.09);border:1px solid rgba(20,184,230,.20);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;flex:none}
+    .include-item h3{font-size:16px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px}
+    .include-item p{font-size:15px;color:#d1e0ee;line-height:1.75}
 
-    .section-head p{
-      max-width:760px;
-      margin:14px auto 0;
-      font-size:15px;
-      color:var(--muted);
-      line-height:1.8;
-    }
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit-card{background:linear-gradient(180deg, rgba(6,34,58,.98) 0%, rgba(5,27,48,.98) 100%);border:1px solid rgba(20,184,230,.20);border-radius:26px;padding:28px 24px 24px;box-shadow:var(--shadow);height:100%}
+    .benefit-card h3{font-size:20px;font-weight:800;line-height:1.18;color:#fff;margin-bottom:14px}
+    .benefit-divider{width:66px;height:3px;border-radius:999px;background:var(--accent);margin-bottom:18px}
+    .benefit-card p{font-size:15px;color:#d1e0ee;line-height:1.85}
 
-    .chips-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-
-    .chip-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:24px 18px;
-      text-align:center;
-      box-shadow:var(--shadow);
-      height:100%;
-    }
-
-    .chip-card h3{
-      font-size:16px;
-      font-weight:700;
-      color:#fff;
-      margin-bottom:8px;
-    }
-
-    .chip-card p{
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.65;
-    }
-
-    .includes-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-    }
-
-    .include-item{
-      display:flex;
-      gap:16px;
-      align-items:flex-start;
-      padding:22px;
-      border-radius:24px;
-      background:var(--card);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-    }
-
-    .include-icon{
-      width:44px;
-      height:44px;
-      min-width:44px;
-      border-radius:14px;
-      background:rgba(20,184,230,.09);
-      border:1px solid rgba(20,184,230,.20);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--accent);
-      font-weight:800;
-      flex:none;
-    }
-
-    .include-item h3{
-      font-size:16px;
-      font-weight:800;
-      color:#fff;
-      line-height:1.3;
-      margin-bottom:8px;
-    }
-
-    .include-item p{
-      font-size:15px;
-      color:#d1e0ee;
-      line-height:1.75;
-    }
-
-    .benefits-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .benefit-card{
-      background:linear-gradient(180deg, rgba(6,34,58,.98) 0%, rgba(5,27,48,.98) 100%);
-      border:1px solid rgba(20,184,230,.20);
-      border-radius:26px;
-      padding:28px 24px 24px;
-      box-shadow:var(--shadow);
-      height:100%;
-    }
-
-    .benefit-card h3{
-      font-size:20px;
-      font-weight:800;
-      line-height:1.18;
-      color:#fff;
-      margin-bottom:14px;
-    }
-
-    .benefit-divider{
-      width:66px;
-      height:3px;
-      border-radius:999px;
-      background:var(--accent);
-      margin-bottom:18px;
-    }
-
-    .benefit-card p{
-      font-size:15px;
-      color:#d1e0ee;
-      line-height:1.85;
-    }
-
-    .cta-wrap{
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      background:linear-gradient(135deg, rgba(4,14,28,.82) 0%, rgba(6,18,36,.66) 100%);
-      width:100%;
-    }
-
-    .cta-body{
-      text-align:center;
-      padding:82px 24px 74px;
-      max-width:760px;
-      margin-inline:auto;
-    }
-
-    .cta-body h2{
-      font-size:40px;
-      font-weight:800;
-      line-height:1.08;
-      color:#fff;
-      margin-bottom:14px;
-    }
-
-    .cta-body p{
-      font-size:15.5px;
-      color:rgba(255,255,255,.78);
-      line-height:1.7;
-      margin-bottom:28px;
-    }
-
-    .cta-actions{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:14px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 24px;
-      border-radius:999px;
-      font-family:var(--font);
-      font-size:13px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      transition:.2s ease;
-    }
-
-    .btn-primary{
-      background:var(--accent);
-      color:#fff;
-      box-shadow:0 10px 28px rgba(20,184,230,.30);
-    }
-
-    .btn-outline{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.28);
-      color:#fff;
-    }
+    .cta-wrap{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+    .cta-photo{position:absolute;inset:0}
+    .cta-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.14)}
+    .cta-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(4,14,28,.78) 0%, rgba(6,18,36,.64) 100%)}
+    .cta-body{position:relative;z-index:2;text-align:center;padding:82px 24px 74px;max-width:760px;margin-inline:auto}
+    .cta-body h2{font-size:40px;font-weight:800;line-height:1.08;letter-spacing:-.04em;color:#fff;margin-bottom:14px}
+    .cta-body .lead{font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:28px}
+    .cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
 
     .back-top{
       position:fixed;
       right:18px;
       bottom:18px;
-      width:62px;
-      height:62px;
+      width:58px;
+      height:58px;
       border-radius:50%;
       display:flex;
       align-items:center;
@@ -529,138 +231,53 @@
       transition:.2s ease;
     }
 
-    .back-top:hover{
-      transform:translateY(-3px);
-      background:var(--accent-d);
-    }
+    .back-top:hover{transform:translateY(-3px);background:var(--accent-d)}
 
-    footer{
-      background:#030d18;
-      border-top:1px solid var(--border);
-      padding:28px 0;
-      text-align:center;
-    }
+    footer{background:#030d18;border-top:1px solid var(--border);padding:28px 0;text-align:center}
+    footer p{font-size:12.5px;color:#2d4256}
+    footer span{margin:0 8px;color:#1f3040}
 
-    footer p{
-      font-size:12.5px;
-      color:#2d4256;
-    }
-
-    @media (max-width: 1180px){
+    @media (max-width:1180px){
       .nav-desk{gap:16px}
       .nav-desk a{font-size:12px}
       .brand-name{font-size:17px}
       .social-link{width:40px;height:40px}
-      .hero-title{font-size:62px}
     }
 
-    @media (max-width: 1024px){
-      .hero{
-        grid-template-columns:1fr;
-        min-height:auto;
-      }
-
-      .hero-left-inner{
-        max-width:none;
-        padding:42px 20px 28px;
-      }
-
-      .hero-title{
-        font-size:52px;
-      }
-
-      .hero-right{
-        min-height:480px;
-      }
-
-      .chips-grid,
-      .benefits-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .includes-grid{
-        grid-template-columns:1fr;
-      }
+    @media (max-width:1060px){
+      .hero{min-height:600px;background-position:68% center}
+      .hero-title{font-size:48px}
+      .chips-grid,.benefits-grid{grid-template-columns:1fr 1fr}
+      .includes-grid{grid-template-columns:1fr}
     }
 
-    @media (max-width: 768px){
-      :root{
-        --header-h:70px;
-        --section-offset:120px;
-      }
-
+    @media (max-width:768px){
+      :root{--header-h:70px}
       .nav-desk{display:none}
       .ham{display:flex}
       .topbar-row{height:var(--header-h)}
+      .brand-mark img,.brand-mark{width:36px;height:36px}
+      .brand-name{font-size:16px}
 
-      .brand-mark img{
-        width:36px;
-        height:36px;
-      }
+      .hero{min-height:560px;background-position:66% center}
+      .hero::after{background:linear-gradient(to right,rgba(2,8,16,.90) 0%,rgba(2,8,16,.78) 52%,rgba(2,8,16,.46) 100%)}
+      .hero-content{padding:64px 0}
+      .hero-title{font-size:38px;line-height:1.04}
+      .hero-text{font-size:15px;max-width:320px;margin-bottom:24px}
+      .hero-nav{grid-template-columns:1fr;max-width:320px}
 
-      .brand-name{
-        font-size:16px;
-      }
-
-      .hero-title{
-        font-size:44px;
-      }
-
-      .hero-text{
-        font-size:15px;
-      }
-
-      .hero-nav{
-        grid-template-columns:1fr;
-      }
-
-      .hero-right{
-        min-height:340px;
-      }
-
-      .section-head h2,
-      .cta-body h2{
-        font-size:28px;
-      }
-
-      .chips-grid,
-      .benefits-grid{
-        grid-template-columns:1fr;
-      }
-
-      .cta-actions{
-        flex-direction:column;
-      }
-
-      .cta-actions .btn{
-        width:100%;
-      }
-
-      .back-top{
-        right:14px;
-        bottom:14px;
-        width:56px;
-        height:56px;
-      }
+      .page-section{padding:72px 0;scroll-margin-top:calc(var(--header-h) + 18px)}
+      .section-head h2,.cta-body h2{font-size:28px}
+      .chips-grid,.benefits-grid{grid-template-columns:1fr}
+      .cta-actions{flex-direction:column}
+      .cta-actions .btn{width:100%}
+      .back-top{right:14px;bottom:14px;width:54px;height:54px}
     }
 
-    @media (max-width: 520px){
-      .include-item{
-        flex-direction:column;
-      }
-
-      .benefit-card h3{
-        font-size:22px;
-      }
-
-      .benefit-card p,
-      .include-item p{
-        font-size:14px;
-      }
-
-      .hero-right{
-        min-height:280px;
-      }
+    @media (max-width:520px){
+      .include-item{flex-direction:column}
+      .benefit-card h3{font-size:22px}
+      .benefit-card p,.include-item p{font-size:14px}
     }
   </style>
 </head>
@@ -684,15 +301,15 @@
 
         <div class="social-links" aria-label="Redes sociales">
           <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/></svg>
           </a>
 
           <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/></svg>
           </a>
 
           <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/></svg>
           </a>
         </div>
       </nav>
@@ -708,33 +325,17 @@
       <a href="index.html#porque" onclick="closeNav()">Por qué elegirnos</a>
       <a href="index.html#tips" onclick="closeNav()">Cleaning Tips</a>
       <a href="#contacto" onclick="closeNav()">Contacto</a>
-
-      <div class="social-links" aria-label="Redes sociales">
-        <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/></svg>
-        </a>
-
-        <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/></svg>
-        </a>
-
-        <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/></svg>
-        </a>
-      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="inicio-sillones">
-      <div class="hero-left">
-        <div class="hero-left-inner">
+      <div class="container">
+        <div class="hero-content">
           <span class="eyebrow">Servicio premium para sillones</span>
           <h1 class="hero-title">Limpieza profesional de sillones a domicilio</h1>
           <p class="hero-text">
-            Recuperamos frescura, higiene y presencia en tus sillones con un proceso técnico
-            pensado para actuar en profundidad, respetando cada tipo de tapizado y trabajando
-            con equipamiento profesional.
+            Recuperamos frescura, higiene y presencia en tus sillones con un proceso técnico pensado para actuar en profundidad, respetando cada tipo de tapizado y trabajando con equipamiento profesional.
           </p>
 
           <div class="hero-nav">
@@ -745,10 +346,6 @@
           </div>
         </div>
       </div>
-
-      <div class="hero-right">
-        <img src="sillones-hero.png" alt="Limpieza profesional de sillones Cleaning Services" />
-      </div>
     </section>
 
     <section class="page-section" id="diferenciales">
@@ -756,32 +353,14 @@
         <div class="section-head">
           <span class="kicker">Diferenciales</span>
           <h2>Diferenciales del servicio</h2>
-          <p>
-            Un trabajo pensado para lograr profundidad, cuidado del tapizado y una terminación
-            profesional en el propio domicilio del cliente.
-          </p>
+          <p>Un trabajo pensado para lograr profundidad, cuidado del tapizado y una terminación profesional en el propio domicilio del cliente.</p>
         </div>
 
         <div class="chips-grid">
-          <div class="chip-card">
-            <h3>Atención a domicilio</h3>
-            <p>Trabajamos en el lugar, sin necesidad de traslado.</p>
-          </div>
-
-          <div class="chip-card">
-            <h3>Proceso profundo</h3>
-            <p>Actuamos sobre suciedad, residuos y contaminación acumulada.</p>
-          </div>
-
-          <div class="chip-card">
-            <h3>Productos biodegradables</h3>
-            <p>Usamos soluciones especiales según la superficie tratada.</p>
-          </div>
-
-          <div class="chip-card">
-            <h3>Equipamiento profesional</h3>
-            <p>Máquinas de inyección, extracción, vapor y secado controlado.</p>
-          </div>
+          <div class="chip-card"><h3>Atención a domicilio</h3><p>Trabajamos en el lugar, sin necesidad de traslado.</p></div>
+          <div class="chip-card"><h3>Proceso profundo</h3><p>Actuamos sobre suciedad, residuos y contaminación acumulada.</p></div>
+          <div class="chip-card"><h3>Productos biodegradables</h3><p>Usamos soluciones especiales según la superficie tratada.</p></div>
+          <div class="chip-card"><h3>Equipamiento profesional</h3><p>Máquinas de inyección, extracción, vapor y secado controlado.</p></div>
         </div>
       </div>
     </section>
@@ -791,60 +370,16 @@
         <div class="section-head">
           <span class="kicker">Proceso del servicio</span>
           <h2>Qué incluye nuestro servicio</h2>
-          <p>
-            Cada sillón se evalúa para aplicar el procedimiento correcto según su uso,
-            material y nivel de suciedad.
-          </p>
+          <p>Cada sillón se evalúa para aplicar el procedimiento correcto según su uso, material y nivel de suciedad.</p>
         </div>
 
         <div class="includes-grid">
-          <div class="include-item">
-            <div class="include-icon">1</div>
-            <div>
-              <h3>Aspirado profundo</h3>
-              <p>Retiramos polvo, partículas y suciedad gruesa acumulada en la superficie y en zonas de difícil acceso.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">2</div>
-            <div>
-              <h3>Aplicación de productos biodegradables</h3>
-              <p>Utilizamos productos especiales para aflojar la suciedad y preparar el tapizado para una limpieza más efectiva.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">3</div>
-            <div>
-              <h3>Cepillado según la superficie</h3>
-              <p>Trabajamos con el cepillo correcto de acuerdo al tipo de tela, textura y nivel de sensibilidad del material.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">4</div>
-            <div>
-              <h3>Inyección y extracción</h3>
-              <p>Inyectamos agua de manera controlada y extraemos residuos para lograr una limpieza profunda del tapizado.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">5</div>
-            <div>
-              <h3>Tratamiento con vapor</h3>
-              <p>Incorporamos vapor como parte del proceso para reforzar la higiene y optimizar la terminación general del servicio.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">6</div>
-            <div>
-              <h3>Secado controlado con máquinas</h3>
-              <p>Finalizamos con secado asistido para reducir la humedad residual y mejorar el resultado final.</p>
-            </div>
-          </div>
+          <div class="include-item"><div class="include-icon">1</div><div><h3>Aspirado profundo</h3><p>Retiramos polvo, partículas y suciedad gruesa acumulada en la superficie y en zonas de difícil acceso.</p></div></div>
+          <div class="include-item"><div class="include-icon">2</div><div><h3>Aplicación de productos biodegradables</h3><p>Utilizamos productos especiales para aflojar la suciedad y preparar el tapizado para una limpieza más efectiva.</p></div></div>
+          <div class="include-item"><div class="include-icon">3</div><div><h3>Cepillado según la superficie</h3><p>Trabajamos con el cepillo correcto de acuerdo al tipo de tela, textura y nivel de sensibilidad del material.</p></div></div>
+          <div class="include-item"><div class="include-icon">4</div><div><h3>Inyección y extracción</h3><p>Inyectamos agua de manera controlada y extraemos residuos para lograr una limpieza profunda del tapizado.</p></div></div>
+          <div class="include-item"><div class="include-icon">5</div><div><h3>Tratamiento con vapor</h3><p>Incorporamos vapor como parte del proceso para reforzar la higiene y optimizar la terminación general del servicio.</p></div></div>
+          <div class="include-item"><div class="include-icon">6</div><div><h3>Secado controlado con máquinas</h3><p>Finalizamos con secado asistido para reducir la humedad residual y mejorar el resultado final.</p></div></div>
         </div>
       </div>
     </section>
@@ -854,30 +389,13 @@
         <div class="section-head">
           <span class="kicker">Beneficios</span>
           <h2>Beneficios de una limpieza profesional</h2>
-          <p>
-            Más allá de lo visual, un sillón limpio mejora la experiencia de uso y eleva
-            la imagen del ambiente.
-          </p>
+          <p>Más allá de lo visual, un sillón limpio mejora la experiencia de uso y eleva la imagen del ambiente.</p>
         </div>
 
         <div class="benefits-grid">
-          <article class="benefit-card">
-            <h3>Mejor imagen del ambiente</h3>
-            <div class="benefit-divider"></div>
-            <p>El sillón vuelve a verse más prolijo, cuidado y alineado con un espacio limpio y bien presentado.</p>
-          </article>
-
-          <article class="benefit-card">
-            <h3>Mayor higiene en profundidad</h3>
-            <div class="benefit-divider"></div>
-            <p>El proceso técnico permite trabajar más allá de la limpieza superficial y apuntar a residuos acumulados en el tapizado.</p>
-          </article>
-
-          <article class="benefit-card">
-            <h3>Cuidado según cada material</h3>
-            <div class="benefit-divider"></div>
-            <p>Adaptamos el trabajo a cada superficie para lograr un resultado efectivo sin aplicar métodos genéricos.</p>
-          </article>
+          <article class="benefit-card"><h3>Mejor imagen del ambiente</h3><div class="benefit-divider"></div><p>El sillón vuelve a verse más prolijo, cuidado y alineado con un espacio limpio y bien presentado.</p></article>
+          <article class="benefit-card"><h3>Mayor higiene en profundidad</h3><div class="benefit-divider"></div><p>El proceso técnico permite trabajar más allá de la limpieza superficial y apuntar a residuos acumulados en el tapizado.</p></article>
+          <article class="benefit-card"><h3>Cuidado según cada material</h3><div class="benefit-divider"></div><p>Adaptamos el trabajo a cada superficie para lograr un resultado efectivo sin aplicar métodos genéricos.</p></article>
         </div>
       </div>
     </section>
@@ -885,16 +403,19 @@
     <section class="page-section" id="contacto">
       <div class="container">
         <div class="cta-wrap">
+          <div class="cta-photo">
+            <img src="cta.png" alt="Living premium con sillón limpio">
+          </div>
+
           <div class="cta-body">
             <h2>¿Querés cotizar la limpieza de tus sillones?</h2>
-            <p>
-              Escribinos y te asesoramos según el tipo de sillón, cantidad de cuerpos y estado general
-              del tapizado para brindarte una atención clara y profesional.
+            <p class="lead">
+              Escribinos y te asesoramos según el tipo de sillón, cantidad de cuerpos y estado general del tapizado para brindarte una atención clara y profesional.
             </p>
 
             <div class="cta-actions">
-              <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
-              <a class="btn btn-outline" href="#inicio-sillones">Volver al inicio</a>
+              <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Hogares</a>
+              <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Corporativo</a>
             </div>
           </div>
         </div>
@@ -906,7 +427,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Cleaning Services · Limpieza profesional de tapizados · CABA y GBA</p>
+      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
     </div>
   </footer>
 

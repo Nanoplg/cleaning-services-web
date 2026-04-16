@@ -13,8 +13,8 @@
   <style>
     :root{
       --bg:#061828;
-      --bg2:#082035;
-      --card:#0b2642;
+      --bg2:#061828;
+      --card:#082035;
       --border:rgba(255,255,255,.08);
       --text:#e7eff8;
       --muted:#90a9c0;
@@ -230,30 +230,39 @@
     .include-icon{width:44px;height:44px;min-width:44px;border-radius:14px;background:rgba(20,184,230,.09);border:1px solid rgba(20,184,230,.20);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;flex:none}
     .include-item h3{font-size:16px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px}
     .include-item p{font-size:15px;color:#d1e0ee;line-height:1.75}
-.resultado-box{
-  max-width:980px;
-  height:360px;
-  margin:0 auto;
-  border-radius:28px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:var(--shadow);
-  background:#0b2642;
-}
 
-.resultado-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+    .resultado-box{
+      max-width:980px;
+      height:360px;
+      margin:0 auto;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      background:var(--card);
+    }
 
-.benefits-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-    .benefit-card{background:linear-gradient(180deg, rgba(6,34,58,.98) 0%, rgba(5,27,48,.98) 100%);border:1px solid rgba(20,184,230,.20);border-radius:26px;padding:28px 24px 24px;box-shadow:var(--shadow);height:100%}
+    .resultado-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .benefit-card{
+      background:var(--card);
+      border:1px solid rgba(20,184,230,.20);
+      border-radius:26px;
+      padding:28px 24px 24px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
     .benefit-card h3{font-size:20px;font-weight:800;line-height:1.18;color:#fff;margin-bottom:14px}
     .benefit-divider{width:66px;height:3px;border-radius:999px;background:var(--accent);margin-bottom:18px}
     .benefit-card p{font-size:15px;color:#d1e0ee;line-height:1.85}
@@ -420,19 +429,21 @@
         </div>
       </div>
     </section>
-<section class="page-section" id="resultado">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Resultado visible</span>
-      <h2>Antes y después del servicio</h2>
-      <p>La diferencia no está solo en cómo se ve. También se nota en la sensación de limpieza, frescura y presencia del tapizado.</p>
-    </div>
 
-    <div class="resultado-box">
-      <img src="antes-despues-sillones.png" alt="Antes y después de limpieza profesional de sillones">
-    </div>
-  </div>
-</section>
+    <section class="page-section" id="resultado">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Resultado visible</span>
+          <h2>Antes y después del servicio</h2>
+          <p>La diferencia no está solo en cómo se ve. También se nota en la sensación de limpieza, frescura y presencia del tapizado.</p>
+        </div>
+
+        <div class="resultado-box">
+          <img src="antes-despues-sillones.png" alt="Antes y después de limpieza profesional de sillones">
+        </div>
+      </div>
+    </section>
+
     <section class="page-section" id="incluye">
       <div class="container">
         <div class="section-head">

@@ -977,6 +977,89 @@
       }
     }
   </style>
+  .hero-paths{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:30px;
+  max-width:720px;
+}
+
+.hero-path-card{
+  position:relative;
+  display:block;
+  padding:20px 20px 18px;
+  border-radius:22px;
+  background:rgba(6,24,40,.62);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(14px);
+  box-shadow:0 18px 42px rgba(0,0,0,.26);
+  transition:.22s ease;
+  overflow:hidden;
+}
+
+.hero-path-card::after{
+  content:"";
+  position:absolute;
+  inset:auto 18px 0 18px;
+  height:3px;
+  border-radius:999px 999px 0 0;
+  background:rgba(20,184,230,.75);
+  transform:scaleX(.35);
+  transform-origin:left;
+  transition:.22s ease;
+}
+
+.hero-path-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(20,184,230,.50);
+  background:rgba(8,32,53,.78);
+}
+
+.hero-path-card:hover::after{
+  transform:scaleX(1);
+}
+
+.hero-path-primary{
+  background:linear-gradient(180deg, rgba(20,184,230,.18), rgba(6,24,40,.66));
+  border-color:rgba(20,184,230,.38);
+}
+
+.path-label{
+  display:block;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#18d9ff;
+  margin-bottom:10px;
+}
+
+.hero-path-card strong{
+  display:block;
+  color:#ffffff;
+  font-size:17px;
+  line-height:1.25;
+  margin-bottom:10px;
+}
+
+.hero-path-card small{
+  display:block;
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  line-height:1.55;
+}
+
+@media (max-width: 768px){
+  .hero-paths{
+    grid-template-columns:1fr;
+    max-width:360px;
+  }
+
+  .hero-path-card{
+    padding:18px;
+  }
+}
 </head>
 
 <body>
@@ -1074,8 +1157,19 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
-            <a class="btn btn-outline" href="#contacto">Ver contactos</a>
+            <div class="hero-paths">
+  <a class="hero-path-card hero-path-primary" href="hogares.html">
+    <span class="path-label">Hogares</span>
+    <strong>Sillones · Colchones · Sillas · Alfombras</strong>
+    <small>Limpieza profesional para tapizados de uso diario, manchas, olores y suciedad acumulada.</small>
+  </a>
+
+  <a class="hero-path-card" href="empresas.html">
+    <span class="path-label">Empresas</span>
+    <strong>Oficinas · Locales · Consorcios · Espacios corporativos</strong>
+    <small>Limpieza profesional para tapizados de alto uso, salas de espera, puestos de trabajo y espacios comerciales.</small>
+  </a>
+</div>
           </div>
         </div>
       </div>

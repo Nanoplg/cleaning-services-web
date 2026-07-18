@@ -259,10 +259,9 @@ button { font: inherit; }
 .guide-hero-copy > p { max-width: 650px; margin: 28px 0 0; color: rgba(255,255,255,.70); font-size: 17px; line-height: 1.75; }
 .guide-hero .button { cursor: pointer; }
 .guide-visual { position: relative; min-height: 500px; display: grid; place-items: center; }
-.guide-orbit { position: absolute; width: 470px; height: 470px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; box-shadow: 0 0 0 76px rgba(255,255,255,.018), 0 0 0 152px rgba(255,255,255,.012); }
-.guide-hero-card { position: relative; width: min(390px, 78vw); aspect-ratio: 1; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.20); border-radius: 50%; background: rgba(255,255,255,.96); box-shadow: 0 38px 100px rgba(0,0,0,.30); }
-.guide-hero-card img { width: 88%; height: 88%; object-fit: cover; }
-.guide-hero-card::after { content: ""; position: absolute; inset: auto 10% 7%; height: 35%; border-radius: 999px; background: linear-gradient(to top, rgba(7,26,43,.94), rgba(7,26,43,.68)); filter: blur(1px); }
+.guide-hero-card { position: relative; width: min(430px, 84vw); aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 2px; background: #fff; box-shadow: 0 38px 100px rgba(0,0,0,.30); }
+.guide-hero-card img { width: 100%; height: 100%; object-fit: contain; }
+.guide-hero-card::after { content: ""; position: absolute; inset: auto 0 0; height: 35%; background: linear-gradient(to top, rgba(7,26,43,.96), rgba(7,26,43,.02)); }
 .guide-hero-card strong, .guide-hero-card span { position: absolute; z-index: 2; color: white; text-align: center; }
 .guide-hero-card strong { bottom: 16%; font-size: 52px; line-height: 1; letter-spacing: -.06em; }
 .guide-hero-card span { bottom: 9%; font-size: 9px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
@@ -323,7 +322,6 @@ button { font: inherit; }
   .guide-hero h1 { font-size: 46px; }
   .guide-hero-copy > p { font-size: 15px; }
   .guide-visual { min-height: 350px; }
-  .guide-orbit { width: 330px; height: 330px; }
   .guide-hero-card { width: 295px; }
   .guide-notice { margin-top: 0; background: white; }
   .guide-notice-row { grid-template-columns: 1fr; gap: 9px; border-radius: 0; box-shadow: none; }

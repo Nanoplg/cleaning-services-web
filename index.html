@@ -624,6 +624,7 @@
       [data-reveal] { opacity: 1; transform: none; }
     }
   </style>
+  <link rel="stylesheet" href="premium-v3.css">
 </head>
 <body>
   <header class="site-header">
@@ -655,11 +656,15 @@
 
   <main>
     <section class="hero" id="inicio">
+      <video class="hero-film" autoplay muted loop playsinline preload="auto" poster="assets/premium/cleaning-opening-poster.webp" aria-hidden="true">
+        <source src="assets/premium/cleaning-opening.webm" type="video/webm">
+        <source src="assets/premium/cleaning-opening.mp4" type="video/mp4">
+      </video>
       <div class="container hero-inner">
         <div class="hero-copy" data-reveal>
-          <p class="hero-kicker">Una empresa · Tres áreas especializadas</p>
-          <h1>La limpieza profesional,<br><span>elevada a otro nivel.</span></h1>
-          <p class="hero-lead">Servicios especializados para hogares y organizaciones, e insumos técnicos para profesionales. Cada necesidad llega directamente al equipo indicado.</p>
+          <p class="hero-kicker">Cleaning Services · Precisión sobre cada fibra</p>
+          <h1>El cuidado profesional,<br><span>llevado a otro nivel.</span></h1>
+          <p class="hero-lead">Cuidamos tapizados en hogares y organizaciones. También desarrollamos insumos, tecnología y conocimiento para profesionales. Tres especialidades, un mismo estándar.</p>
           <div class="hero-actions">
             <a class="button button-light" href="#soluciones">Conocer las soluciones</a>
             <a class="button button-outline" href="#contacto">Ver contactos directos</a>
@@ -755,7 +760,10 @@
           <div class="report-sheet-head"><strong>CLEANING SERVICES</strong><span>Servicio documentado</span></div>
           <h3>Informe post-servicio</h3>
           <p>Registro visual y técnico de la intervención realizada</p>
-          <div class="report-photos"><div class="report-photo">Estado inicial</div><div class="report-photo">Resultado</div></div>
+          <div class="report-photos">
+            <figure class="report-photo"><img src="assets/premium/hogar-antes.webp" alt="Sillón antes del servicio profesional"><figcaption>Estado inicial</figcaption></figure>
+            <figure class="report-photo"><img src="assets/premium/hogar-despues.webp" alt="Sillón después del servicio profesional"><figcaption>Resultado</figcaption></figure>
+          </div>
           <div class="report-data"><div><strong>Tratamiento aplicado</strong><span>Material, proceso técnico y soluciones utilizadas.</span></div><div><strong>Cuidados posteriores</strong><span>Secado, ventilación, uso y mantenimiento recomendados.</span></div><div><strong>Seguimiento</strong><span>Observaciones y trazabilidad del servicio realizado.</span></div></div>
         </article>
       </div>
@@ -787,9 +795,9 @@
           <p class="section-lead">Sin derivaciones ni números ocultos: elegí el área y hablá directamente con el equipo que puede resolver tu necesidad.</p>
         </div>
         <div class="contact-grid" data-reveal>
-          <article class="contact-card"><small>Servicios a domicilio</small><h3>Hogar</h3><a class="contact-phone" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11-5881-7248</a><p>Sillones, sillas, colchones, alfombras y tapizados de vehículos.</p><a class="button button-light" href="https://wa.me/5491158817248?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20para%20mi%20hogar" target="_blank" rel="noopener noreferrer">Hablar con Hogar</a></article>
-          <article class="contact-card"><small>Soluciones corporativas</small><h3>Empresas</h3><a class="contact-phone" href="https://wa.me/5491166395037" target="_blank" rel="noopener noreferrer">11-6639-5037</a><p>Propuestas para oficinas, instituciones, hoteles, locales y flotas.</p><a class="button button-light" href="https://wa.me/5491166395037?text=Hola%2C%20quiero%20solicitar%20una%20propuesta%20para%20una%20empresa" target="_blank" rel="noopener noreferrer">Hablar con Empresas</a></article>
-          <article class="contact-card"><small>Insumos y soporte técnico</small><h3>Provider</h3><a class="contact-phone" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11-6011-4067</a><p>Productos, protocolos y orientación para profesionales del sector.</p><a class="button button-light" href="https://wa.me/5491160114067?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Cleaning%20Services%20Provider" target="_blank" rel="noopener noreferrer">Hablar con Provider</a></article>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-hogar-oficial.webp" alt="Cleaning Services Hogar"></div><small>Servicios a domicilio</small><h3>Hogar</h3><a class="contact-phone" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11-5881-7248</a><a class="contact-email" href="mailto:hogar@cleaningservices.com.ar">hogar@cleaningservices.com.ar</a><p>Sillones, sillas, colchones, alfombras y tapizados de vehículos en tu domicilio.</p><a class="button button-light" href="https://wa.me/5491158817248?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20para%20mi%20hogar" target="_blank" rel="noopener noreferrer">Hablar con Hogar</a></article>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-empresas-oficial.webp" alt="Cleaning Services Empresas"></div><small>Soluciones corporativas</small><h3>Empresas</h3><a class="contact-phone" href="https://wa.me/5491166395037" target="_blank" rel="noopener noreferrer">11-6639-5037</a><a class="contact-email" href="mailto:empresas@cleaningservices.com.ar">empresas@cleaningservices.com.ar</a><p>Propuestas planificadas para oficinas, instituciones, hoteles, locales y flotas.</p><a class="button button-light" href="https://wa.me/5491166395037?text=Hola%2C%20quiero%20solicitar%20una%20propuesta%20para%20una%20empresa" target="_blank" rel="noopener noreferrer">Hablar con Empresas</a></article>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-provider-oficial.webp" alt="Cleaning Services Provider"></div><small>Desarrollo profesional</small><h3>Provider</h3><a class="contact-phone" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11-6011-4067</a><a class="contact-email" href="mailto:provider@cleaningservices.com.ar">provider@cleaningservices.com.ar</a><p>Productos, máquinas, capacitación, protocolos y desarrollo de negocios especializados.</p><a class="button button-light" href="https://wa.me/5491160114067?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Cleaning%20Services%20Provider" target="_blank" rel="noopener noreferrer">Hablar con Provider</a></article>
         </div>
         <div class="contact-social"><span>Instagram general: <strong><a href="https://www.instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a></strong></span><span>Canning · Ezeiza · Gran Buenos Aires</span></div>
       </div>

@@ -1,0 +1,242 @@
+/* Cleaning Services — premium editorial refinement */
+
+:root {
+  --premium-ink: #061522;
+  --premium-navy: #071f32;
+  --premium-teal: #13b8ca;
+  --premium-paper: #f3f4f2;
+  --premium-muted: #3f5562;
+  --premium-line: rgba(6, 21, 34, .14);
+}
+
+/* Shared legibility */
+body { color: var(--premium-ink); }
+.section-lead,
+.section-head > p,
+.service-card p,
+.benefit p,
+.product-card p,
+.report-copy > p,
+.report-point p,
+.faq-list p,
+.guide-notice p,
+.material-card > p,
+.material-card dd,
+.material-alert { color: var(--premium-muted); }
+
+.section-lead,
+.section-head > p { font-size: clamp(16px, 1.2vw, 18px); line-height: 1.75; }
+.service-card p,
+.benefit p,
+.product-card p,
+.report-copy > p { font-size: 15px; line-height: 1.72; }
+.report-point p,
+.faq-list p { font-size: 14px; line-height: 1.72; }
+.overline,
+.section-label,
+.channel-kicker { font-size: 11px; letter-spacing: .18em; }
+
+/* Homepage: cinematic opening */
+.hero { min-height: calc(100svh - var(--header-h)); background: #02080e; }
+.hero::before { display: none; }
+.hero::after {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(2, 10, 17, .91) 0%, rgba(2, 10, 17, .67) 43%, rgba(2, 10, 17, .18) 74%, rgba(2, 10, 17, .09) 100%),
+    linear-gradient(0deg, rgba(2, 10, 17, .72) 0%, transparent 46%);
+}
+.hero-film {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-copy { max-width: 850px; }
+.hero h1 { max-width: 850px; font-size: clamp(52px, 6.3vw, 96px); line-height: .94; }
+.hero-lead { max-width: 670px; color: rgba(255,255,255,.88); font-size: clamp(16px, 1.35vw, 19px); }
+.hero-kicker { color: #a9f3f6; }
+.hero-actions .button { min-height: 54px; padding-inline: 28px; }
+
+/* Editorial unit cards: the isologos are identity, not layout geometry */
+.units-grid { gap: 24px; }
+.unit { border-radius: 2px; box-shadow: 0 28px 90px rgba(7,22,35,.08); }
+.unit-logo { min-height: 320px; padding: 28px; background: #fff; }
+.unit-logo img { mix-blend-mode: multiply; }
+.unit-copy { padding: 34px; }
+.unit p { color: var(--premium-muted); font-size: 15px; }
+
+/* Real visual evidence in reports */
+.report-photo,
+.report-visual {
+  position: relative;
+  min-height: 170px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #dfe7e8;
+}
+.report-photo img,
+.report-visual img { width: 100%; height: 100%; min-height: 170px; object-fit: cover; }
+.report-photo figcaption,
+.report-visual figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 30px 15px 13px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(2,11,18,.84));
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.theme-empresas .report-comparison .report-photo {
+  min-height: 170px;
+  align-items: flex-end;
+  padding: 34px 15px 14px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,.7);
+  box-shadow: inset 0 -65px 55px -36px rgba(1,10,17,.85);
+}
+.theme-empresas .report-comparison .report-photo:first-child { background-image: url("assets/premium/empresas-antes.webp"); }
+.theme-empresas .report-comparison .report-photo:last-child { background-image: url("assets/premium/empresas-despues.webp"); }
+.report-sheet > p,
+.report-document > p { color: #405765; font-size: 13px; }
+.report-data strong,
+.report-tech strong { font-size: 13px; }
+.report-data span,
+.report-tech span { color: #405765; font-size: 11px; }
+.report-list p { color: var(--premium-muted); font-size: 14px; }
+
+/* Cleaning Lab */
+.lab-link { padding: 24px 0; }
+.lab-link strong { font-size: 17px; }
+.lab-link small { color: var(--premium-muted); font-size: 14px; line-height: 1.6; }
+
+/* Premium direct-contact experience */
+.contacts {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 14%, rgba(22,185,204,.13), transparent 27%),
+    linear-gradient(145deg, #061522, #0b2b40 68%, #082133);
+}
+.contacts::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.025), transparent);
+}
+.contacts .section-lead { color: rgba(255,255,255,.78); }
+.contact-grid { gap: 16px; border: 0; background: transparent; }
+.contact-card {
+  position: relative;
+  min-height: 440px;
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,.30);
+  background: #f7f8f6;
+  backdrop-filter: blur(12px);
+  transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+.contact-card:hover { transform: translateY(-5px); border-color: rgba(151,237,244,.64); background: #fff; }
+.contact-logo { height: 86px; display: flex; align-items: center; margin-bottom: 26px; }
+.contact-logo img { width: 155px; height: 86px; object-fit: contain; mix-blend-mode: multiply; filter: saturate(.85) contrast(1.04); }
+.contact-card small { color: #087f94; font-size: 10px; }
+.contact-card h3 { margin-top: 12px; font-size: 34px; }
+.contact-card h3,
+.contact-phone { color: var(--premium-ink); }
+.contact-phone { font-size: 23px; }
+.contact-email { display: inline-block; margin-top: 8px; color: #425967; font-size: 13px; }
+.contact-card p { color: #425967; font-size: 15px; line-height: 1.7; }
+.contact-card .button { min-height: 51px; }
+.contact-card .button-light { border-color: var(--premium-ink); background: var(--premium-ink); color: #fff; }
+.contact-social { color: rgba(255,255,255,.80); font-size: 14px; }
+
+/* Channel pages: photographic hero, no oversized logo tile */
+.channel-hero { min-height: 720px; }
+.hero-layout { min-height: 720px; grid-template-columns: .92fr 1.08fr; gap: clamp(46px, 6vw, 92px); }
+.hero-copy > p { color: rgba(255,255,255,.82); font-size: 18px; }
+.symbol-stage { min-height: 510px; }
+.symbol-card {
+  width: min(660px, 48vw);
+  aspect-ratio: 16 / 11;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 2px;
+  background: #071b29;
+  box-shadow: 0 46px 120px rgba(0,0,0,.38);
+}
+.symbol-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(1,10,17,.28));
+}
+.symbol-card img { object-fit: cover; filter: saturate(.9) contrast(1.03); }
+.trust-item span { color: #405765; font-size: 13px; line-height: 1.6; }
+.service-card { min-height: 310px; padding: 34px; border-radius: 2px; background: #fff; }
+.service-icon { border-radius: 2px; }
+.service-card a { font-size: 11px; }
+.benefit { padding: 34px; border-radius: 2px; }
+.product-card { min-height: 350px; border-radius: 2px; }
+.method-step p,
+.split-copy p { color: rgba(255,255,255,.73); font-size: 14px; }
+.method-step h3 { font-size: 19px; }
+.report-document { border-radius: 2px; }
+
+/* Provider is a complete business platform */
+.provider-platform .service-card { min-height: 325px; }
+
+/* Cleaning Lab belongs to the general company */
+body.theme-general { --accent: #10aabd; --accent-soft: #e5f6f7; --accent-rgb: 16,170,189; }
+.guide-hero-copy > p { color: rgba(255,255,255,.88); font-size: 18px; }
+.guide-hero-card { aspect-ratio: 16 / 11; }
+.guide-hero-card img { object-fit: contain; mix-blend-mode: multiply; }
+.guide-hero-card strong { display: none; }
+.guide-hero-card span { bottom: 8%; font-size: 11px; }
+.guide-hero .button-secondary { border-color: rgba(255,255,255,.72); background: rgba(255,255,255,.12); color: #fff; }
+.guide-hero .button-secondary:hover { background: #fff; color: var(--premium-ink); }
+.guide-notice p { font-size: 15px; }
+.guide-search span,
+.guide-count,
+.material-card small { font-size: 10px; }
+.material-card > p { font-size: 15px; }
+.material-card dt { font-size: 10px; }
+.material-card dd,
+.material-alert { font-size: 13px; }
+.first-steps-grid p { color: rgba(255,255,255,.74); font-size: 14px; }
+
+@media (max-width: 980px) {
+  .symbol-card { width: min(720px, 90vw); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { min-height: 360px; }
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: clamp(46px, 14vw, 66px); }
+  .hero-film { object-position: 58% center; }
+  .hero-actions { width: 100%; }
+  .hero-actions .button { width: 100%; }
+  .unit-logo { min-height: 260px; }
+  .contact-card { min-height: 0; padding: 28px; }
+  .contact-logo { height: 72px; }
+  .contact-logo img { height: 72px; }
+  .report-photos,
+  .report-comparison { grid-template-columns: 1fr; }
+  .report-photo,
+  .report-photo img,
+  .report-visual,
+  .report-visual img { min-height: 180px; }
+  .symbol-card { width: min(420px, 94vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-film { display: none; }
+  .hero { background: #061522 url("assets/premium/cleaning-opening-poster.webp") center / cover no-repeat; }
+}

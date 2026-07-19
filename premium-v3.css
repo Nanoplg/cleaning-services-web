@@ -193,6 +193,44 @@ body { color: var(--premium-ink); }
 /* Provider is a complete business platform */
 .provider-platform .service-card { min-height: 325px; }
 
+/* Bio Active Pro — cinematic product presentation */
+.bio-active-feature {
+  position: relative;
+  min-height: min(82svh, 880px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: #020810;
+  color: #fff;
+}
+.bio-active-image,
+.bio-active-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bio-active-image { object-fit: cover; object-position: center; }
+.bio-active-shade {
+  background:
+    linear-gradient(90deg, rgba(1,7,13,.98) 0%, rgba(1,7,13,.82) 34%, rgba(1,7,13,.2) 68%, rgba(1,7,13,.05) 100%),
+    linear-gradient(0deg, rgba(1,7,13,.72), transparent 38%);
+}
+.bio-active-content { position: relative; z-index: 2; padding-block: 110px; }
+.bio-active-content .overline { color: #6de5ed; }
+.bio-active-content h2 {
+  max-width: 620px;
+  margin: 18px 0 20px;
+  color: #fff;
+  font-size: clamp(58px, 7vw, 112px);
+  line-height: .9;
+  letter-spacing: -.055em;
+}
+.bio-active-content p {
+  max-width: 560px;
+  color: rgba(255,255,255,.86);
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.65;
+}
+.bio-active-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
+.bio-active-link { color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.bio-active-link span { display: inline-block; margin-left: 8px; color: #61dce7; }
+
 /* Cleaning Lab belongs to the general company */
 body.theme-general { --accent: #10aabd; --accent-soft: #e5f6f7; --accent-rgb: 16,170,189; }
 .guide-hero-copy > p { color: rgba(255,255,255,.88); font-size: 18px; }
@@ -375,6 +413,15 @@ body.theme-general { --accent: #10aabd; --accent-soft: #e5f6f7; --accent-rgb: 16
   .hero-film-signature { right: 18px; bottom: 20px; padding-left: 0; }
   .hero-film-signature::before, .hero-film-signature span { display: none; }
   .hero-film-signature strong { font-size: 10px; }
+  .bio-active-feature { min-height: 760px; align-items: end; }
+  .bio-active-image { object-position: 66% center; }
+  .bio-active-shade {
+    background: linear-gradient(0deg, rgba(1,7,13,.98) 0%, rgba(1,7,13,.82) 42%, rgba(1,7,13,.08) 78%);
+  }
+  .bio-active-content { padding-block: 360px 62px; }
+  .bio-active-content h2 { font-size: clamp(50px, 16vw, 70px); }
+  .bio-active-actions { align-items: stretch; flex-direction: column; gap: 20px; }
+  .bio-active-actions .button { width: 100%; }
   .contact-card { min-height: 0; padding: 34px 25px 28px; }
   .contact-logo { height: 104px; }
   .contact-logo img { width: 205px; height: 102px; }

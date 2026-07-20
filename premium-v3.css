@@ -6,6 +6,32 @@
 .hero::before { display: none !important; animation: none !important; }
 img { max-width: 100%; }
 
+/* Página principal: reducir espacios excesivos entre bloques */
+body:not([class*="theme-"]) .section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+body:not([class*="theme-"]) #soluciones {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+body:not([class*="theme-"]) #informes {
+  padding-top: 52px !important;
+  padding-bottom: 40px !important;
+}
+body:not([class*="theme-"]) #lab {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+body:not([class*="theme-"]) #contacto {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+body:not([class*="theme-"]) .closing {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
 /* Botones consistentes entre Hogar, Empresas y Provider */
 .theme-hogar .hero-actions,
 .theme-provider .hero-actions,
@@ -166,6 +192,15 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 760px) {
+  body:not([class*="theme-"]) .section,
+  body:not([class*="theme-"]) #soluciones,
+  body:not([class*="theme-"]) #informes,
+  body:not([class*="theme-"]) #lab,
+  body:not([class*="theme-"]) #contacto,
+  body:not([class*="theme-"]) .closing {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
   .theme-hogar .hero-layout,
   .theme-provider .hero-layout,
   .theme-empresas .hero-layout { padding-bottom: 62px !important; }

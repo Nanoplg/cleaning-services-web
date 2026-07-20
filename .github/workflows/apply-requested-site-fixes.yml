@@ -1,0 +1,24 @@
+name: Apply requested site fixes
+
+on:
+  push:
+    branches:
+      - codex/premium-redesign-v1
+
+permissions:
+  contents: write
+
+jobs:
+  apply-fixes:
+    if: ${{ !contains(github.event.head_commit.message, '[site-fixes-applied]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout redesign branch
+        uses: actions/checkout@v4
+        with:
+          ref: codex/premium-redesign-v1
+          fetch-depth: 0
+
+      - name: Apply requested corrections
+        shell: bash
+        run: |

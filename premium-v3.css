@@ -136,6 +136,10 @@ img { max-width: 100%; }
   object-fit: contain;
   object-position: center;
 }
+.client-logo img[src$="starbucks.webp"] { transform: scale(1.10); }
+.client-logo img[src$="la-veneciana.webp"] { transform: scale(1.16); }
+.client-logo img[src$="toyota.webp"] { transform: scale(1.16); }
+.client-logo img[src$="hotel-continental.webp"] { transform: scale(1.10); }
 .clients-marquee:hover .clients-track { animation-play-state: paused; }
 @keyframes clientsLoop {
   from { transform: translateX(0); }

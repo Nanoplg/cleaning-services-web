@@ -22,3 +22,210 @@ jobs:
       - name: Apply requested corrections
         shell: bash
         run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          index = Path('index.html')
+          text = index.read_text(encoding='utf-8')
+          text = text.replace(
+              '<video class="hero-film" autoplay muted playsinline preload="auto"',
+              '<video class="hero-film" autoplay muted loop playsinline preload="auto"'
+          )
+          text = re.sub(
+              r'\s*<div class="hero-film-signature"[^>]*>.*?</div>',
+              '',
+              text,
+              count=1,
+              flags=re.S,
+          )
+          index.write_text(text, encoding='utf-8')
+
+          css = Path('premium-v3.css')
+          css_text = css.read_text(encoding='utf-8')
+          marker = '/* Requested corrections — July 2026 */'
+          if marker not in css_text:
+              css_text += r'''
+
+/* Requested corrections — July 2026 */
+.hero-film-signature { display: none !important; }
+
+/* Mostrar los envases completos y con una escala equilibrada */
+.product-feature {
+  min-height: 660px;
+}
+.product-feature-image {
+  object-fit: contain;
+  object-position: 76% center;
+  transform: scale(.82);
+  transform-origin: 76% center;
+  background: #020810;
+}
+.product-feature-shade {
+  background:
+    linear-gradient(90deg, rgba(1,7,13,.98) 0%, rgba(1,7,13,.87) 36%, rgba(1,7,13,.24) 69%, rgba(1,7,13,.08) 100%),
+    linear-gradient(0deg, rgba(1,7,13,.70), transparent 42%);
+}
+
+/* Logo final legible, sin inversión ni deformación */
+.footer-brand img {
+  width: 230px;
+  height: auto;
+  max-height: 112px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fff !important;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1;
+}
+
+/* Empresas que confiaron en Cleaning Services */
+.clients-section {
+  overflow: hidden;
+  padding: 82px 0;
+  border-top: 1px solid rgba(7,26,43,.10);
+  border-bottom: 1px solid rgba(7,26,43,.10);
+  background: #fff;
+}
+.clients-heading {
+  width: var(--container);
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.clients-heading span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.clients-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+.clients-marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.clients-track {
+  display: flex;
+  width: max-content;
+  animation: clientsLoop 30s linear infinite;
+}
+.clients-group {
+  display: flex;
+  gap: 18px;
+  padding-right: 18px;
+}
+.client-logo {
+  width: 210px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid rgba(7,26,43,.12);
+  border-radius: 18px;
+  background: #f8faf9;
+  color: #071a2b;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+.client-logo small {
+  display: block;
+  color: #556a76;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.clients-marquee:hover .clients-track { animation-play-state: paused; }
+@keyframes clientsLoop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 760px) {
+  .product-feature { min-height: 650px; }
+  .product-feature-image {
+    object-position: center 14%;
+    transform: scale(.70);
+    transform-origin: center 14%;
+  }
+  .product-feature-content { padding-block: 320px 58px; }
+  .clients-section { padding: 64px 0; }
+  .clients-heading { width: min(100% - 34px, 1180px); margin-bottom: 28px; }
+  .client-logo { width: 168px; height: 96px; font-size: 15px; }
+  .footer-brand img { width: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-track { animation: none; }
+}
+'''
+          css.write_text(css_text, encoding='utf-8')
+
+          js = Path('channel.js')
+          js_text = js.read_text(encoding='utf-8')
+          js_marker = "  const corporateClients = ["
+          if js_marker not in js_text:
+              injection = r'''
+
+  const corporateClients = [
+    'Café Martínez',
+    'Panning',
+    'La Veneciana',
+    'Starbucks',
+    'YPF',
+    'Hotel Continental',
+    'RE/MAX',
+    'Toyota',
+    'Fiat'
+  ];
+
+  if (document.body.classList.contains('theme-empresas')) {
+    const trustBar = document.querySelector('.trust-bar');
+    if (trustBar) {
+      const section = document.createElement('section');
+      section.className = 'clients-section';
+      section.setAttribute('aria-label', 'Empresas que confiaron en Cleaning Services');
+
+      const card = name => `<div class="client-logo" role="listitem"><span>${name}</span></div>`;
+      const group = corporateClients.map(card).join('');
+
+      section.innerHTML = `
+        <div class="clients-heading">
+          <span>Experiencia corporativa</span>
+          <h2>Empresas que confiaron en nuestro trabajo.</h2>
+        </div>
+        <div class="clients-marquee" role="list">
+          <div class="clients-track">
+            <div class="clients-group">${group}</div>
+            <div class="clients-group" aria-hidden="true">${group}</div>
+          </div>
+        </div>`;
+
+      trustBar.insertAdjacentElement('afterend', section);
+    }
+  }
+'''
+              js_text = js_text.rsplit('\n})();', 1)[0] + injection + '\n})();\n'
+          js.write_text(js_text, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/apply-requested-site-fixes.yml
+
+          git config user.name "Cleaning Services Web Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html premium-v3.css channel.js .github/workflows/apply-requested-site-fixes.yml
+          git commit -m "Corregir hero, productos, logo y clientes [site-fixes-applied]"
+          git push origin codex/premium-redesign-v1

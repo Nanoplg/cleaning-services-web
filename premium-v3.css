@@ -1,21 +1,15 @@
 @import url("premium-v3-base.css");
 
-/* Correcciones solicitadas — julio 2026 */
-/* Conservar el video cinematográfico original de la portada */
-.hero-film {
-  display: block !important;
-}
-.hero-film-signature {
-  display: none !important;
-}
-.hero::before {
-  display: none !important;
-  animation: none !important;
-}
+/* Ajustes generales y estabilidad visual */
+.hero-film { display: block !important; }
+.hero-film-signature { display: none !important; }
+.hero::before { display: none !important; animation: none !important; }
+img { max-width: 100%; }
 
-/* Botones proporcionados como en Empresas */
+/* Botones consistentes entre Hogar, Empresas y Provider */
 .theme-hogar .hero-actions,
-.theme-provider .hero-actions {
+.theme-provider .hero-actions,
+.theme-empresas .hero-actions {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center;
@@ -23,17 +17,31 @@
   gap: 12px !important;
 }
 .theme-hogar .hero-actions .button,
-.theme-provider .hero-actions .button {
+.theme-provider .hero-actions .button,
+.theme-empresas .hero-actions .button {
   width: auto !important;
   min-width: 188px;
   min-height: 52px;
   padding-inline: 24px;
+  white-space: nowrap;
 }
 
-/* Envases completos, proporcionados y fáciles de identificar */
-.product-feature {
-  min-height: 660px !important;
-}
+/* Evitar superposiciones entre hero y tarjetas */
+.theme-hogar .channel-hero,
+.theme-provider .channel-hero,
+.theme-empresas .channel-hero { overflow: hidden; }
+.theme-hogar .hero-layout,
+.theme-provider .hero-layout,
+.theme-empresas .hero-layout { padding-bottom: 100px !important; }
+.theme-hogar .hero-note,
+.theme-provider .hero-note,
+.theme-empresas .hero-note { position: relative; z-index: 2; }
+.theme-hogar .trust-bar,
+.theme-provider .trust-bar,
+.theme-empresas .trust-bar { margin-top: -34px; }
+
+/* Envases completos y proporcionados */
+.product-feature { min-height: 660px !important; overflow: hidden; }
 .product-feature-image {
   object-fit: contain !important;
   object-position: 76% center !important;
@@ -47,7 +55,7 @@
     linear-gradient(0deg, rgba(1,7,13,.70), transparent 42%) !important;
 }
 
-/* Logo final legible, sin inversión ni deformación */
+/* Logos de pie de página legibles */
 .footer-brand img {
   width: 230px !important;
   height: auto !important;
@@ -92,8 +100,8 @@
 .clients-marquee {
   overflow: hidden;
   width: 100%;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
 .clients-track {
   display: flex;
@@ -108,58 +116,83 @@
   padding-right: 18px;
 }
 .client-logo {
-  width: 118px;
-  height: 118px;
-  flex: 0 0 118px;
+  width: 128px;
+  height: 128px;
+  flex: 0 0 128px;
   display: grid;
   place-items: center;
-  padding: 18px;
+  padding: 12px;
   overflow: hidden;
   border: 1px solid rgba(7,26,43,.12);
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 16px 38px rgba(7,26,43,.08);
 }
-.client-logo img {
+.client-logo-image {
   display: block;
-  width: 76px;
-  height: 76px;
-  max-width: 76px;
-  max-height: 76px;
-  object-fit: contain;
-  image-rendering: auto;
-  filter: none !important;
-  opacity: 1 !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-image: url("assets/clients/logos-source.svg");
+  background-repeat: no-repeat;
+  background-size: 332.8125% 346.875%;
 }
+.client-logo-cafe-martinez { background-position: 6.711% 6.962%; }
+.client-logo-panning { background-position: 52.349% 6.962%; }
+.client-logo-la-veneciana { background-position: 97.987% 6.962%; }
+.client-logo-starbucks { background-position: 6.711% 50%; }
+.client-logo-ypf { background-position: 52.349% 50%; }
+.client-logo-hotel-continental { background-position: 97.987% 50%; }
+.client-logo-remax { background-position: 6.711% 93.038%; }
+.client-logo-toyota { background-position: 52.349% 93.038%; }
+.client-logo-fiat { background-position: 97.987% 93.038%; }
 .clients-marquee:hover .clients-track { animation-play-state: paused; }
 @keyframes clientsLoop {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
+/* Correcciones de estructura compartida */
+.symbol-card img { object-fit: contain !important; }
+.contact-logo img,
+.brand img,
+.unit-logo img { object-fit: contain !important; }
+.report-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 980px) {
+  .theme-hogar .hero-layout,
+  .theme-provider .hero-layout,
+  .theme-empresas .hero-layout { padding-bottom: 72px !important; }
+  .theme-hogar .trust-bar,
+  .theme-provider .trust-bar,
+  .theme-empresas .trust-bar { margin-top: 0 !important; }
+}
+
 @media (max-width: 760px) {
-  .theme-hogar .hero-layout {
-    padding-bottom: 92px !important;
-  }
-  .theme-hogar .hero-note {
-    margin-bottom: 0 !important;
-  }
-  .theme-hogar .trust-bar {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
+  .theme-hogar .hero-layout,
+  .theme-provider .hero-layout,
+  .theme-empresas .hero-layout { padding-bottom: 62px !important; }
   .theme-hogar .hero-actions,
-  .theme-provider .hero-actions {
+  .theme-provider .hero-actions,
+  .theme-empresas .hero-actions {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
+    width: 100%;
     gap: 12px !important;
   }
   .theme-hogar .hero-actions .button,
-  .theme-provider .hero-actions .button {
+  .theme-provider .hero-actions .button,
+  .theme-empresas .hero-actions .button {
     width: 100% !important;
     min-width: 0;
-    min-height: 52px;
-    padding-inline: 12px;
+    min-height: 50px;
+    padding-inline: 16px;
+  }
+  .theme-hogar .hero-note,
+  .theme-provider .hero-note,
+  .theme-empresas .hero-note {
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
   }
   .product-feature { min-height: 650px !important; }
   .product-feature-image {
@@ -168,29 +201,17 @@
     transform-origin: center 14% !important;
   }
   .product-feature-content { padding-block: 320px 58px !important; }
-  .clients-section { padding: 64px 0; }
-  .clients-heading { width: min(100% - 34px, 1180px); margin-bottom: 28px; }
+  .clients-section { padding: 62px 0; }
+  .clients-heading { width: min(100% - 34px, 1180px); margin-bottom: 26px; }
+  .clients-heading h2 { font-size: clamp(32px, 10vw, 42px); }
   .client-logo {
-    width: 104px;
-    height: 104px;
-    flex-basis: 104px;
-    padding: 15px;
+    width: 108px;
+    height: 108px;
+    flex-basis: 108px;
+    padding: 10px;
     border-radius: 15px;
   }
-  .client-logo img {
-    width: 68px;
-    height: 68px;
-    max-width: 68px;
-    max-height: 68px;
-  }
   .footer-brand img { width: 220px !important; }
-}
-
-@media (max-width: 430px) {
-  .theme-hogar .hero-actions,
-  .theme-provider .hero-actions {
-    grid-template-columns: 1fr !important;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,281 @@
+/* Ajustes aprobados para la página Hogar — julio 2026 */
+
+/* Ritmo vertical más compacto y consistente */
+.theme-hogar .section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+.theme-hogar #servicios {
+  padding-top: 64px;
+  padding-bottom: 62px;
+}
+.theme-hogar .section-head {
+  gap: 56px;
+  margin-bottom: 34px;
+}
+.theme-hogar .report-proof {
+  padding: 66px 0;
+}
+.theme-hogar .report-layout {
+  gap: clamp(44px, 6vw, 76px);
+}
+.theme-hogar .channel-cta {
+  padding: 70px 0;
+}
+
+/* Tarjetas de servicios — estética premium, sin letras genéricas */
+.theme-hogar .service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.theme-hogar .service-card {
+  min-height: 350px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 26, 43, .11);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 46px rgba(7, 26, 43, .055);
+}
+.theme-hogar .service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(22, 185, 204, .32);
+  box-shadow: 0 28px 72px rgba(7, 26, 43, .11);
+}
+.theme-hogar .service-visual {
+  position: relative;
+  height: 138px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 23px;
+  overflow: hidden;
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at 72% 25%, rgba(22, 185, 204, .20), transparent 30%),
+    linear-gradient(145deg, #f8fbfb 0%, #edf5f5 100%);
+}
+.theme-hogar .service-visual::before {
+  content: "";
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  border: 1px solid rgba(7, 154, 181, .14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .55);
+}
+.theme-hogar .service-visual svg {
+  position: relative;
+  z-index: 1;
+  width: 112px;
+  height: 92px;
+  fill: none;
+  stroke: #0a3853;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 9px 14px rgba(7, 26, 43, .08));
+}
+.theme-hogar .service-card h3 {
+  margin: 0 12px 10px;
+  font-size: 22px;
+}
+.theme-hogar .service-card p {
+  margin: 0 12px;
+  font-size: 12.5px;
+  line-height: 1.72;
+}
+.theme-hogar .service-action {
+  width: fit-content;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: auto 12px 4px;
+  padding: 0 15px;
+  border: 1px solid rgba(7, 26, 43, .22);
+  border-radius: 999px;
+  color: var(--ink) !important;
+  font-size: 9px !important;
+  letter-spacing: .09em !important;
+  transition: background .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
+}
+.theme-hogar .service-action b {
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 600;
+}
+.theme-hogar .service-action:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff !important;
+  transform: translateX(3px);
+}
+
+/* Informe post-servicio — contenido real, presentación más premium */
+.theme-hogar .report-proof {
+  background:
+    radial-gradient(circle at 82% 15%, rgba(22, 185, 204, .11), transparent 26%),
+    #eef3f3;
+}
+.theme-hogar .report-copy > p {
+  margin-top: 22px;
+  margin-bottom: 24px;
+}
+.theme-hogar .report-points {
+  gap: 10px;
+  border-top: 0;
+}
+.theme-hogar .report-point {
+  grid-template-columns: 42px 1fr;
+  align-items: start;
+  padding: 14px 16px;
+  border: 1px solid rgba(7, 26, 43, .10);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .72);
+}
+.theme-hogar .report-point span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(22, 185, 204, .13);
+  color: #078fa7;
+}
+.theme-hogar .report-document {
+  width: min(540px, 100%);
+  min-height: 600px;
+  padding: 30px;
+  border: 1px solid rgba(7, 26, 43, .10);
+  border-radius: 22px;
+  box-shadow: 0 34px 90px rgba(7, 26, 43, .16);
+  transform: none;
+}
+.theme-hogar .report-document::before {
+  inset: 11px;
+  border-radius: 15px;
+}
+.theme-hogar .report-document-head {
+  padding-bottom: 18px;
+  border-bottom-width: 2px;
+}
+.theme-hogar .report-document-head strong {
+  font-size: 11px;
+}
+.theme-hogar .report-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #e6f7f8;
+  color: #078fa7 !important;
+}
+.theme-hogar .report-document h3 {
+  margin-top: 22px;
+  font-size: 28px;
+}
+.theme-hogar .report-comparison {
+  gap: 10px;
+  margin: 22px 0;
+}
+.theme-hogar .report-photo {
+  position: relative;
+  min-height: 170px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #dfe8e9;
+}
+.theme-hogar .report-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.theme-hogar .report-photo figcaption {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: rgba(7, 26, 43, .90);
+  color: #fff;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+.theme-hogar .report-photo:last-child figcaption {
+  background: rgba(7, 154, 181, .94);
+}
+.theme-hogar .report-tech {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+.theme-hogar .report-tech div {
+  min-height: 96px;
+  padding: 14px;
+  border-left: 0;
+  border: 1px solid rgba(7, 26, 43, .08);
+  border-radius: 13px;
+  background: #f6f9f9;
+}
+.theme-hogar .report-tech div:last-child {
+  grid-column: 1 / -1;
+  min-height: 0;
+}
+.theme-hogar .report-tech strong {
+  color: #08314b;
+  font-size: 10px;
+  letter-spacing: .03em;
+}
+.theme-hogar .report-tech span {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+}
+
+@media (max-width: 980px) {
+  .theme-hogar .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .theme-hogar .report-layout {
+    grid-template-columns: 1fr;
+  }
+  .theme-hogar .report-document {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .theme-hogar .section,
+  .theme-hogar #servicios {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+  .theme-hogar .section-head {
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+  .theme-hogar .service-grid {
+    grid-template-columns: 1fr;
+  }
+  .theme-hogar .service-card {
+    min-height: 320px;
+  }
+  .theme-hogar .report-proof {
+    padding: 48px 0;
+  }
+  .theme-hogar .report-document {
+    padding: 22px;
+    border-radius: 18px;
+  }
+  .theme-hogar .report-tech {
+    grid-template-columns: 1fr;
+  }
+  .theme-hogar .report-tech div:last-child {
+    grid-column: auto;
+  }
+  .theme-hogar .channel-cta {
+    padding: 52px 0;
+  }
+}

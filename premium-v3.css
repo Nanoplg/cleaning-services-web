@@ -1,29 +1,16 @@
 @import url("premium-v3-base.css");
 
 /* Correcciones solicitadas — julio 2026 */
-.hero-film,
+/* Conservar el video cinematográfico original de la portada */
+.hero-film {
+  display: block !important;
+}
 .hero-film-signature {
   display: none !important;
 }
-
-/* Secuencia visual continua en la portada */
 .hero::before {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: -2 !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  animation: cleaningHeroLoop 24s step-end infinite !important;
-}
-@keyframes cleaningHeroLoop {
-  0%, 24.99% { background-image: url("assets/premium/cleaning-opening-poster.webp"); }
-  25%, 49.99% { background-image: url("assets/premium/film-extraccion.webp"); }
-  50%, 74.99% { background-image: url("assets/premium/film-fibra.webp"); }
-  75%, 99.99% { background-image: url("assets/hero-luxury.webp"); }
-  100% { background-image: url("assets/premium/cleaning-opening-poster.webp"); }
+  display: none !important;
+  animation: none !important;
 }
 
 /* Envases completos, proporcionados y fáciles de identificar */
@@ -128,7 +115,6 @@
 }
 
 @media (max-width: 760px) {
-  .hero::before { background-position: center !important; }
   .product-feature { min-height: 650px !important; }
   .product-feature-image {
     object-position: center 14% !important;

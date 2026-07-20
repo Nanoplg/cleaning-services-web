@@ -28,15 +28,15 @@
   document.querySelectorAll('[data-reveal]').forEach(element => observer.observe(element));
 
   const corporateClients = [
-    { name: 'Café Martínez', src: 'assets/clients/cafe-martinez.svg' },
-    { name: 'Panning', src: 'assets/clients/panning.svg' },
-    { name: 'La Veneciana', src: 'assets/clients/la-veneciana.svg' },
-    { name: 'Starbucks', src: 'assets/clients/starbucks.svg' },
-    { name: 'YPF', src: 'assets/clients/ypf.svg' },
-    { name: 'Hotel Continental', src: 'assets/clients/hotel-continental.svg' },
-    { name: 'RE/MAX', src: 'assets/clients/remax.svg' },
-    { name: 'Toyota', src: 'assets/clients/toyota.svg' },
-    { name: 'Fiat', src: 'assets/clients/fiat.svg' }
+    { name: 'Café Martínez', slug: 'cafe-martinez' },
+    { name: 'Panning', slug: 'panning' },
+    { name: 'La Veneciana', slug: 'la-veneciana' },
+    { name: 'Starbucks', slug: 'starbucks' },
+    { name: 'YPF', slug: 'ypf' },
+    { name: 'Hotel Continental', slug: 'hotel-continental' },
+    { name: 'RE/MAX', slug: 'remax' },
+    { name: 'Toyota', slug: 'toyota' },
+    { name: 'Fiat', slug: 'fiat' }
   ];
 
   if (document.body.classList.contains('theme-empresas')) {
@@ -47,8 +47,8 @@
       section.className = 'clients-section';
       section.setAttribute('aria-label', 'Empresas que confiaron en Cleaning Services');
 
-      const card = ({ name, src }) =>
-        `<div class="client-logo" role="listitem"><img src="${src}" alt="${name}" loading="lazy"></div>`;
+      const card = ({ name, slug }) =>
+        `<div class="client-logo" role="listitem" aria-label="${name}"><span class="client-logo-image client-logo-${slug}" aria-hidden="true"></span></div>`;
       const group = corporateClients.map(card).join('');
 
       section.innerHTML = `

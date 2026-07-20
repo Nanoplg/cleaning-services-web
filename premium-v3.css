@@ -71,14 +71,17 @@ img { max-width: 100%; }
 /* Empresas que confiaron en Cleaning Services */
 .clients-section {
   overflow: hidden;
-  padding: 82px 0;
+  padding: 64px 0 28px;
   border-top: 1px solid rgba(7,26,43,.10);
   border-bottom: 1px solid rgba(7,26,43,.10);
   background: #fff;
 }
+.theme-empresas .clients-section + .section {
+  padding-top: 56px !important;
+}
 .clients-heading {
   width: min(1180px, calc(100% - 56px));
-  margin: 0 auto 34px;
+  margin: 0 auto 30px;
   text-align: center;
 }
 .clients-heading span {
@@ -100,6 +103,7 @@ img { max-width: 100%; }
 .clients-marquee {
   overflow: hidden;
   width: 100%;
+  margin: 0;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
@@ -201,8 +205,9 @@ img { max-width: 100%; }
     transform-origin: center 14% !important;
   }
   .product-feature-content { padding-block: 320px 58px !important; }
-  .clients-section { padding: 62px 0; }
-  .clients-heading { width: min(100% - 34px, 1180px); margin-bottom: 26px; }
+  .clients-section { padding: 50px 0 20px; }
+  .theme-empresas .clients-section + .section { padding-top: 44px !important; }
+  .clients-heading { width: min(100% - 34px, 1180px); margin-bottom: 24px; }
   .clients-heading h2 { font-size: clamp(32px, 10vw, 42px); }
   .client-logo {
     width: 108px;

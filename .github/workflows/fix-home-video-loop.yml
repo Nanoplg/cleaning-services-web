@@ -1,0 +1,50 @@
+name: Fix home video loop
+
+on:
+  push:
+    branches:
+      - codex/premium-redesign-v1
+
+permissions:
+  contents: write
+
+jobs:
+  fix-home-video:
+    if: ${{ !contains(github.event.head_commit.message, '[hero-loop-ready]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout redesign branch
+        uses: actions/checkout@v4
+        with:
+          ref: codex/premium-redesign-v1
+          fetch-depth: 0
+
+      - name: Restore original video and enable continuous loop
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              '<video class="hero-film" autoplay muted playsinline preload="auto"',
+              '<video class="hero-film" autoplay muted loop playsinline preload="auto"'
+          )
+          text = re.sub(
+              r'\s*<div class="hero-film-signature"[^>]*>.*?</div>',
+              '',
+              text,
+              count=1,
+              flags=re.S,
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/fix-home-video-loop.yml
+          git config user.name "Cleaning Services Web Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html .github/workflows/fix-home-video-loop.yml
+          git commit -m "Restaurar video continuo original [hero-loop-ready]"
+          git push origin codex/premium-redesign-v1

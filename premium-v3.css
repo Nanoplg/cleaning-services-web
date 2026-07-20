@@ -13,6 +13,22 @@
   animation: none !important;
 }
 
+/* Botones de Hogar y Provider con la misma proporción visual de Empresas */
+.theme-hogar .channel-hero .hero-actions,
+.theme-provider .channel-hero .hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+}
+.theme-hogar .channel-hero .hero-actions .button,
+.theme-provider .channel-hero .hero-actions .button {
+  width: auto !important;
+  min-width: 0 !important;
+  border-radius: 3px !important;
+  padding-inline: 24px !important;
+}
+
 /* Envases completos, proporcionados y fáciles de identificar */
 .product-feature {
   min-height: 660px !important;
@@ -102,12 +118,23 @@
   background: #fff;
   box-shadow: 0 16px 38px rgba(7,26,43,.08);
 }
-.client-logo img {
+.client-logo-image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  background-image: url("assets/clients/logos-source.svg");
+  background-repeat: no-repeat;
+  background-size: 332.8125% 346.875%;
 }
+.client-logo-cafe-martinez { background-position: 6.71% 6.96%; }
+.client-logo-panning { background-position: 52.35% 6.96%; }
+.client-logo-la-veneciana { background-position: 97.99% 6.96%; }
+.client-logo-starbucks { background-position: 6.71% 50%; }
+.client-logo-ypf { background-position: 52.35% 50%; }
+.client-logo-hotel-continental { background-position: 97.99% 50%; }
+.client-logo-remax { background-position: 6.71% 93.04%; }
+.client-logo-toyota { background-position: 52.35% 93.04%; }
+.client-logo-fiat { background-position: 97.99% 93.04%; }
 .clients-marquee:hover .clients-track { animation-play-state: paused; }
 @keyframes clientsLoop {
   from { transform: translateX(0); }
@@ -115,6 +142,20 @@
 }
 
 @media (max-width: 760px) {
+  .theme-hogar .channel-hero .hero-actions,
+  .theme-provider .channel-hero .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
+  .theme-hogar .channel-hero .hero-actions .button,
+  .theme-provider .channel-hero .hero-actions .button {
+    width: auto !important;
+    flex: 0 1 auto !important;
+    min-height: 48px !important;
+    padding-inline: 18px !important;
+    font-size: 10px !important;
+  }
   .product-feature { min-height: 650px !important; }
   .product-feature-image {
     object-position: center 14% !important;
@@ -131,6 +172,14 @@
     border-radius: 15px;
   }
   .footer-brand img { width: 220px !important; }
+}
+
+@media (max-width: 430px) {
+  .theme-hogar .channel-hero .hero-actions .button,
+  .theme-provider .channel-hero .hero-actions .button {
+    font-size: 9px !important;
+    padding-inline: 14px !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

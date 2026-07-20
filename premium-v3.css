@@ -79,6 +79,49 @@ body:not([class*="theme-"]) .text-link:hover span::after {
   color: #fff;
 }
 
+/* Cleaning Lab: mismo indicador de acción opción 3 */
+body:not([class*="theme-"]) .lab-link > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 112px;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid rgba(7, 22, 35, .65);
+  border-radius: 999px;
+  color: transparent;
+  font-size: 0;
+  line-height: 1;
+  transform: none !important;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+body:not([class*="theme-"]) .lab-link > span:last-child::before {
+  content: "VER MÁS";
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+body:not([class*="theme-"]) .lab-link > span:last-child::after {
+  content: "›";
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+body:not([class*="theme-"]) .lab-link:hover > span:last-child {
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: translateX(3px) !important;
+}
+body:not([class*="theme-"]) .lab-link:hover > span:last-child::before,
+body:not([class*="theme-"]) .lab-link:hover > span:last-child::after {
+  color: #fff;
+}
+
 /* Botones consistentes entre Hogar, Empresas y Provider */
 .theme-hogar .hero-actions,
 .theme-provider .hero-actions,
@@ -248,7 +291,8 @@ body:not([class*="theme-"]) .text-link:hover span::after {
     padding-top: 38px !important;
     padding-bottom: 38px !important;
   }
-  body:not([class*="theme-"]) .text-link span {
+  body:not([class*="theme-"]) .text-link span,
+  body:not([class*="theme-"]) .lab-link > span:last-child {
     min-width: 104px;
     min-height: 36px;
     padding-inline: 14px;

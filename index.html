@@ -656,11 +656,10 @@
 
   <main>
     <section class="hero" id="inicio">
-      <video class="hero-film" autoplay muted playsinline preload="auto" poster="assets/premium/cleaning-opening-poster.webp" aria-hidden="true">
+      <video class="hero-film" autoplay muted loop playsinline preload="auto" poster="assets/premium/cleaning-opening-poster.webp" aria-hidden="true">
         <source src="assets/premium/cleaning-opening.webm" type="video/webm">
         <source src="assets/premium/cleaning-opening.mp4" type="video/mp4">
       </video>
-      <div class="hero-film-signature" aria-hidden="true"><strong>BioActiv Pro</strong><span>Proceso profesional sobre cada fibra</span></div>
       <div class="container hero-inner">
         <div class="hero-copy" data-reveal>
           <p class="hero-kicker">Cleaning Services · Precisión sobre cada fibra</p>
@@ -834,6 +833,15 @@
     (() => {
       const menuToggle = document.getElementById("menuToggle");
       const mobileNav = document.getElementById("mobileNav");
+      const heroFilm = document.querySelector(".hero-film");
+
+      if (heroFilm) {
+        heroFilm.loop = true;
+        heroFilm.addEventListener("ended", () => {
+          heroFilm.currentTime = 0;
+          heroFilm.play().catch(() => {});
+        });
+      }
 
       const closeMenu = () => {
         menuToggle.setAttribute("aria-expanded", "false");

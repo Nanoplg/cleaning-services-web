@@ -65,4 +65,43 @@
       trustBar.insertAdjacentElement('afterend', section);
     }
   }
+
+  if (document.body.classList.contains('theme-provider')) {
+    const image = document.querySelector('.provider-platform-visual img');
+    const sources = [
+      'provider-image-bytes-1.js',
+      'provider-image-bytes-2.js',
+      'provider-image-bytes-3.js',
+      'provider-image-bytes-4.js'
+    ];
+
+    const loadScript = src => new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+
+    if (image) {
+      image.style.visibility = 'hidden';
+      window.__providerImageBytes = [];
+
+      (async () => {
+        try {
+          for (const src of sources) await loadScript(src);
+          const bytes = new Uint8Array(window.__providerImageBytes);
+          const url = URL.createObjectURL(new Blob([bytes], { type: 'image/avif' }));
+          image.onload = () => {
+            image.style.visibility = 'visible';
+            URL.revokeObjectURL(url);
+          };
+          image.src = url;
+        } catch (error) {
+          image.style.visibility = 'visible';
+          console.error('No se pudo cargar la imagen de Provider.', error);
+        }
+      })();
+    }
+  }
 })();

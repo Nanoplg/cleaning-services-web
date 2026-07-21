@@ -1,0 +1,1 @@
+(()=>{const i=document.getElementById('providerPlatformImage');if(i){i.addEventListener('error',()=>i.classList.add('is-error'));}})();

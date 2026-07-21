@@ -1,3 +1,28 @@
+/* Página Provider: espacios verticales más compactos, alineados con la portada. */
+.theme-provider .section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+.theme-provider .section-head {
+  margin-bottom: 36px !important;
+}
+
+.theme-provider .product-collection-head {
+  padding-top: 64px !important;
+  padding-bottom: 46px !important;
+}
+
+.theme-provider .product-feature-content {
+  padding-top: 76px !important;
+  padding-bottom: 76px !important;
+}
+
+.theme-provider .channel-cta {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
 /* Imagen aprobada para la sección Plataforma de Provider. */
 .theme-provider .provider-platform .section-head {
   grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
@@ -41,6 +66,28 @@
   .theme-provider .provider-platform .section-head {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  .theme-provider .section,
+  .theme-provider .channel-cta {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .theme-provider .section-head {
+    margin-bottom: 26px !important;
+  }
+
+  .theme-provider .product-collection-head {
+    padding-top: 44px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .theme-provider .product-feature-content {
+    padding-top: 54px !important;
+    padding-bottom: 54px !important;
   }
 }
 

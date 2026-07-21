@@ -1,12 +1,12 @@
-/* Reconstrucción fiel de las seis tarjetas de Provider. */
+/* Reconstrucción fiel de las seis tarjetas de Provider según la maqueta aprobada. */
 .theme-provider .provider-platform {
-  background: #f2f2f0;
+  background: #f3f3f1;
 }
 
 .theme-provider .provider-service-grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 28px !important;
+  gap: 30px !important;
   align-items: stretch !important;
 }
 
@@ -15,7 +15,7 @@
   padding: 0 !important;
   overflow: hidden !important;
   border: 1px solid rgba(7, 26, 43, .08) !important;
-  border-radius: 10px !important;
+  border-radius: 9px !important;
   background: #fbfaf7 !important;
   box-shadow: 0 13px 30px rgba(7, 26, 43, .10) !important;
   transform: none !important;
@@ -47,23 +47,23 @@
   z-index: 2;
   display: flex !important;
   flex-direction: column !important;
-  min-height: 220px !important;
+  min-height: 215px !important;
   margin-top: 0 !important;
-  padding: 25px 36px 24px !important;
+  padding: 26px 36px 23px !important;
   border-radius: 0 !important;
   background: #fbfaf7 !important;
 }
 
-/* Volado blanco de la maqueta: amplio, suave y unido al cuerpo. */
+/* Volado blanco curvo igual a la maqueta: nace cerca del centro y termina unido al borde derecho. */
 .theme-provider .provider-service-content::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: -62px;
+  top: -56px;
   right: -1px;
-  width: 58%;
-  height: 72px;
-  border-top-left-radius: 72px 58px;
+  width: 50%;
+  height: 66px;
+  border-top-left-radius: 68px 58px;
   background: #fbfaf7;
 }
 
@@ -80,10 +80,10 @@
 
 .theme-provider .provider-service-content h3 {
   max-width: 310px !important;
-  margin: 0 0 18px !important;
+  margin: 0 0 17px !important;
   color: #081b2d !important;
   font-family: "DM Serif Display", Georgia, serif !important;
-  font-size: clamp(29px, 2.45vw, 38px) !important;
+  font-size: clamp(29px, 2.15vw, 35px) !important;
   font-weight: 400 !important;
   line-height: .98 !important;
   letter-spacing: -.025em !important;
@@ -91,10 +91,10 @@
 
 .theme-provider .provider-service-content p {
   max-width: 355px !important;
-  margin: 0 0 22px !important;
+  margin: 0 0 21px !important;
   color: #4f6472 !important;
   font-size: 13px !important;
-  line-height: 1.68 !important;
+  line-height: 1.65 !important;
 }
 
 .theme-provider .provider-service-content a {
@@ -144,10 +144,10 @@
   }
 
   .theme-provider .provider-service-content::before {
-    top: -54px;
-    width: 57%;
-    height: 64px;
-    border-top-left-radius: 64px 52px;
+    top: -52px;
+    width: 50%;
+    height: 62px;
+    border-top-left-radius: 62px 52px;
   }
 
   .theme-provider .provider-service-content h3 {

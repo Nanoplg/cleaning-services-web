@@ -1,0 +1,51 @@
+/* Imagen aprobada para la sección Plataforma de Provider. */
+.theme-provider .provider-platform .section-head {
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
+  align-items: start;
+  gap: clamp(48px, 6vw, 88px);
+}
+
+.theme-provider .provider-platform-side {
+  display: grid;
+  gap: 20px;
+}
+
+.theme-provider .provider-platform-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(7, 26, 43, .12);
+  border-radius: 18px;
+  background: #071a2b;
+  box-shadow: 0 24px 60px rgba(7, 26, 43, .13);
+}
+
+.theme-provider .provider-platform-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.theme-provider .provider-platform-side > p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .theme-provider .provider-platform .section-head {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .theme-provider .provider-platform-visual {
+    border-radius: 14px;
+  }
+}

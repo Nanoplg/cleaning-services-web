@@ -1,36 +1,12 @@
-/* Imágenes individuales en alta resolución para cada tarjeta de Provider. */
+/* Cada tarjeta usa exclusivamente su fotografía correspondiente de la maqueta aprobada. */
 .theme-provider .provider-service-media {
-  background-size: cover !important;
+  background-size: 300% 200% !important;
   background-repeat: no-repeat !important;
-  background-position: center !important;
 }
 
-.theme-provider .provider-service-media--1 {
-  background-image: url("assets/premium/mlf-pro-clean-hero.webp") !important;
-  background-position: center 48% !important;
-}
-
-.theme-provider .provider-service-media--2 {
-  background-image: url("assets/premium/provider-platform.png") !important;
-  background-position: center 54% !important;
-}
-
-.theme-provider .provider-service-media--3 {
-  background-image: url("assets/premium/provider-studio.webp") !important;
-  background-position: center 45% !important;
-}
-
-.theme-provider .provider-service-media--4 {
-  background-image: url("assets/lab-editorial.webp") !important;
-  background-position: center 48% !important;
-}
-
-.theme-provider .provider-service-media--5 {
-  background-image: url("assets/system-process.webp") !important;
-  background-position: center 48% !important;
-}
-
-.theme-provider .provider-service-media--6 {
-  background-image: url("assets/hero-luxury.webp") !important;
-  background-position: center 50% !important;
-}
+.theme-provider .provider-service-media--1 { background-position: 0% 0% !important; }
+.theme-provider .provider-service-media--2 { background-position: 50% 0% !important; }
+.theme-provider .provider-service-media--3 { background-position: 100% 0% !important; }
+.theme-provider .provider-service-media--4 { background-position: 0% 100% !important; }
+.theme-provider .provider-service-media--5 { background-position: 50% 100% !important; }
+.theme-provider .provider-service-media--6 { background-position: 100% 100% !important; }

@@ -1,0 +1,29 @@
+/* Cada tarjeta muestra solamente su imagen individual dentro de la lámina aprobada. */
+.theme-provider .provider-service-media {
+  background-size: 300% 200% !important;
+  background-repeat: no-repeat !important;
+}
+
+.theme-provider .provider-service-media--1 {
+  background-position: 0% 0% !important;
+}
+
+.theme-provider .provider-service-media--2 {
+  background-position: 50% 0% !important;
+}
+
+.theme-provider .provider-service-media--3 {
+  background-position: 100% 0% !important;
+}
+
+.theme-provider .provider-service-media--4 {
+  background-position: 0% 100% !important;
+}
+
+.theme-provider .provider-service-media--5 {
+  background-position: 50% 100% !important;
+}
+
+.theme-provider .provider-service-media--6 {
+  background-position: 100% 100% !important;
+}

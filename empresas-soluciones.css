@@ -1,0 +1,163 @@
+/* Soluciones corporativas: una imagen protagonista y tarjetas editoriales sin iconos. */
+.theme-empresas #soluciones .empresas-soluciones-head {
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
+  align-items: start;
+  gap: clamp(48px, 6vw, 88px);
+  margin-bottom: 34px !important;
+}
+
+.theme-empresas #soluciones .empresas-soluciones-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.theme-empresas #soluciones .empresas-soluciones-side {
+  display: grid;
+  gap: 14px;
+  align-self: start;
+}
+
+.theme-empresas #soluciones .empresas-soluciones-visual {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(7, 26, 43, .10);
+  border-radius: 18px;
+  background: #0a2b48;
+  box-shadow: 0 24px 58px rgba(7, 26, 43, .14);
+}
+
+.theme-empresas #soluciones .empresas-soluciones-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(1.02) saturate(.96);
+}
+
+.theme-empresas #soluciones .empresas-soluciones-caption {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.theme-empresas #soluciones .empresas-service-grid {
+  gap: 18px;
+}
+
+.theme-empresas #soluciones .empresas-service-card {
+  position: relative;
+  min-height: 230px;
+  padding: 31px 30px 25px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 26, 43, .10);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafb 100%);
+  box-shadow: 0 14px 36px rgba(7, 26, 43, .055);
+}
+
+.theme-empresas #soluciones .empresas-service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.theme-empresas #soluciones .empresas-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(7, 26, 43, .10);
+}
+
+.theme-empresas #soluciones .empresas-service-label {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.theme-empresas #soluciones .empresas-service-card h3 {
+  margin: 0 0 13px;
+  color: var(--ink);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(26px, 2.1vw, 31px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+
+.theme-empresas #soluciones .empresas-service-card p {
+  max-width: 360px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.68;
+}
+
+.theme-empresas #soluciones .empresas-service-card a {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .theme-empresas #soluciones .empresas-soluciones-head {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .theme-empresas #soluciones .empresas-soluciones-visual {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .theme-empresas #soluciones .empresas-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .theme-empresas #soluciones .empresas-soluciones-head {
+    margin-bottom: 26px !important;
+  }
+
+  .theme-empresas #soluciones .empresas-soluciones-side {
+    gap: 12px;
+  }
+
+  .theme-empresas #soluciones .empresas-soluciones-caption {
+    font-size: 13px;
+  }
+
+  .theme-empresas #soluciones .empresas-soluciones-visual {
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+  }
+
+  .theme-empresas #soluciones .empresas-service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .theme-empresas #soluciones .empresas-service-card {
+    min-height: 220px;
+    padding: 28px 25px 23px;
+  }
+}

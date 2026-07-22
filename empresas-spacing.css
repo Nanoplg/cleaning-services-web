@@ -1,0 +1,50 @@
+/* Página Empresas: espacios verticales compactos, alineados con la portada. */
+.theme-empresas .section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+.theme-empresas .section-head {
+  margin-bottom: 36px !important;
+}
+
+.theme-empresas .report-proof {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+.theme-empresas .channel-cta {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+.theme-empresas .clients-section {
+  padding-top: 42px !important;
+  padding-bottom: 24px !important;
+}
+
+.theme-empresas .clients-section + .section {
+  padding-top: 52px !important;
+}
+
+@media (max-width: 760px) {
+  .theme-empresas .section,
+  .theme-empresas .report-proof,
+  .theme-empresas .channel-cta {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .theme-empresas .section-head {
+    margin-bottom: 26px !important;
+  }
+
+  .theme-empresas .clients-section {
+    padding-top: 34px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .theme-empresas .clients-section + .section {
+    padding-top: 38px !important;
+  }
+}

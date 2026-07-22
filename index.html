@@ -1,887 +1,871 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Cleaning Services | Limpieza de Tapizados Profesional</title>
-  <meta name="description" content="Limpieza de Tapizados Profesional para sillones, sillas, colchones, alfombras y tapizados de autos. Servicio a domicilio con extracción profunda, vapor, ozono y productos de uso profesional." />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cleaning Services | Limpieza de Tapizados Profesional" />
-  <meta property="og:description" content="No hacemos limpieza superficial. Restauramos tus tapizados por dentro con extracción profunda, vapor, ozono y productos de uso profesional exclusivo." />
-  <meta property="og:image" content="héroe.png" />
-  <meta property="og:url" content="https://cleaningservices.com.ar" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071623">
+  <title>Cleaning Services | Hogar, empresas y profesionales</title>
+  <meta name="description" content="Cleaning Services brinda limpieza profesional de tapizados para hogares y empresas, además de insumos y soporte técnico para especialistas.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.cleaningservices.com.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Cleaning Services">
+  <meta property="og:title" content="Cleaning Services | La limpieza profesional, elevada a otro nivel">
+  <meta property="og:description" content="Soluciones especializadas para hogares, empresas y profesionales del sector.">
+  <meta property="og:url" content="https://www.cleaningservices.com.ar/">
+  <meta property="og:image" content="https://www.cleaningservices.com.ar/assets/hero-luxury.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo-general-oficial.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cleaning Services",
+      "url": "https://www.cleaningservices.com.ar/",
+      "logo": "https://www.cleaningservices.com.ar/assets/logo-general-oficial.webp",
+      "sameAs": ["https://www.instagram.com/cleaningcanning"],
+      "areaServed": ["Canning", "Ezeiza", "Gran Buenos Aires"],
+      "description": "Limpieza profesional de tapizados para hogares y empresas, e insumos técnicos para especialistas."
+    }
+  </script>
   <style>
-    :root{
-      --bg:#061828;
-      --bg2:#082035;
-      --card:#0b2642;
-      --border:rgba(255,255,255,.08);
-      --text:#e7eff8;
-      --muted:#90a9c0;
-      --accent:#14b8e6;
-      --accent-d:#0d95bb;
-      --white:#fff;
-      --font:"Plus Jakarta Sans",sans-serif;
-      --display:"Oswald",sans-serif;
-      --r-lg:24px;
-      --shadow:0 20px 50px rgba(0,0,0,.28);
-      --header-h:72px;
+    :root {
+      --ink: #071623;
+      --ink-soft: #10283a;
+      --paper: #f4f3ef;
+      --white: #ffffff;
+      --silver: #d8dfe2;
+      --muted: #60707a;
+      --accent: #079bb3;
+      --accent-light: #9be7ee;
+      --line: rgba(7, 22, 35, .14);
+      --line-light: rgba(255, 255, 255, .2);
+      --header-h: 76px;
+      --container: 1220px;
+      --sans: "Manrope", Arial, sans-serif;
+      --serif: "Cormorant Garamond", Georgia, serif;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;}
-    img{max-width:100%;display:block;}
-    a{text-decoration:none;color:inherit;}
-
-    .container{width:min(1180px,calc(100% - 40px));margin-inline:auto;}
-
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      border:none;border-radius:999px;padding:14px 24px;
-      font-family:var(--font);font-size:13px;font-weight:700;
-      text-transform:uppercase;letter-spacing:.04em;cursor:pointer;
-      transition:.2s ease;white-space:nowrap;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
     }
-    .btn:hover{transform:translateY(-2px);}
-    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 28px rgba(20,184,230,.30);}
-    .btn-primary:hover{background:var(--accent-d);}
-    .btn-outline{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.28);color:#fff;}
-    .btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45);}
-
-    .topbar{
-      position:sticky;top:0;z-index:200;
-      background:rgba(6,24,40,.94);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border);
-    }
-    .topbar-row{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:20px;}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0;}
-    .brand-mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex:none;}
-    .brand-mark img{width:42px;height:42px;object-fit:contain;display:block;}
-    .brand-name{font-size:18px;font-weight:800;color:#fff;letter-spacing:.08em;line-height:1;white-space:nowrap;}
-
-    .nav-desk{display:flex;align-items:center;gap:30px;}
-    .nav-desk a{
-      font-size:13px;font-weight:700;color:rgba(255,255,255,.78);
-      text-transform:uppercase;letter-spacing:.05em;padding-bottom:3px;
-      border-bottom:2px solid transparent;transition:.15s ease;
-    }
-    .nav-desk a:hover,.nav-desk a.active{color:#fff;border-bottom-color:var(--accent);}
-
-    .social-links{display:flex;align-items:center;gap:10px;}
-    .social-link{
-      width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
-      color:#fff;transition:.2s ease;flex:none;
-    }
-    .social-link:hover{transform:translateY(-2px);background:rgba(20,184,230,.16);border-color:rgba(20,184,230,.55);color:var(--accent);}
-    .social-link svg{width:20px;height:20px;fill:currentColor;stroke:none;}
-
-    .ham{
-      display:none;flex-direction:column;justify-content:center;gap:5px;
-      width:40px;height:40px;background:transparent;border:1px solid rgba(255,255,255,.14);
-      border-radius:10px;cursor:pointer;padding:8px;
-    }
-    .ham span{display:block;height:2px;background:#fff;border-radius:2px;transition:.25s ease;}
-    .ham.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .ham.is-open span:nth-child(2){opacity:0;}
-    .ham.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-    .nav-mob{display:none;flex-direction:column;background:var(--bg2);border-top:1px solid var(--border);padding:8px 0 20px;}
-    .nav-mob.is-open{display:flex;}
-    .nav-mob a{
-      font-size:13px;font-weight:700;color:rgba(255,255,255,.78);
-      text-transform:uppercase;letter-spacing:.05em;padding:13px 20px;border-bottom:1px solid var(--border);
-    }
-    .nav-mob a.active{color:#fff;border-bottom-color:var(--accent);}
-    .nav-mob .social-links{margin:16px 20px 0;justify-content:flex-start;}
-
-    #servicios{scroll-margin-top:calc(var(--header-h) - 50px);}
-    #porque,#tips,#contacto{scroll-margin-top:calc(var(--header-h) + 10px);}
-
-    .hero{
-      position:relative;
-      min-height:calc(100vh - var(--header-h));
-      max-height:720px;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      border-bottom:1px solid var(--border);
-    }
-    .hero-slider{position:absolute;inset:0;z-index:0;}
-    .hero-slide{
-      position:absolute;inset:0;
-      background-size:cover;background-repeat:no-repeat;background-position:70% center;
-      opacity:0;transform:scale(1.025);
-      transition:opacity 1.1s ease, transform 7s ease;
-    }
-    .hero-slide.active{opacity:1;transform:scale(1);}
-    .hero-overlay{
-      position:absolute;inset:0;z-index:1;
-      background:linear-gradient(
-        to right,
-        rgba(2,8,16,.86) 0%,
-        rgba(2,8,16,.76) 26%,
-        rgba(2,8,16,.48) 48%,
-        rgba(2,8,16,.18) 74%,
-        rgba(2,8,16,.10) 100%
-      );
-    }
-    .hero-content{
-      position:relative;z-index:2;
-      max-width:560px;
-      padding:34px 0 24px;
-      transform:translateY(-6px);
-    }
-    .eyebrow{
-      display:inline-block;font-size:18px;font-weight:900;letter-spacing:.18em;
-      text-transform:uppercase;color:#18d9ff;margin-bottom:18px;
-      text-shadow:0 0 18px rgba(20,184,230,.35);
-    }
-    .hero-title{
-      font-family:var(--display);
-      font-size:clamp(44px,5.1vw,64px);
-      line-height:.94;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.01em;
-      color:#fff;
-      margin:0 0 18px;
-      max-width:470px;
-    }
-    .hero-text{
-      font-size:15.5px;
-      color:rgba(255,255,255,.92);
-      line-height:1.62;
-      max-width:510px;
-      margin-bottom:0;
-    }
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
-
-    .hero-paths{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-      margin-top:24px;
-      max-width:600px;
-    }
-    .hero-path-card{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:136px;
-      padding:18px 20px 17px;
-      border-radius:20px;
-      background:linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
-      border:1px solid rgba(255,255,255,.20);
-      backdrop-filter:blur(16px);
-      box-shadow:0 18px 42px rgba(0,0,0,.24);
-      transition:.22s ease;
-    }
-    .hero-path-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(20,184,230,.58);
-      background:linear-gradient(145deg, rgba(20,184,230,.18), rgba(255,255,255,.07));
-      box-shadow:0 22px 48px rgba(0,0,0,.30);
-    }
-    .hero-path-primary{
-      background:linear-gradient(145deg, rgba(20,184,230,.24), rgba(255,255,255,.06));
-      border-color:rgba(20,184,230,.45);
-    }
-    .path-label{
-      display:block;
-      font-size:10px;
-      font-weight:900;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      color:#27dcff;
-      margin-bottom:8px;
-    }
-    .hero-path-card strong{
-      display:block;
-      color:#fff;
-      font-size:24px;
-      line-height:1;
-      margin-bottom:9px;
-      font-weight:800;
-      letter-spacing:-.03em;
-    }
-    .hero-path-card small{
-      display:block;
-      color:rgba(255,255,255,.78);
-      font-size:12.5px;
-      line-height:1.48;
-    }
-    .hero-path-arrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:13px;
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#27dcff;
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(var(--container), calc(100% - 56px)); margin-inline: auto; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
-    .section{padding:84px 0;}
-    .section-head{text-align:center;margin-bottom:42px;}
-    .kicker{display:block;font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;margin-bottom:12px;}
-    .section-head h2{font-size:40px;font-weight:800;line-height:1.08;letter-spacing:-.03em;color:#fff;}
-    .section-head p{max-width:760px;margin:14px auto 0;font-size:15px;color:var(--muted);line-height:1.8;}
-
-    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-    .service-link{display:block;color:inherit;}
-    .service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:.22s ease;box-shadow:var(--shadow);height:100%;}
-    .service-link:hover .service-card{transform:translateY(-5px);box-shadow:0 22px 52px rgba(0,0,0,.34);border-color:rgba(20,184,230,.28);}
-    .service-card img{width:100%;height:220px;object-fit:cover;}
-    .service-body{padding:20px 18px 22px;}
-    .service-body h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;}
-    .service-body p{font-size:13px;color:var(--muted);line-height:1.65;}
-
-    .more-services{margin-top:32px;background:linear-gradient(180deg, rgba(5,24,42,.98) 0%, rgba(4,18,34,.98) 100%);border:1px solid rgba(20,184,230,.32);border-radius:22px;padding:34px 30px 30px;box-shadow:var(--shadow);}
-    .more-services-head{text-align:center;margin-bottom:28px;}
-    .more-services-head h3{font-size:34px;font-weight:800;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:8px;text-transform:uppercase;}
-    .more-services-head p{font-size:15px;color:var(--muted);line-height:1.7;}
-    .more-services-divider{width:54px;height:3px;border-radius:999px;background:var(--accent);margin:14px auto 0;}
-    .more-services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
-    .more-service-item{display:flex;gap:14px;padding:18px 18px 18px 0;min-height:118px;}
-    .more-service-item:nth-child(1),.more-service-item:nth-child(2),.more-service-item:nth-child(3),.more-service-item:nth-child(4){border-bottom:1px solid rgba(255,255,255,.08);}
-    .more-service-item:not(:nth-child(4n)){border-right:1px solid rgba(255,255,255,.08);padding-right:18px;}
-    .more-service-icon{width:42px;height:42px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--accent);}
-    .more-service-icon svg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-    .more-service-item h4{font-size:14px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px;text-transform:uppercase;}
-    .more-service-item p{font-size:13px;color:var(--muted);line-height:1.6;}
-
-    .why-section{background:var(--bg2);min-height:calc(100vh - var(--header-h));display:flex;align-items:center;}
-    .why-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start;}
-    .why-text h2{font-size:32px;font-weight:800;line-height:1.15;letter-spacing:-.03em;color:#fff;margin:10px 0 18px;}
-    .why-text p{font-size:16px;color:var(--muted);line-height:1.9;max-width:860px;margin-bottom:18px;}
-    .stats-list{display:grid;gap:14px;}
-    .stat-row{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow);}
-    .stat-badge{width:48px;height:48px;border-radius:14px;background:rgba(20,184,230,.09);border:1px solid rgba(20,184,230,.20);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;flex:none;}
-    .stat-num{font-size:26px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:3px;}
-    .stat-desc{font-size:13px;color:var(--muted);line-height:1.55;}
-
-    .tips-section{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-    .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-    .tip-card{background:linear-gradient(180deg, rgba(6,34,58,.98) 0%, rgba(5,27,48,.98) 100%);border:1px solid rgba(20,184,230,.20);border-radius:26px;padding:28px 24px 24px;box-shadow:var(--shadow);transition:.22s ease;}
-    .tip-card:hover{transform:translateY(-5px);box-shadow:0 22px 52px rgba(0,0,0,.34);}
-    .tip-icon{width:66px;height:66px;border-radius:50%;border:2px solid rgba(20,184,230,.75);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:20px;}
-    .tip-icon svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-    .tip-card h3{font-size:20px;font-weight:800;line-height:1.18;letter-spacing:-.02em;color:#fff;margin-bottom:14px;min-height:76px;}
-    .tip-divider{width:66px;height:3px;border-radius:999px;background:var(--accent);margin-bottom:18px;}
-    .tip-card p{font-size:15px;color:#d1e0ee;line-height:1.85;}
-
-    .cta-wrap{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);}
-    .cta-photo{position:absolute;inset:0;}
-    .cta-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.14);}
-    .cta-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(4,14,28,.78) 0%, rgba(6,18,36,.64) 100%);}
-    .cta-body{position:relative;z-index:2;text-align:center;padding:82px 24px 74px;max-width:760px;margin-inline:auto;}
-    .cta-body h2{font-size:40px;font-weight:800;line-height:1.08;letter-spacing:-.04em;color:#fff;margin-bottom:14px;}
-    .cta-body .lead{font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:28px;}
-    .cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:0;}
-
-    footer{background:#030d18;border-top:1px solid var(--border);padding:28px 0;text-align:center;}
-    footer p{font-size:12.5px;color:#2d4256;}
-    footer span{margin:0 8px;color:#1f3040;}
-
-    @media (max-width:1180px){
-      .nav-desk{gap:16px;}
-      .nav-desk a{font-size:12px;}
-      .brand-name{font-size:17px;}
-      .social-link{width:40px;height:40px;}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid rgba(7, 22, 35, .1);
+      backdrop-filter: blur(16px);
+    }
+    .header-row {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: flex; align-items: center; min-width: 148px; }
+    .brand img {
+      width: 148px;
+      height: 62px;
+      object-fit: contain;
+      filter: contrast(1.04) brightness(1.02);
+    }
+    .desktop-nav { display: flex; align-items: center; gap: clamp(18px, 2vw, 34px); }
+    .desktop-nav > a {
+      position: relative;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .desktop-nav > a:not(.header-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -8px;
+      height: 1px;
+      background: var(--ink);
+      transition: right .25s ease;
+    }
+    .desktop-nav > a:hover::after { right: 0; }
+    .header-cta {
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      transition: background .25s ease, color .25s ease;
+    }
+    .header-cta:hover { background: var(--ink); color: var(--white); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      padding: 11px 8px;
+      cursor: pointer;
+    }
+    .menu-toggle span:not(.sr-only) {
+      display: block;
+      height: 1px;
+      margin: 6px 0;
+      background: var(--ink);
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      position: fixed;
+      inset: var(--header-h) 0 0;
+      z-index: 90;
+      display: none;
+      padding: 34px 28px;
+      background: var(--white);
+    }
+    .mobile-nav.is-open { display: grid; align-content: start; }
+    .mobile-nav a {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .mobile-nav small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    @media (max-width:1060px){
-      .services-grid,.why-layout{grid-template-columns:1fr 1fr;}
-      .tips-grid,.more-services-grid{grid-template-columns:1fr 1fr;}
-      .hero{min-height:620px;max-height:none;}
-      .hero-title{font-size:48px;}
-      .more-service-item{padding:18px 16px;}
-      .more-service-item:nth-child(1),.more-service-item:nth-child(2),.more-service-item:nth-child(3),.more-service-item:nth-child(4),.more-service-item:nth-child(5),.more-service-item:nth-child(6){border-bottom:1px solid rgba(255,255,255,.08);}
-      .more-service-item:not(:nth-child(4n)){border-right:none;padding-right:16px;}
-      .more-service-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.08);}
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--header-h));
+      overflow: hidden;
+      isolation: isolate;
+      color: var(--white);
+      background: var(--ink);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("assets/hero-luxury.webp") center 58% / cover no-repeat;
+      transform: scale(1.015);
+      animation: heroDrift 14s ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(4, 14, 23, .92) 0%, rgba(4, 14, 23, .72) 42%, rgba(4, 14, 23, .22) 72%, rgba(4, 14, 23, .1) 100%),
+        linear-gradient(0deg, rgba(4, 14, 23, .72) 0%, transparent 38%);
+    }
+    @keyframes heroDrift {
+      from { transform: scale(1.07); }
+      to { transform: scale(1.015); }
+    }
+    .hero-inner {
+      min-height: calc(100svh - var(--header-h));
+      display: flex;
+      align-items: center;
+      padding: clamp(58px, 8vh, 92px) 0;
+    }
+    .hero-copy {
+      display: grid;
+      align-content: center;
+      justify-items: start;
+      max-width: 780px;
+    }
+    .hero-kicker {
+      margin: 0 0 18px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+    .hero h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(48px, 5.45vw, 82px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: .98;
+      text-wrap: balance;
+    }
+    .hero h1 span {
+      color: #d8f4f6;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: -.035em;
+    }
+    .hero-lead {
+      max-width: 640px;
+      margin: 25px 0 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(15px, 1.25vw, 18px);
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-light { background: var(--white); color: var(--ink); }
+    .button-outline { border-color: rgba(255,255,255,.5); color: var(--white); }
+    .button-dark { background: var(--ink); color: var(--white); }
+    .button-line { border-color: var(--ink); color: var(--ink); }
+    .button-line:hover { background: var(--ink); color: var(--white); }
+    .proof {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 54px); }
+    .proof-item {
+      min-height: 132px;
+      padding: 30px 0;
+    }
+    .proof-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: clamp(23px, 2vw, 32px);
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+    .proof-item span { color: var(--muted); font-size: 12px; line-height: 1.65; }
+
+    .section { padding: clamp(82px, 9vw, 142px) 0; }
+    .section-label {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-heading {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(42px, 5.2vw, 74px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+    .section-heading em {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+    }
+    .section-lead {
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .units-head {
+      display: grid;
+      grid-template-columns: 1.45fr .55fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .units-head .section-lead { margin: 0; }
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .unit {
+      display: grid;
+      grid-template-rows: 300px 1fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: 0 22px 70px rgba(7,22,35,.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .unit:hover { transform: translateY(-5px); box-shadow: 0 30px 90px rgba(7,22,35,.11); }
+    .unit-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .unit-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: saturate(.96) contrast(1.05) brightness(1.025);
+      transition: transform .55s cubic-bezier(.2,.8,.2,1);
+    }
+    .unit:hover .unit-logo img { transform: scale(1.025); }
+    .unit-copy {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+    }
+    .unit-audience {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .unit h3 {
+      margin: 10px 0 12px;
+      font-size: 33px;
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+    .unit p { margin: 0 0 28px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .text-link span { font-size: 18px; font-weight: 400; transition: transform .25s ease; }
+    .text-link:hover span { transform: translateX(5px); }
+
+    .standard { padding: 0; background: var(--ink); color: var(--white); }
+    .standard-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      min-height: 620px;
+    }
+    .standard-media { min-height: 560px; overflow: hidden; }
+    .standard-media img { width: 100%; height: 100%; object-fit: cover; }
+    .standard-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(56px, 6vw, 86px);
+    }
+    .standard-copy .section-label { color: var(--accent-light); }
+    .standard-copy h2 {
+      margin: 0;
+      font-size: clamp(42px, 4.5vw, 68px);
+      font-weight: 500;
+      letter-spacing: -.05em;
+      line-height: 1.04;
+    }
+    .standard-copy > p {
+      margin: 24px 0 38px;
+      color: rgba(255,255,255,.68);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .standard-list { border-top: 1px solid var(--line-light); }
+    .standard-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .standard-item span { color: var(--accent-light); font-size: 11px; font-weight: 800; }
+    .standard-item strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .standard-item p { margin: 0; color: rgba(255,255,255,.58); font-size: 12px; }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: clamp(48px, 7vw, 108px);
+      align-items: center;
+    }
+    .lab-media { aspect-ratio: 4 / 4.5; overflow: hidden; }
+    .lab-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+    .lab-media:hover img { transform: scale(1.025); }
+    .lab-copy .section-heading { font-size: clamp(42px, 5vw, 72px); }
+    .lab-links { margin-top: 38px; border-top: 1px solid var(--line); }
+    .lab-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .lab-link strong { display: block; font-size: 15px; }
+    .lab-link small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .lab-link span { font-size: 18px; }
+
+    .report-feature { overflow: hidden; background: #e9eff0; }
+    .report-grid {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: clamp(52px, 8vw, 118px);
+      align-items: center;
+    }
+    .report-copy .section-heading { font-size: clamp(42px, 4.8vw, 70px); }
+    .report-list { margin-top: 34px; border-top: 1px solid var(--line); }
+    .report-list div {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 16px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .report-list span { color: var(--accent); font-size: 10px; font-weight: 800; }
+    .report-list strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .report-list p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .report-sheet {
+      position: relative;
+      width: min(540px, 100%);
+      min-height: 610px;
+      justify-self: end;
+      padding: 40px;
+      border: 1px solid rgba(7,22,35,.1);
+      background: #fff;
+      box-shadow: 0 45px 110px rgba(7,22,35,.18);
+      transform: rotate(1deg);
+    }
+    .report-sheet::before { content: ""; position: absolute; inset: 13px; border: 1px solid rgba(7,22,35,.06); pointer-events: none; }
+    .report-sheet-head { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 24px; border-bottom: 3px solid var(--ink); }
+    .report-sheet-head strong { font-size: 12px; letter-spacing: .14em; }
+    .report-sheet-head span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .report-sheet h3 { margin: 28px 0 7px; font-size: 31px; letter-spacing: -.04em; }
+    .report-sheet > p { margin: 0; color: var(--muted); font-size: 11px; }
+    .report-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0; }
+    .report-photo { min-height: 154px; display: flex; align-items: flex-end; padding: 14px; background: linear-gradient(145deg,#d9e3e5,#9fafb4); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .report-photo:last-child { background: linear-gradient(145deg,#b8dadd,#517782); }
+    .report-data { display: grid; gap: 10px; }
+    .report-data div { padding: 14px 15px; border-left: 3px solid var(--accent); background: #f2f6f6; }
+    .report-data strong { display: block; margin-bottom: 3px; font-size: 11px; }
+    .report-data span { color: var(--muted); font-size: 9px; line-height: 1.55; }
+
+    .contacts { background: #0d2536; color: var(--white); }
+    .contacts-head { display: grid; grid-template-columns: 1fr .7fr; gap: 80px; align-items: end; margin-bottom: 50px; }
+    .contacts .section-label { color: var(--accent-light); }
+    .contacts .section-lead { margin: 0; color: rgba(255,255,255,.65); }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.16); }
+    .contact-card { min-height: 320px; display: flex; flex-direction: column; padding: 34px; background: #0d2536; }
+    .contact-card small { color: var(--accent-light); font-size: 9px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .contact-card h3 { margin: 14px 0 6px; font-size: 29px; font-weight: 500; letter-spacing: -.04em; }
+    .contact-phone { font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+    .contact-card p { margin: 18px 0 28px; color: rgba(255,255,255,.60); font-size: 13px; line-height: 1.7; }
+    .contact-card .button { margin-top: auto; align-self: flex-start; }
+    .contact-social { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.72); font-size: 12px; }
+    .contact-social strong { color: #fff; }
+
+    .closing {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      text-align: center;
+    }
+    .closing-inner { max-width: 900px; margin: auto; }
+    .closing h2 {
+      margin: 0;
+      font-size: clamp(42px, 5.5vw, 76px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.02;
+    }
+    .closing p { max-width: 620px; margin: 24px auto 34px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .closing-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+    .site-footer {
+      padding: 58px 0 32px;
+      background: #050f17;
+      color: var(--white);
+    }
+    .footer-row {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr 1fr;
+      align-items: start;
+      gap: 54px;
+    }
+    .footer-brand img { width: 180px; height: 90px; object-fit: contain; filter: brightness(1.08); background: #fff; }
+    .footer-brand p { max-width: 280px; margin: 18px 0 0; color: rgba(255,255,255,.48); font-size: 11px; line-height: 1.75; }
+    .footer-title { display: block; margin-bottom: 16px; color: var(--accent-light); font-size: 9px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .footer-contact { display: grid; gap: 9px; font-size: 11px; }
+    .footer-contact a { color: rgba(255,255,255,.72); }
+    .footer-contact a strong { color: #fff; }
+    .footer-links { display: grid; gap: 9px; font-size: 11px; }
+    .footer-links a { color: rgba(255,255,255,.72); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; margin-top: 42px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.38); font-size: 10px; }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    [data-reveal].visible { opacity: 1; transform: none; }
+
+    @media (max-width: 1050px) {
+      .desktop-nav { display: none; }
+      .menu-toggle { display: block; }
+      .units-head, .contacts-head { grid-template-columns: 1fr; gap: 24px; }
+      .units-grid { grid-template-columns: 1fr; }
+      .unit {
+        grid-template-columns: .9fr 1.1fr;
+        grid-template-rows: auto;
+        min-height: 370px;
+        padding: 0;
+      }
+      .unit-logo { min-height: 360px; padding: 24px; }
+      .unit-copy { padding: 46px; }
+      .standard-grid { grid-template-columns: 1fr; }
+      .standard-media { min-height: 560px; }
+      .standard-copy { padding: 72px max(28px, calc((100vw - min(var(--container), calc(100vw - 56px))) / 2)); }
+      .report-grid { grid-template-columns: 1fr; }
+      .report-sheet { justify-self: center; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width:768px){
-      :root{--header-h:70px;}
-      .container{width:min(100% - 28px,1180px);}
-      .nav-desk{display:none;}
-      .ham{display:flex;}
-      .topbar-row{height:var(--header-h);}
-      .brand-mark img{width:36px;height:36px;}
-      .brand-name{font-size:16px;}
-      .hero{min-height:700px;max-height:none;align-items:flex-start;padding:52px 0 38px;}
-      .hero-slide{background-position:64% center;}
-      .hero-overlay{background:linear-gradient(to right, rgba(2,8,16,.90) 0%, rgba(2,8,16,.78) 48%, rgba(2,8,16,.46) 100%);}
-      .hero-content{padding:0;transform:none;max-width:100%;}
-      .hero-title{font-size:clamp(36px,11vw,46px);line-height:1.02;max-width:360px;margin-bottom:16px;}
-      .hero-text{font-size:14.5px;max-width:350px;line-height:1.58;}
-      .hero-paths{grid-template-columns:1fr;max-width:360px;margin-top:20px;gap:12px;}
-      .hero-path-card{min-height:auto;padding:17px 18px;}
-      .hero-path-card strong{font-size:23px;}
-      .section{padding:64px 0;}
-      .section-head h2,.why-text h2,.cta-body h2,.more-services-head h3{font-size:28px;}
-      .services-grid,.why-layout,.tips-grid,.more-services-grid{grid-template-columns:1fr;}
-      .tip-card h3{min-height:auto;font-size:24px;}
-      .more-services{padding:26px 20px 22px;}
-      .more-service-item,.more-service-item:nth-child(odd){border-right:none !important;}
-      .more-service-item:not(:last-child){border-bottom:1px solid rgba(255,255,255,.08);}
-      .more-service-item{padding:16px 0;min-height:auto;}
-      .cta-actions{flex-direction:column;}
-      .cta-actions .btn{width:100%;}
+    @media (max-width: 760px) {
+      :root { --header-h: 70px; }
+      .container { width: min(100% - 34px, var(--container)); }
+      .brand { min-width: 124px; }
+      .brand img { width: 124px; height: 56px; }
+      .hero::before { background-position: 59% center; }
+      .hero::after {
+        background:
+          linear-gradient(90deg, rgba(4,14,23,.9), rgba(4,14,23,.48)),
+          linear-gradient(0deg, rgba(4,14,23,.88) 0%, transparent 58%);
+      }
+      .hero-inner { min-height: calc(100svh - var(--header-h)); padding: 48px 0; }
+      .hero-copy { align-content: center; }
+      .hero-kicker { margin-bottom: 13px; font-size: 9px; }
+      .hero h1 { font-size: clamp(42px, 12vw, 58px); line-height: .98; }
+      .hero-lead { margin-top: 18px; font-size: 14px; }
+      .hero-actions { margin-top: 20px; }
+      .button { min-height: 45px; padding: 0 17px; font-size: 10px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item, .proof-item:first-child, .proof-item:last-child {
+        min-height: 126px;
+        padding: 24px 0;
+      }
+      .section { padding: 78px 0; }
+      .section-label { margin-bottom: 13px; font-size: 13px; }
+      .section-heading { font-size: 42px; }
+      .section-lead { margin-top: 18px; font-size: 14px; }
+      .units-head { margin-bottom: 40px; }
+      .unit { grid-template-columns: 1fr; min-height: 0; }
+      .unit-logo { min-height: 280px; }
+      .unit-copy { padding: 30px; }
+      .unit h3 { font-size: 29px; }
+      .standard-media { min-height: 460px; }
+      .standard-copy { padding: 64px 18px; }
+      .lab-grid { grid-template-columns: 1fr; gap: 44px; }
+      .lab-media { aspect-ratio: 4 / 3.5; }
+      .report-sheet { min-height: 0; padding: 27px; transform: none; }
+      .report-photos { gap: 8px; }
+      .report-photo { min-height: 118px; }
+      .contacts-head { margin-bottom: 34px; }
+      .contact-card { min-height: 290px; padding: 28px; }
+      .footer-row { grid-template-columns: 1fr; }
+      .footer-brand img { width: 160px; }
+      .footer-bottom { flex-direction: column; }
     }
 
-    @media (max-width:520px){
-      .hero{min-height:720px;}
-      .hero-slide{background-position:68% center;}
-      .hero-actions{flex-direction:column;}
-      .hero-actions .btn{width:100%;}
-      .tip-card{padding:24px 20px 22px;}
-      .tip-card h3{font-size:22px;}
-      .tip-card p{font-size:14px;line-height:1.8;}
+    @media (max-height: 720px) and (min-width: 761px) {
+      .hero-inner { padding-block: 34px; }
+      .hero h1 { font-size: clamp(50px, 5vw, 66px); }
+      .hero-lead { margin-top: 17px; }
+      .hero-actions { margin-top: 18px; }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
   </style>
+  <link rel="stylesheet" href="premium-v3.css">
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container topbar-row">
-  <a href="#inicio" class="brand brand-text-only" aria-label="Cleaning Services">
-  <div class="brand-name">CLEANING SERVICES</div>
-</a>
-      <nav class="nav-desk" aria-label="Menú principal" id="desktopNav">
-        <a href="#inicio" data-target="inicio">Inicio</a>
-        <a href="#servicios" data-target="servicios">Servicios</a>
-        <a href="#porque" data-target="porque">Por qué elegirnos</a>
-        <a href="#tips" data-target="tips">Cleaning Tips</a>
-        <a href="#contacto" data-target="contacto">Contacto</a>
-
-        <div class="social-links" aria-label="Redes sociales">
-          <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/>
-            </svg>
-          </a>
-
-          <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/>
-            </svg>
-          </a>
-
-          <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/>
-            </svg>
-          </a>
-        </div>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#inicio" aria-label="Cleaning Services, volver al inicio">
+        <img src="assets/logo-general-transparent.png" alt="Cleaning Services">
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="hogar.html">Para hogares</a>
+        <a href="empresas.html">Para empresas</a>
+        <a href="provider.html">Para profesionales</a>
+        <a href="#sistema">Nuestro sistema</a>
+        <a class="header-cta" href="#contacto">Contactar</a>
       </nav>
-
-      <button class="ham" id="hamBtn" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span><span class="sr-only">Abrir menú</span>
       </button>
     </div>
-
-    <nav class="nav-mob" id="mobNav" aria-label="Menú móvil">
-      <a href="#inicio" data-target="inicio" onclick="closeNav()">Inicio</a>
-      <a href="#servicios" data-target="servicios" onclick="closeNav()">Servicios</a>
-      <a href="#porque" data-target="porque" onclick="closeNav()">Por qué elegirnos</a>
-      <a href="#tips" data-target="tips" onclick="closeNav()">Cleaning Tips</a>
-      <a href="#contacto" data-target="contacto" onclick="closeNav()">Contacto</a>
-
-      <div class="social-links" aria-label="Redes sociales">
-        <a class="social-link" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.48-8.43ZM12.08 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.73.98 1-3.63-.24-.37a9.8 9.8 0 1 1 8.33 4.6Zm5.38-7.35c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.2.29-.76.94-.94 1.13-.17.2-.35.22-.64.08-.29-.14-1.23-.45-2.35-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.35.43-.52.14-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.14.2 2.08 3.17 5.03 4.44.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.27.17-1.38-.07-.12-.26-.19-.55-.33Z"/>
-          </svg>
-        </a>
-
-        <a class="social-link" href="https://www.instagram.com/cleaningcanning?igsh=YnNyOGE1OTBrdTN6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.36 3.36 0 0 0 12 8.65Z"/>
-          </svg>
-        </a>
-
-        <a class="social-link" href="https://www.facebook.com/share/18DePmDC1E/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M13.62 22v-8.03h2.7l.4-3.13h-3.1V8.84c0-.91.25-1.53 1.56-1.53h1.67V4.5c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.16v2.3H8.64v3.13h2.23V22h2.75Z"/>
-          </svg>
-        </a>
-      </div>
-    </nav>
   </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+    <a href="hogar.html">Para tu hogar<small>Cleaning Services Hogar</small></a>
+    <a href="empresas.html">Para tu empresa<small>Cleaning Services Empresas</small></a>
+    <a href="provider.html">Para profesionales<small>Cleaning Services Provider</small></a>
+    <a href="#sistema">Nuestro sistema</a>
+    <a href="#lab">Cleaning Lab</a>
+    <a href="#contacto">Contactos directos</a>
+  </nav>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-slider">
-        <div class="hero-slide active" style="background-image:url('héroe.png?v=3');"></div>
-        <div class="hero-slide" style="background-image:url('hero-2.png?v=3');"></div>
-        <div class="hero-slide" style="background-image:url('hero-3.png?v=3');"></div>
-      </div>
-
-      <div class="hero-overlay"></div>
-
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Limpieza de Tapizados Profesional</h1>
-
-          <p class="hero-text">
-            No hacemos limpieza superficial. Restauramos tus tapizados por dentro con extracción profunda, vapor, ozono y productos de uso profesional exclusivo.
-          </p>
-
-          <div class="hero-paths">
-            <a class="hero-path-card hero-path-primary" href="hogares.html">
-              <div>
-                <span class="path-label">Para clientes particulares</span>
-                <strong>Hogares</strong>
-                <small>Sillones, colchones, sillas y alfombras para espacios de uso diario.</small>
-              </div>
-              <span class="hero-path-arrow">Entrar a Hogares</span>
-            </a>
-
-            <a class="hero-path-card" href="empresas.html">
-              <div>
-                <span class="path-label">Para espacios de trabajo</span>
-                <strong>Empresas</strong>
-                <small>Oficinas, locales, consorcios y espacios corporativos de alto uso.</small>
-              </div>
-              <span class="hero-path-arrow">Entrar a Empresas</span>
-            </a>
+      <video class="hero-film" autoplay muted loop playsinline preload="auto" poster="assets/premium/cleaning-opening-poster.webp" aria-hidden="true">
+        <source src="assets/premium/cleaning-opening.webm" type="video/webm">
+        <source src="assets/premium/cleaning-opening.mp4" type="video/mp4">
+      </video>
+      <div class="container hero-inner">
+        <div class="hero-copy" data-reveal>
+          <p class="hero-kicker">Cleaning Services · Precisión sobre cada fibra</p>
+          <h1>El cuidado profesional,<br><span>llevado a otro nivel.</span></h1>
+          <p class="hero-lead">Cuidamos tapizados en hogares y organizaciones. También desarrollamos insumos, tecnología y conocimiento para profesionales. Tres especialidades, un mismo estándar.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#soluciones">Conocer las soluciones</a>
+            <a class="button button-outline" href="#contacto">Ver contactos directos</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Nuestros servicios</span>
-          <h2>Cuidado profesional para cada superficie</h2>
-        </div>
-
-        <div class="services-grid">
-          <a class="service-link" href="sillones.html" aria-label="Ver más sobre limpieza de sillones">
-            <article class="service-card">
-              <img src="sillones.png" alt="Limpieza de sillones">
-              <div class="service-body">
-                <h3>Limpieza de sillones</h3>
-                <p>Recuperamos color, frescura e higiene para que tu sillón vuelva a lucir prolijo y renovado.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="service-link" href="colchones.html" aria-label="Ver más sobre limpieza de colchones">
-            <article class="service-card">
-              <img src="colchones.png" alt="Limpieza de colchones">
-              <div class="service-body">
-                <h3>Limpieza de colchones</h3>
-                <p>Eliminamos suciedad, manchas y olores para mejorar la higiene de una superficie clave para tu descanso.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="service-link" href="alfombras.html" aria-label="Ver más sobre limpieza de alfombras">
-            <article class="service-card">
-              <img src="alfombras.png" alt="Limpieza de alfombras">
-              <div class="service-body">
-                <h3>Limpieza de alfombras</h3>
-                <p>Removemos suciedad acumulada y ayudamos a recuperar mejor aspecto, color y presencia en zonas de alto uso.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="service-link" href="autos.html" aria-label="Ver más sobre limpieza de autos">
-            <article class="service-card">
-              <img src="autos.png" alt="Limpieza de autos">
-              <div class="service-body">
-                <h3>Limpieza de autos</h3>
-                <p>Limpieza profunda de butacas y tapizados para renovar la higiene interior y mejorar la imagen del vehículo.</p>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <div class="more-services">
-          <div class="more-services-head">
-            <h3>Otros servicios que realizamos</h3>
-            <p>También trabajamos otras superficies y tapizados para hogares, empresas y espacios especiales.</p>
-            <div class="more-services-divider"></div>
-          </div>
-
-          <div class="more-services-grid">
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7 20v-4M17 20v-4M5 16h14"></path>
-                  <path d="M7 16V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v7"></path>
-                  <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Sillas</h4>
-                <p>Limpieza de sillas de comedor, oficina y todo tipo de tapizados.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 19v-6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6"></path>
-                  <path d="M8 10V8a4 4 0 0 1 8 0v2"></path>
-                  <path d="M6 19h12"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Puffs y butacas</h4>
-                <p>Recuperamos frescura, higiene y mejor aspecto en piezas de uso diario.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 18h14"></path>
-                  <path d="M7 18v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"></path>
-                  <path d="M8 10V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Respaldos y pie de cama</h4>
-                <p>Limpieza profunda de respaldos y pie de cama tapizados para mejorar higiene, frescura y presencia.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 4v16"></path>
-                  <path d="M18 4v16"></path>
-                  <path d="M8 6c2 1 2 3 0 4 2 1 2 3 0 4 2 1 2 3 0 4"></path>
-                  <path d="M16 6c-2 1-2 3 0 4-2 1-2 3 0 4-2 1-2 3 0 4"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Limpieza de cortinados</h4>
-                <p>Tratamiento orientado a remover suciedad acumulada y mejorar frescura textil.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7 18v-5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v5"></path>
-                  <path d="M9 11V8a3 3 0 0 1 6 0v3"></path>
-                  <path d="M5 18h14"></path>
-                  <path d="M4 20h16"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Cochecitos y sillitas de bebé</h4>
-                <p>Limpieza de superficies textiles de alto contacto con foco en higiene real.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7 20v-3M17 20v-3"></path>
-                  <path d="M5 17h14"></path>
-                  <path d="M7 17v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"></path>
-                  <path d="M9 9V7a3 3 0 0 1 6 0v2"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Sillas de oficina</h4>
-                <p>Ideal para puestos de trabajo, salas de reunión y espacios de uso frecuente.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 6h16"></path>
-                  <path d="M4 12h16"></path>
-                  <path d="M4 18h16"></path>
-                  <path d="M8 4v16"></path>
-                  <path d="M16 4v16"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Paneles divisores tapizados</h4>
-                <p>Limpieza profesional para paneles de oficina y superficies textiles verticales.</p>
-              </div>
-            </div>
-
-            <div class="more-service-item">
-              <div class="more-service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"></path>
-                  <path d="M9.5 12l1.7 1.7L14.8 10"></path>
-                </svg>
-              </div>
-              <div>
-                <h4>Tratamientos especiales</h4>
-                <p>Vapor para desinfección, ozono en ambientes y cuidados complementarios.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="proof" id="trayectoria">
+      <h2 class="sr-only">Datos de trayectoria</h2>
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>Más de 4.500</strong><span>servicios realizados en hogares, empresas y vehículos.</span></div>
+        <div class="proof-item"><strong>+5 años</strong><span>de especialización en limpieza profesional de tapizados.</span></div>
+        <div class="proof-item"><strong>Sistema propio</strong><span>diagnóstico, productos y protocolos según cada material.</span></div>
+        <div class="proof-item"><strong>Canning · GBA</strong><span>atención a domicilio y soluciones corporativas.</span></div>
       </div>
     </section>
 
-    <section class="section why-section" id="porque">
+    <section class="section" id="soluciones">
       <div class="container">
-        <div class="why-layout">
-          <div class="why-text">
-            <span class="kicker">¿Por qué elegirnos?</span>
-            <h2>Más que limpieza: un servicio pensado para mejorar de verdad cada espacio.</h2>
-            <p>No hacemos una limpieza superficial. Brindamos un servicio pensado para recuperar higiene, presentación y frescura en cada tapizado, adaptando el trabajo a cada superficie según su material, uso y nivel de suciedad. Además, contamos con vapor para desinfección y ozono en ambientes, dos diferenciales que elevan el resultado final.</p>
+        <div class="units-head" data-reveal>
+          <div>
+            <span class="section-label">Tres áreas especializadas</span>
+            <h2 class="section-heading">Una respuesta profesional para <em>cada necesidad.</em></h2>
           </div>
-
-          <div class="stats-list">
-            <div class="stat-row">
-              <div class="stat-badge">+5</div>
-              <div>
-                <div class="stat-num">+5 años</div>
-                <div class="stat-desc">de experiencia en limpieza profesional de tapizados.</div>
-              </div>
-            </div>
-
-            <div class="stat-row">
-              <div class="stat-badge">2500</div>
-              <div>
-                <div class="stat-num">+2500</div>
-                <div class="stat-desc">servicios realizados en hogares, empresas y vehículos.</div>
-              </div>
-            </div>
-
-            <div class="stat-row">
-              <div class="stat-badge">DOM</div>
-              <div>
-                <div class="stat-num">A domicilio</div>
-                <div class="stat-desc">atención práctica, prolija y adaptada a cada espacio.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tips-section" id="tips">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Cleaning Tips</span>
-          <h2>Información útil para el cuidado de tus tapizados</h2>
-          <p>Conocé más sobre limpieza profunda, manchas difíciles, vapor para desinfección y ozono en ambientes.</p>
+          <p class="section-lead">Cada área tiene su propio equipo, contacto y propuesta. Todas comparten el mismo estándar de cuidado y precisión.</p>
         </div>
 
-        <div class="tips-grid">
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                <path d="M16 3v4M8 3v4M3 10h18"></path>
-                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-              </svg>
+        <div class="units-grid">
+          <article class="unit" data-reveal>
+            <div class="unit-logo"><img src="assets/logo-hogar-transparent.png" alt="Cleaning Services Hogar"></div>
+            <div class="unit-copy">
+              <span class="unit-audience">Para tu hogar</span>
+              <h3>Hogar</h3>
+              <p>Limpieza profesional a domicilio de sillones, sillas, colchones, alfombras y tapizados de vehículos.</p>
+              <a class="text-link" href="hogar.html">Conocer Hogar <span>→</span></a>
             </div>
-            <h3>Cuándo es momento de hacer una limpieza profunda de tapizados</h3>
-            <div class="tip-divider"></div>
-            <p>La frecuencia no depende solo del uso. También influyen mascotas, chicos, humedad, polvo y ventilación del ambiente. Mantener una limpieza periódica ayuda a conservar mejor la higiene, la frescura y el estado general de sillones, colchones y alfombras.</p>
           </article>
 
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 3l1.6 3.7L17 8.3l-3.4 1.7L12 14l-1.6-4-3.4-1.7 3.4-1.6L12 3z"></path>
-                <path d="M5 14c1.5-.8 2.7-.7 4 0 1.4.7 2.6.8 4 0 1.3-.7 2.5-.8 4 0"></path>
-                <path d="M7 17c1.1-.5 1.9-.5 3 0 1.1.5 1.9.5 3 0 1.1-.5 1.9-.5 3 0"></path>
-              </svg>
+          <article class="unit" data-reveal>
+            <div class="unit-logo"><img src="assets/logo-empresas-transparent.png" alt="Cleaning Services Empresas"></div>
+            <div class="unit-copy">
+              <span class="unit-audience">Para organizaciones</span>
+              <h3>Empresas</h3>
+              <p>Servicios corporativos e institucionales planificados para cuidar la imagen sin alterar la operación.</p>
+              <a class="text-link" href="empresas.html">Conocer Empresas <span>→</span></a>
             </div>
-            <h3>Manchas que persisten: por qué a veces empeoran con el intento incorrecto</h3>
-            <div class="tip-divider"></div>
-            <p>No todas las manchas se resuelven frotando más. En muchos casos, insistir con productos caseros o exceso de agua termina fijando la suciedad, marcando la tela o empeorando el problema. Saber cuándo frenar también es parte de cuidar el tapizado.</p>
           </article>
 
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="5"></circle>
-                <path d="M8 14l-2 7 6-3 6 3-2-7"></path>
-              </svg>
+          <article class="unit" data-reveal>
+            <div class="unit-logo"><img src="assets/logo-provider-transparent.png" alt="Cleaning Services Provider"></div>
+            <div class="unit-copy">
+              <span class="unit-audience">Para profesionales del sector</span>
+              <h3>Provider</h3>
+              <p>Insumos, protocolos y acompañamiento técnico para elevar la calidad de cada servicio profesional.</p>
+              <a class="text-link" href="provider.html">Conocer Provider <span>→</span></a>
             </div>
-            <h3>Por qué un servicio profesional logra mejores resultados</h3>
-            <div class="tip-divider"></div>
-            <p>La diferencia no está solo en limpiar más, sino en trabajar cada superficie según su material, su uso y el nivel de suciedad acumulada. Un servicio profesional permite lograr un resultado más parejo, más profundo y con mejor duración en el tiempo.</p>
-          </article>
-
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M7 15a4 4 0 1 1 1-7.9A5 5 0 0 1 18 9a3 3 0 1 1 0 6H7z"></path>
-                <path d="M12 11v7"></path>
-                <path d="M9.5 15.5L12 18l2.5-2.5"></path>
-              </svg>
-            </div>
-            <h3>Vapor para desinfección: un diferencial real en higiene</h3>
-            <div class="tip-divider"></div>
-            <p>No todos los servicios trabajan con el mismo nivel de tratamiento. El uso de vapor aporta un plus real en desinfección y ayuda a mejorar la higiene de superficies textiles y zonas de contacto frecuente, elevando el resultado final del servicio.</p>
-          </article>
-
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 3v4"></path>
-                <path d="M12 17v4"></path>
-                <path d="M4.9 4.9l2.8 2.8"></path>
-                <path d="M16.3 16.3l2.8 2.8"></path>
-                <path d="M3 12h4"></path>
-                <path d="M17 12h4"></path>
-                <path d="M4.9 19.1l2.8-2.8"></path>
-                <path d="M16.3 7.7l2.8-2.8"></path>
-                <circle cx="12" cy="12" r="3.5"></circle>
-              </svg>
-            </div>
-            <h3>¿La limpieza de tapizados ayuda con ácaros, bacterias y pulgas?</h3>
-            <div class="tip-divider"></div>
-            <p>Cuando un tapizado acumula suciedad, humedad y restos orgánicos, también puede convertirse en un entorno favorable para agentes no deseados. Una limpieza profesional con vapor ayuda a mejorar la higiene y a reducir esa carga en sillones, colchones y alfombras.</p>
-          </article>
-
-          <article class="tip-card">
-            <div class="tip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <text x="4" y="16" fill="currentColor" stroke="none" font-size="11" font-family="Arial, sans-serif" font-weight="700">O₃</text>
-              </svg>
-            </div>
-            <h3>Ozono en ambientes: qué aporta después de la limpieza</h3>
-            <div class="tip-divider"></div>
-            <p>El tratamiento con ozono suma un diferencial importante en ambientes cerrados, vehículos y espacios de uso frecuente. Es un complemento ideal para reforzar la sensación de frescura, mejorar el entorno y acompañar un servicio más completo.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-wrap">
-          <div class="cta-photo">
-            <img src="cta.png" alt="Living premium con sillón limpio">
+    <section class="standard" id="sistema">
+      <div class="standard-grid">
+        <div class="standard-media"><img src="assets/system-process.webp" alt="Proceso profesional de extracción en un tapizado"></div>
+        <div class="standard-copy" data-reveal>
+          <span class="section-label">El estándar Cleaning</span>
+          <h2>La diferencia está en lo que sucede dentro de la fibra.</h2>
+          <p>Antes de intervenir, identificamos el material, el origen de la suciedad y el riesgo. El proceso se define después del diagnóstico, nunca antes.</p>
+          <div class="standard-list">
+            <div class="standard-item"><span>01</span><div><strong>Diagnóstico</strong><p>Material, manchas, olores, uso y antecedentes.</p></div></div>
+            <div class="standard-item"><span>02</span><div><strong>Tratamiento específico</strong><p>Producto, dilución, temperatura y técnica adecuados.</p></div></div>
+            <div class="standard-item"><span>03</span><div><strong>Extracción profunda</strong><p>Remoción controlada de suciedad, residuos y humedad.</p></div></div>
+            <div class="standard-item"><span>04</span><div><strong>Terminación y control</strong><p>Secado acelerado, revisión final y presentación.</p></div></div>
           </div>
-          <div class="cta-body">
-            <h2>Hogares o Empresas: elegí el canal adecuado y hablá con nosotros.</h2>
-            <p class="lead">Te ayudamos a encontrar la mejor solución según el tipo de espacio y el servicio que necesitás.</p>
+        </div>
+      </div>
+    </section>
 
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">Hogares</a>
-              <a class="btn btn-outline" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">Corporativo</a>
-            </div>
+    <section class="section report-feature" id="informes">
+      <div class="container report-grid">
+        <div class="report-copy" data-reveal>
+          <span class="section-label">Servicio documentado</span>
+          <h2 class="section-heading">El resultado queda respaldado, no sólo <em>a la vista.</em></h2>
+          <p class="section-lead">En Hogar y Empresas, cada intervención puede cerrar con un informe digital que explica qué se hizo sobre las fibras del mobiliario y cómo conservar el resultado.</p>
+          <div class="report-list">
+            <div><span>01</span><p><strong>Registro antes y después</strong>Evidencia visual del estado inicial y la terminación obtenida.</p></div>
+            <div><span>02</span><p><strong>Tratamiento y recomendaciones</strong>Proceso aplicado, observaciones técnicas y cuidados posteriores.</p></div>
+            <div><span>03</span><p><strong>Respaldo para organizaciones</strong>Cuando el alcance lo requiere, documentación profesional en Seguridad e Higiene.</p></div>
           </div>
+        </div>
+        <article class="report-sheet" data-reveal aria-label="Representación del informe post-servicio de Cleaning Services">
+          <div class="report-sheet-head"><strong>CLEANING SERVICES</strong><span>Servicio documentado</span></div>
+          <h3>Informe post-servicio</h3>
+          <p>Registro visual y técnico de la intervención realizada</p>
+          <div class="report-photos">
+            <figure class="report-photo"><img src="assets/premium/hogar-antes.webp" alt="Sillón antes del servicio profesional"><figcaption>Estado inicial</figcaption></figure>
+            <figure class="report-photo"><img src="assets/premium/hogar-despues.webp" alt="Sillón después del servicio profesional"><figcaption>Resultado</figcaption></figure>
+          </div>
+          <div class="report-data"><div><strong>Tratamiento aplicado</strong><span>Material, proceso técnico y soluciones utilizadas.</span></div><div><strong>Cuidados posteriores</strong><span>Secado, ventilación, uso y mantenimiento recomendados.</span></div><div><strong>Seguimiento</strong><span>Observaciones y trazabilidad del servicio realizado.</span></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="lab">
+      <div class="container lab-grid">
+        <div class="lab-media" data-reveal><img src="assets/lab-editorial.webp" alt="Tapizado claro en un ambiente cuidado"></div>
+        <div class="lab-copy" data-reveal>
+          <span class="section-label">Cleaning Lab</span>
+          <h2 class="section-heading">Conocimiento para cuidar mejor.</h2>
+          <p class="section-lead">Información clara para reconocer materiales, actuar ante una mancha y evitar daños antes de una intervención profesional.</p>
+          <div class="lab-links">
+            <a class="lab-link" href="guia-materiales.html"><span><strong>Guía de materiales</strong><small>Microfibra, chenille, pana, lino, cuero y otras superficies.</small></span><span>→</span></a>
+            <a class="lab-link" href="guia-materiales.html#primeros-pasos"><span><strong>Primeros pasos ante una mancha</strong><small>Qué hacer, qué evitar y cuándo dejar de intervenir.</small></span><span>→</span></a>
+            <a class="lab-link" href="hogar.html#sistema"><span><strong>Cómo trabaja un profesional</strong><small>Por qué el diagnóstico determina todo el proceso.</small></span><span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contacts" id="contacto">
+      <div class="container">
+        <div class="contacts-head" data-reveal>
+          <div>
+            <span class="section-label">Atención por área</span>
+            <h2 class="section-heading">Tres equipos. Tres contactos directos.</h2>
+          </div>
+          <p class="section-lead">Sin derivaciones ni números ocultos: elegí el área y hablá directamente con el equipo que puede resolver tu necesidad.</p>
+        </div>
+        <div class="contact-grid" data-reveal>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-hogar-transparent.png" alt="Cleaning Services Hogar"></div><small>Servicios a domicilio</small><h3>Hogar</h3><a class="contact-phone" href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11-5881-7248</a><a class="contact-email" href="mailto:hogar@cleaningservices.com.ar">hogar@cleaningservices.com.ar</a><p>Sillones, sillas, colchones, alfombras y tapizados de vehículos en tu domicilio.</p><a class="button button-light" href="https://wa.me/5491158817248?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20para%20mi%20hogar" target="_blank" rel="noopener noreferrer">Hablar con Hogar</a></article>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-empresas-transparent.png" alt="Cleaning Services Empresas"></div><small>Soluciones corporativas</small><h3>Empresas</h3><a class="contact-phone" href="https://wa.me/5491166395037" target="_blank" rel="noopener noreferrer">11-6639-5037</a><a class="contact-email" href="mailto:empresas@cleaningservices.com.ar">empresas@cleaningservices.com.ar</a><p>Propuestas planificadas para oficinas, instituciones, hoteles, locales y flotas.</p><a class="button button-light" href="https://wa.me/5491166395037?text=Hola%2C%20quiero%20solicitar%20una%20propuesta%20para%20una%20empresa" target="_blank" rel="noopener noreferrer">Hablar con Empresas</a></article>
+          <article class="contact-card"><div class="contact-logo"><img src="assets/logo-provider-transparent.png" alt="Cleaning Services Provider"></div><small>Desarrollo profesional</small><h3>Provider</h3><a class="contact-phone" href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11-6011-4067</a><a class="contact-email" href="mailto:provider@cleaningservices.com.ar">provider@cleaningservices.com.ar</a><p>Productos, máquinas, capacitación, protocolos y desarrollo de negocios especializados.</p><a class="button button-light" href="https://wa.me/5491160114067?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Cleaning%20Services%20Provider" target="_blank" rel="noopener noreferrer">Hablar con Provider</a></article>
+        </div>
+        <div class="contact-social"><span>Instagram general: <strong><a href="https://www.instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">@cleaningcanning</a></strong></span><span>Canning · Ezeiza · Gran Buenos Aires</span></div>
+      </div>
+    </section>
+
+    <section class="section closing">
+      <div class="container closing-inner" data-reveal>
+        <span class="section-label">Cleaning Services</span>
+        <h2>Profesionalismo que se ve. Método que se comprueba.</h2>
+        <p>Una empresa especializada, tres áreas de trabajo y un mismo compromiso con el resultado.</p>
+        <div class="closing-actions">
+          <a class="button button-dark" href="#contacto">Elegir un contacto</a>
+          <a class="button button-line" href="https://www.instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Cleaning Services <span>·</span> Limpieza profesional de tapizados <span>·</span> CABA y GBA</p>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand"><img src="assets/logo-general-transparent.png" alt="Cleaning Services"><p>Limpieza profesional de tapizados, soluciones corporativas e insumos técnicos para especialistas.</p></div>
+      <div><span class="footer-title">Contactos directos</span><div class="footer-contact">
+        <div class="footer-contact-item"><strong>Hogar</strong><a href="https://wa.me/5491158817248" target="_blank" rel="noopener noreferrer">11-5881-7248</a><a href="mailto:hogar@cleaningservices.com.ar">hogar@cleaningservices.com.ar</a></div>
+        <div class="footer-contact-item"><strong>Empresas</strong><a href="https://wa.me/5491166395037" target="_blank" rel="noopener noreferrer">11-6639-5037</a><a href="mailto:empresas@cleaningservices.com.ar">empresas@cleaningservices.com.ar</a></div>
+        <div class="footer-contact-item"><strong>Provider</strong><a href="https://wa.me/5491160114067" target="_blank" rel="noopener noreferrer">11-6011-4067</a><a href="mailto:provider@cleaningservices.com.ar">provider@cleaningservices.com.ar</a></div>
+      </div></div>
+      <div><span class="footer-title">Cleaning Services</span><div class="footer-links"><a href="hogar.html">Para hogares</a><a href="empresas.html">Para empresas</a><a href="provider.html">Para profesionales</a><a href="guia-materiales.html">Cleaning Lab</a><a href="https://www.instagram.com/cleaningcanning" target="_blank" rel="noopener noreferrer">Instagram · @cleaningcanning</a></div></div>
     </div>
+    <div class="container footer-bottom"><span>Canning, Ezeiza y Gran Buenos Aires</span><span>© 2026 Cleaning Services</span></div>
   </footer>
 
   <script>
-    (function () {
-      var btn = document.getElementById('hamBtn');
-      var drawer = document.getElementById('mobNav');
-      var desktopLinks = document.querySelectorAll('#desktopNav a[data-target]');
-      var mobileLinks = document.querySelectorAll('#mobNav a[data-target]');
-      var sections = document.querySelectorAll('section[id]');
-      var slides = document.querySelectorAll('.hero-slide');
-      var currentSlide = 0;
+    (() => {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      const heroFilm = document.querySelector(".hero-film");
 
-      function closeNav() {
-        if (!btn || !drawer) return;
-        btn.classList.remove('is-open');
-        drawer.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-
-      function openNav() {
-        if (!btn || !drawer) return;
-        btn.classList.add('is-open');
-        drawer.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-
-      function clearActive() {
-        desktopLinks.forEach(function(link){ link.classList.remove('active'); });
-        mobileLinks.forEach(function(link){ link.classList.remove('active'); });
-      }
-
-      function setActive(id) {
-        clearActive();
-        document.querySelectorAll('[data-target="' + id + '"]').forEach(function(link){
-          link.classList.add('active');
+      if (heroFilm) {
+        heroFilm.loop = true;
+        heroFilm.addEventListener("ended", () => {
+          heroFilm.currentTime = 0;
+          heroFilm.play().catch(() => {});
         });
       }
 
-      function updateActiveSection() {
-        var fromTop = window.scrollY + 140;
-        var current = 'inicio';
+      const closeMenu = () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        mobileNav.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      };
 
-        sections.forEach(function(section){
-          if (section.offsetTop <= fromTop) {
-            current = section.id;
-          }
-        });
-
-        setActive(current);
-      }
-
-      function showSlide(index) {
-        slides.forEach(function(slide, i){
-          slide.classList.toggle('active', i === index);
-        });
-      }
-
-      function startHeroSlider() {
-        if (!slides.length) return;
-
-        showSlide(0);
-
-        setInterval(function(){
-          currentSlide = currentSlide + 1;
-
-          if (currentSlide >= slides.length) {
-            currentSlide = 0;
-          }
-
-          showSlide(currentSlide);
-        }, 5200);
-      }
-
-      window.closeNav = closeNav;
-
-      if (btn) {
-        btn.addEventListener('click', function () {
-          btn.classList.contains('is-open') ? closeNav() : openNav();
-        });
-      }
-
-      window.addEventListener('scroll', updateActiveSection);
-
-      window.addEventListener('load', function () {
-        updateActiveSection();
-        startHeroSlider();
+      menuToggle.addEventListener("click", () => {
+        const open = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!open));
+        mobileNav.classList.toggle("is-open", !open);
+        document.body.classList.toggle("menu-open", !open);
       });
+      mobileNav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll("[data-reveal]").forEach(element => observer.observe(element));
     })();
   </script>
 </body>

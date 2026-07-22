@@ -23,7 +23,7 @@
   padding-bottom: 52px !important;
 }
 
-/* Imagen lateral aprobada: archivo real, sin reconstrucción por JavaScript. */
+/* Imagen lateral aprobada: archivo WebP real, sin reconstrucción por JavaScript. */
 .theme-provider .provider-platform .section-head {
   grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
   align-items: start;
@@ -42,16 +42,12 @@
   overflow: hidden;
   border: 1px solid rgba(7, 26, 43, .12);
   border-radius: 18px;
-  background: #071a2b;
+  background: #071a2b url("assets/premium/provider-platform-approved.webp") center / cover no-repeat;
   box-shadow: 0 24px 60px rgba(7, 26, 43, .13);
 }
 
 .theme-provider .provider-platform-visual img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  display: none;
 }
 
 .theme-provider .provider-platform-side > p {

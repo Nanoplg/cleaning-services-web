@@ -66,16 +66,16 @@
 .theme-provider .provider-platform .service-grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 30px !important;
+  gap: 22px !important;
   align-items: stretch !important;
 }
 
 .theme-provider .provider-platform .service-card {
   position: relative !important;
-  min-height: 360px !important;
+  min-height: 318px !important;
   display: flex !important;
   flex-direction: column !important;
-  padding: 0 28px 22px !important;
+  padding: 0 27px 18px !important;
   overflow: hidden !important;
   border: 1px solid rgba(7, 26, 43, .08) !important;
   border-radius: 9px !important;
@@ -96,21 +96,25 @@
   flex: 0 0 158px;
   width: auto;
   height: 158px;
-  margin: 0 -28px;
+  margin: 0 -27px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  image-rendering: auto;
+  filter: contrast(1.045) saturate(1.025);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .theme-provider .provider-platform .service-card::after {
   content: "";
   position: absolute;
   z-index: 1;
-  top: 112px;
+  top: 119px;
   left: 0;
-  width: 61%;
-  height: 72px;
-  border-top-right-radius: 76px 58px;
+  width: 56%;
+  height: 52px;
+  border-top-right-radius: 64px 46px;
   background: #fbfaf7;
   pointer-events: none;
 }
@@ -149,7 +153,7 @@
   height: auto !important;
   display: block !important;
   place-items: initial !important;
-  margin: -11px 0 12px !important;
+  margin: -8px 0 10px !important;
   border-radius: 0 !important;
   background: transparent !important;
   color: transparent !important;
@@ -161,7 +165,7 @@
   display: block;
   color: #078ca8;
   font-family: "Manrope", sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: .20em;
@@ -176,31 +180,31 @@
 .theme-provider .provider-platform .service-card:nth-child(6) .service-icon::before { content: "Crecimiento"; }
 
 .theme-provider .provider-platform .service-card h3 {
-  max-width: 310px !important;
-  margin: 0 0 14px !important;
+  max-width: 235px !important;
+  margin: 0 0 10px !important;
   color: #081b2d !important;
   font-family: "DM Serif Display", Georgia, serif !important;
-  font-size: clamp(28px, 2.05vw, 34px) !important;
+  font-size: clamp(28px, 1.8vw, 30px) !important;
   font-weight: 400 !important;
-  line-height: .98 !important;
+  line-height: 1 !important;
   letter-spacing: -.025em !important;
 }
 
 .theme-provider .provider-platform .service-card p {
   max-width: 355px !important;
-  margin: 0 0 18px !important;
+  margin: 0 0 12px !important;
   color: #4f6472 !important;
-  font-size: 13px !important;
-  line-height: 1.62 !important;
+  font-size: 11px !important;
+  line-height: 1.55 !important;
 }
 
 .theme-provider .provider-platform .service-card a {
   position: relative !important;
   align-self: flex-start !important;
   margin-top: auto !important;
-  padding: 0 0 13px !important;
+  padding: 0 0 10px !important;
   color: #078ca8 !important;
-  font-size: 10px !important;
+  font-size: 9px !important;
   font-weight: 800 !important;
   line-height: 1 !important;
   letter-spacing: .14em !important;
@@ -261,17 +265,17 @@
   .theme-provider .provider-platform .service-card {
     width: 100% !important;
     max-width: 520px !important;
-    min-height: 350px !important;
+    min-height: 318px !important;
     margin-inline: auto !important;
-    padding-inline: 26px !important;
+    padding-inline: 24px !important;
   }
 
   .theme-provider .provider-platform .service-card::before {
-    margin-inline: -26px;
+    margin-inline: -24px;
   }
 
   .theme-provider .provider-platform .service-card h3 {
-    font-size: 32px !important;
+    font-size: 29px !important;
   }
 }
 

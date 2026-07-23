@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Cotizador Hogar</title>
+<meta name="theme-color" content="#082b5c">
+<meta name="application-name" content="Cotizador Hogar">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Cotizador Hogar">
+<link rel="manifest" href="/manifest.webmanifest?v=26">
+<link rel="icon" type="image/webp" href="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/icon-app.webp">
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/icon-app.webp">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/app.css">
+</head>
+<body>
+<div class="app">
+<aside class="panel">
+ <div class="panel-head"><h1>Cotizador Cleaning Hogar</h1><p>Genera un PDF de dos páginas verticales, cómodo para abrir desde WhatsApp en el celular.</p></div>
+ <div class="form">
+  <div class="section"><h2>Datos del cliente</h2><div class="grid2"><div><label>Nombre</label><input id="client" placeholder="Nombre del cliente"></div><div><label>Zona</label><input id="zone" placeholder="Localidad o zona"></div></div><div style="margin-top:9px"><label>Fecha</label><input id="date" type="date"></div></div>
+  <div class="section"><h2>Servicios</h2><div id="serviceRows"></div><button class="btn btn-add" id="addService">+ Agregar servicio</button></div>
+  <div class="section"><h2>Descuento</h2><div class="grid2"><div><label>Tipo</label><select id="discType"><option value="none">Sin descuento</option><option value="percent">Porcentaje</option><option value="amount">Monto fijo</option></select></div><div><label>Valor</label><input id="discValue" type="number" min="0" value="0"></div></div><div style="margin-top:9px"><label>Nombre del beneficio</label><input id="discName" value="Descuento especial"></div></div>
+  <div class="section"><button class="btn btn-main" id="shareBtn">Compartir PDF</button><button class="btn btn-dark" id="pdfBtn">Descargar PDF</button><p style="font-size:12px;line-height:1.4;color:#61718a;margin:10px 2px 0">En el celular usá Compartir PDF. En la computadora usá Descargar PDF.</p></div>
+ </div>
+</aside>
+<main class="preview-wrap">
+ <div class="preview-toolbar"><h2>Vista previa móvil</h2><span>2 páginas · lectura optimizada para celular</span></div>
+ <div class="page-slot"><div class="page-scaler"><article class="mobile-page" id="page1">
+  <header class="m-head"><div class="m-logo"><img alt="Cleaning Services Hogar"></div><div class="m-title"><h1>COTIZACIÓN DE SERVICIO</h1><div class="m-meta"><strong>Fecha:</strong><span id="p1Date"></span><strong>Cliente:</strong><span id="p1Client"></span><strong>Zona:</strong><span id="p1Zone"></span></div></div></header>
+  <section class="m-hero"><div class="m-hero-copy"><h2>LIMPIEZA PROFESIONAL <span>REAL,<br>NO SUPERFICIAL.</span></h2><p>Removemos suciedad, residuos y olores desde el interior de la fibra.</p></div><div class="m-hero-img"></div></section>
+  <section class="m-brief"><strong>Realizamos una limpieza profunda del tapizado, trabajando sobre la fibra para remover suciedad, residuos y olores acumulados. El procedimiento se adapta según el material, el estado general y las necesidades específicas de cada pieza.</strong></section>
+  <div class="m-section-title">DETALLE DEL SERVICIO</div><section class="m-table" id="p1Table"></section><div class="continue" id="continueText">El detalle continúa en la página 2 →</div>
+  <section class="m-pay"><div class="m-total"><small>TOTAL DEL SERVICIO</small><strong id="p1Total"></strong></div><div class="m-payopts"><div class="m-payrow"><div><b>EFECTIVO / TRANSFERENCIA</b><small>Precio final</small></div><strong id="p1Cash"></strong></div><div class="m-payrow"><div><b>TARJETA DE CRÉDITO</b><small>Valor por cuota</small></div><strong id="p1Card"></strong></div></div></section>
+ </article></div></div>
+ <div class="page-slot"><div class="page-scaler"><article class="mobile-page" id="page2">
+  <header class="m2-top"><img alt="Cleaning Services Hogar"><div class="m2-page">COTIZACIÓN · PÁGINA 2</div></header>
+  <div class="m2-title">Un tratamiento definido para cada tapizado</div>
+  <section class="m2-box"><p>Al momento de realizar el trabajo, nuestro equipo evalúa el estado, el tipo de tejido, las manchas y las necesidades específicas de cada tapizado.</p><p><strong>Esta evaluación permite seleccionar los productos y procedimientos profesionales adecuados, sin modificar el valor de la cotización acordada.</strong></p><div class="m2-products">Trabajamos con MLF Pro Clean, BioActiv Pro y OxiRestore, seleccionados según la evaluación técnica de cada tapizado.</div></section>
+  <div class="m2-subtitle">¿QUÉ INCLUYE?</div><section class="m-includes" id="includesGrid">
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M3.9 54.9C10.5 40.9 24.5 32 40 32h432c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6v-79.1L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></div></div><span>Aspirado<br>técnico</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M96 32v96h128V32c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32zm0 128c-53 0-96 43-96 96v208c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V256c0-53-43-96-96-96H96zm64 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160zM384 48l-32-16-16-32-16 32-32 16 32 16 16 32 16-32 32-16z"/></svg></div></div><span>Productos<br>profesionales</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v208H0V48zm0 240h384v32c0 35.3-28.7 64-64 64h-64v64c0 35.3-28.7 64-64 64s-64-28.7-64-64v-64H64c-35.3 0-64-28.7-64-64v-32z"/></svg></div></div><span>Cepillado<br>controlado</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4 4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32 167.6 32 96 103.6 96 192v8.1C40.2 219.8 0 273.2 0 336z"/></svg></div></div><span>Vapor</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M192 512C86 512 0 426 0 320 0 228.8 130.2 57.7 166.6 11.7 172.6 4.2 181.5 0 191.1 0h1.8c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192z"/></svg></div></div><span>Extracción<br>profunda</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M258.6 0C168 17 115.6 102.3 130.5 189.3c2.9 17 8.4 32.9 15.9 47.4L32 224C14.3 224 0 238.3 0 256c17 85.5 102.3 137.9 189.3 123 17-2.9 32.9-8.4 47.4-15.9L224 480c0 17.7 14.3 32 32 32 85.5-17 137.9-102.3 123-189.3-2.9-17-8.4-32.9-15.9-47.4L480 288c17.7 0 32-14.3 32-32-17-85.5-102.3-137.9-189.3-123-17 2.9-32.9 8.4-47.4 15.9L288 32c0-17.7-13.7-32-29.4-32zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></div></div><span>Secado<br>acelerado</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0c42.8 0 76.4 32.7 98.4 84.8 52.7-6.1 95 6.9 115.2 43.2 20.7 37.1 9.4 82.8-23.6 128 33 45.2 44.3 90.9 23.6 128-20.2 36.4-62.5 49.3-115.2 43.2C332.4 479.3 298.8 512 256 512s-76.4-32.7-98.4-84.8c-52.7 6.1-95-6.8-115.2-43.2C21.7 346.9 33 301.2 66 256c-33-45.2-44.3-90.9-23.6-128 20.2-36.3 62.5-49.3 115.2-43.2C179.6 32.7 213.2 0 256 0zm80 256a80 80 0 1 0-160 0 80 80 0 1 0 160 0z"/></svg></div><span class="o3">O₃</span></div><span>Ozonización<br>final</span></div>
+   <div class="inc"><div class="pictogram"><div class="fa-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M224 88c0-48.6 39.4-88 88-88h8c13.3 0 24 10.7 24 24v8c0 48.6-39.4 88-88 88h-8c-13.3 0-24-10.7-24-24v-8zm-80 24c13.3 0 24 10.7 24 24v8c0 48.6-39.4 88-88 88h-8c-13.3 0-24-10.7-24-24v-8c0-48.6 39.4-88 88-88h8zm200 264c0-61.9-50.1-112-112-112s-112 50.1-112 112h224zM0 408c0-17.7 14.3-32 32-32h448c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"/></svg></div></div><span>Aromatización<br>final</span></div>
+  </section><div class="m2-note">No todos los procedimientos se aplican en todos los casos; se utilizan los necesarios según el tipo de tapizado.</div>
+  <section class="more-wrap" id="moreWrap"><div class="m-section-title">CONTINUACIÓN DEL DETALLE</div><div class="m-table" id="p2Table"></div></section>
+  <section class="m2-contact"><div><small>WHATSAPP / TELÉFONO</small><strong>11 5881 7248</strong></div><div><small>INSTAGRAM</small><strong>@cleaningcanning</strong></div><div><small>SITIO WEB</small><strong>cleaningservices.com.ar</strong></div></section><div class="m2-slogan">Limpieza real por dentro. <span>Resultados que se ven.</span></div>
+ </article></div></div>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/assets/approved-logo.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/assets/approved-hero-01.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/assets/approved-hero-02.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/app-v26.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Nanoplg/cleaning-services-web@098e3aec88683e29e2acd8428b1124924fc6942b/cotizador-hogar/assets/apply-approved-assets.js"></script>
+</body></html>

@@ -1,0 +1,51 @@
+/* Cleaning Lab visible en la navegación principal */
+body:not([class*="theme-"]) .desktop-nav > a[href="#sistema"] {
+  display: none !important;
+}
+
+@media (min-width: 1051px) {
+  body:not([class*="theme-"]) #mobileNav {
+    display: contents !important;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a {
+    display: none !important;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"] {
+    display: block !important;
+    position: fixed;
+    top: 29px;
+    right: max(146px, calc((100vw - 1220px) / 2 + 118px));
+    z-index: 110;
+    padding: 0;
+    border: 0;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -8px;
+    height: 1px;
+    background: var(--ink);
+    transition: right .25s ease;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"]:hover::after {
+    right: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  body:not([class*="theme-"]) #mobileNav > a[href="#sistema"] {
+    display: none !important;
+  }
+}

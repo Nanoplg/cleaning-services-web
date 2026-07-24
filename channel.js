@@ -104,6 +104,7 @@
       heroPrintButton.replaceWith(stepsLink);
     }
 
+    document.querySelector('.guide-hero-card span')?.remove();
     document.querySelector('.channel-cta [data-print]')?.remove();
   }
 

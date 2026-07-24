@@ -45,6 +45,11 @@
         transform: translateY(-48px);
       }
 
+      body.guide-page .material-card-top {
+        display: block;
+        margin-bottom: 24px;
+      }
+
       body.guide-page .guide-notice {
         margin-top: -26px;
       }
@@ -62,6 +67,12 @@
       body.guide-page .channel-cta {
         padding-top: 46px;
         padding-bottom: 46px;
+      }
+
+      @media print {
+        body.guide-page .material-card-top {
+          margin-bottom: 10px;
+        }
       }
 
       @media (max-width: 980px) {
@@ -117,6 +128,7 @@
     }
 
     document.querySelector('.guide-hero-card span')?.remove();
+    document.querySelectorAll('.material-symbol').forEach(symbol => symbol.remove());
     document.querySelector('.channel-cta [data-print]')?.remove();
   }
 

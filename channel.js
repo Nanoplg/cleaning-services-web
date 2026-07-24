@@ -37,12 +37,12 @@
     guideStyles.setAttribute('data-cleaning-lab-spacing', 'true');
     guideStyles.textContent = `
       body.guide-page .guide-hero-layout {
-        padding-top: 132px;
+        padding-top: 112px;
         padding-bottom: 72px;
       }
 
       body.guide-page .guide-hero-card {
-        transform: translateY(-24px);
+        transform: translateY(-4px);
       }
 
       body.guide-page .guide-notice {

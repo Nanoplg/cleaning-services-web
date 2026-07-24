@@ -4,33 +4,108 @@
   const desktopNav = document.querySelector('.desktop-nav');
 
   const hasCleaningLabLink = nav => {
-  if (!nav) return false;
+    if (!nav) return false;
 
-  return Array.from(nav.querySelectorAll('a')).some(link => {
-    const href = (link.getAttribute('href') || '').replace(/^\.\//, '');
-    return href === 'guia-materiales.html'
-      || href === 'index.html#lab'
-      || href === '#lab'
-      || link.hasAttribute('data-cleaning-lab-nav');
-  });
-};
+    return Array.from(nav.querySelectorAll('a')).some(link => {
+      const href = (link.getAttribute('href') || '').replace(/^\.\//, '');
+      return href === 'guia-materiales.html'
+        || href === 'index.html#lab'
+        || href === '#lab'
+        || link.hasAttribute('data-cleaning-lab-nav');
+    });
+  };
 
-const addCleaningLabLink = (nav, beforeElement = null) => {
-  if (!nav || hasCleaningLabLink(nav)) return;
+  const addCleaningLabLink = (nav, beforeElement = null) => {
+    if (!nav || hasCleaningLabLink(nav)) return;
 
-  const link = document.createElement('a');
-  link.href = 'guia-materiales.html';
-  link.textContent = 'Cleaning Lab';
-  link.setAttribute('data-cleaning-lab-nav', 'true');
-  nav.insertBefore(link, beforeElement);
-};
+    const link = document.createElement('a');
+    link.href = 'guia-materiales.html';
+    link.textContent = 'Cleaning Lab';
+    link.setAttribute('data-cleaning-lab-nav', 'true');
+    nav.insertBefore(link, beforeElement);
+  };
 
-addCleaningLabLink(desktopNav, desktopNav?.querySelector('.nav-cta') || null);
+  addCleaningLabLink(desktopNav, desktopNav?.querySelector('.nav-cta') || null);
 
-const firstSectionLink = mobileNav
-  ? Array.from(mobileNav.querySelectorAll('a')).find(link => link.getAttribute('href')?.startsWith('#'))
-  : null;
-addCleaningLabLink(mobileNav, firstSectionLink || null);
+  const firstSectionLink = mobileNav
+    ? Array.from(mobileNav.querySelectorAll('a')).find(link => link.getAttribute('href')?.startsWith('#'))
+    : null;
+  addCleaningLabLink(mobileNav, firstSectionLink || null);
+
+  if (document.body.classList.contains('guide-page')) {
+    const guideStyles = document.createElement('style');
+    guideStyles.setAttribute('data-cleaning-lab-spacing', 'true');
+    guideStyles.textContent = `
+      body.guide-page .guide-hero-layout {
+        padding-top: 132px;
+        padding-bottom: 72px;
+      }
+
+      body.guide-page .guide-notice {
+        margin-top: -26px;
+      }
+
+      body.guide-page .guide-library {
+        padding-top: 84px;
+        padding-bottom: 46px;
+      }
+
+      body.guide-page .first-steps {
+        padding-top: 54px;
+        padding-bottom: 54px;
+      }
+
+      body.guide-page .channel-cta {
+        padding-top: 46px;
+        padding-bottom: 46px;
+      }
+
+      @media (max-width: 980px) {
+        body.guide-page .guide-hero-layout {
+          padding-top: 118px;
+          padding-bottom: 62px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body.guide-page .guide-hero-layout {
+          padding-top: 104px;
+          padding-bottom: 48px;
+        }
+
+        body.guide-page .guide-notice {
+          margin-top: 0;
+        }
+
+        body.guide-page .guide-library {
+          padding-top: 58px;
+          padding-bottom: 36px;
+        }
+
+        body.guide-page .first-steps {
+          padding-top: 44px;
+          padding-bottom: 44px;
+        }
+
+        body.guide-page .channel-cta {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+      }
+    `;
+    document.head.appendChild(guideStyles);
+
+    const heroPrintButton = document.querySelector('.guide-hero [data-print]');
+    if (heroPrintButton) {
+      const stepsLink = document.createElement('a');
+      stepsLink.className = heroPrintButton.className;
+      stepsLink.href = '#primeros-pasos';
+      stepsLink.textContent = 'Qué hacer ante una mancha';
+      heroPrintButton.replaceWith(stepsLink);
+    }
+
+    document.querySelector('.channel-cta [data-print]')?.remove();
+  }
 
   const closeMenu = () => {
     mobileNav?.classList.remove('is-open');

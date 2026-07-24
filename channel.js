@@ -79,6 +79,29 @@
         margin-top: -26px;
       }
 
+      body.guide-page .guide-notice-row {
+        grid-template-columns: 112px 1fr;
+        gap: 32px;
+        padding: 30px 34px;
+        border: 1px solid rgba(var(--accent-rgb), .34);
+        border-left: 4px solid var(--accent);
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), .08), #fff 24%);
+        box-shadow: 0 22px 58px rgba(7, 26, 43, .13);
+      }
+
+      body.guide-page .guide-notice strong {
+        font-size: 11px;
+        line-height: 1.45;
+        letter-spacing: .17em;
+      }
+
+      body.guide-page .guide-notice p {
+        color: #294b5b;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.65;
+      }
+
       body.guide-page .guide-library {
         padding-top: 84px;
         padding-bottom: 46px;
@@ -105,6 +128,11 @@
 
         body.guide-page .step-card-head {
           margin-bottom: 8px;
+        }
+
+        body.guide-page .guide-notice-row {
+          padding: 20px 24px;
+          box-shadow: none;
         }
       }
 
@@ -135,6 +163,17 @@
 
         body.guide-page .guide-notice {
           margin-top: 0;
+        }
+
+        body.guide-page .guide-notice-row {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 25px 24px;
+          border-radius: 0;
+        }
+
+        body.guide-page .guide-notice p {
+          font-size: 15px;
         }
 
         body.guide-page .guide-library {

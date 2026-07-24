@@ -1,6 +1,7 @@
 /* Cleaning Lab visible en la navegación principal */
 body:not([class*="theme-"]) .desktop-nav > a[href="#sistema"] {
-  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 @media (min-width: 1051px) {

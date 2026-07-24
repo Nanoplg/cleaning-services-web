@@ -1,6 +1,7 @@
 /* Ajustes específicos de navegación y presentación de Cleaning Lab. */
 
 /* Regla principal — opción 3 aprobada */
+/* Ícono aprobado: escudo limpio, sin tilde. */
 html body.guide-page .guide-notice-row {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;

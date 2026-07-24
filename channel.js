@@ -37,8 +37,12 @@
     guideStyles.setAttribute('data-cleaning-lab-spacing', 'true');
     guideStyles.textContent = `
       body.guide-page .guide-hero-layout {
-        padding-top: 132px;
+        padding-top: 112px;
         padding-bottom: 72px;
+      }
+
+      body.guide-page .guide-hero-card {
+        transform: translateY(-48px);
       }
 
       body.guide-page .guide-notice {
@@ -65,12 +69,20 @@
           padding-top: 118px;
           padding-bottom: 62px;
         }
+
+        body.guide-page .guide-hero-card {
+          transform: translateY(-14px);
+        }
       }
 
       @media (max-width: 640px) {
         body.guide-page .guide-hero-layout {
           padding-top: 104px;
           padding-bottom: 48px;
+        }
+
+        body.guide-page .guide-hero-card {
+          transform: none;
         }
 
         body.guide-page .guide-notice {
@@ -104,6 +116,7 @@
       heroPrintButton.replaceWith(stepsLink);
     }
 
+    document.querySelector('.guide-hero-card span')?.remove();
     document.querySelector('.channel-cta [data-print]')?.remove();
   }
 

@@ -42,7 +42,7 @@
       }
 
       body.guide-page .guide-hero-card {
-        transform: translateY(-12px);
+        transform: translateY(-28px);
       }
 
       body.guide-page .guide-notice {

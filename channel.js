@@ -41,6 +41,10 @@
         padding-bottom: 72px;
       }
 
+      body.guide-page .guide-hero-card {
+        transform: translateY(-24px);
+      }
+
       body.guide-page .guide-notice {
         margin-top: -26px;
       }
@@ -65,12 +69,20 @@
           padding-top: 118px;
           padding-bottom: 62px;
         }
+
+        body.guide-page .guide-hero-card {
+          transform: translateY(-14px);
+        }
       }
 
       @media (max-width: 640px) {
         body.guide-page .guide-hero-layout {
           padding-top: 104px;
           padding-bottom: 48px;
+        }
+
+        body.guide-page .guide-hero-card {
+          transform: none;
         }
 
         body.guide-page .guide-notice {

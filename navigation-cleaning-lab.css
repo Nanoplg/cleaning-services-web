@@ -1,0 +1,74 @@
+/* Cleaning Lab visible en la navegación principal */
+body:not([class*="theme-"]) {
+  --header-nav-gap: clamp(18px, 2vw, 34px);
+  --header-contact-width: 115px;
+  --header-lab-width: 89px;
+}
+
+body:not([class*="theme-"]) .desktop-nav > a[href="#sistema"] {
+  width: var(--header-lab-width);
+  flex: 0 0 var(--header-lab-width);
+  overflow: hidden;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 1051px) {
+  body:not([class*="theme-"]) .desktop-nav .header-cta {
+    width: var(--header-contact-width);
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+  }
+
+  body:not([class*="theme-"]) #mobileNav {
+    display: contents !important;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a {
+    display: none !important;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"] {
+    display: block !important;
+    position: fixed;
+    top: 29px;
+    right: max(
+      calc(28px + var(--header-contact-width) + var(--header-nav-gap)),
+      calc((100vw - 1220px) / 2 + var(--header-contact-width) + var(--header-nav-gap))
+    );
+    z-index: 110;
+    width: var(--header-lab-width);
+    padding: 0;
+    border: 0;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1.6;
+    text-align: left;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -8px;
+    height: 1px;
+    background: var(--ink);
+    transition: right .25s ease;
+  }
+
+  body:not([class*="theme-"]) #mobileNav > a[href="#lab"]:hover::after {
+    right: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  body:not([class*="theme-"]) #mobileNav > a[href="#sistema"] {
+    display: none !important;
+  }
+}

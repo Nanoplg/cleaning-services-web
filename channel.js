@@ -1,6 +1,24 @@
 (() => {
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
+  const desktopNav = document.querySelector('.desktop-nav');
+
+  const addCleaningLabLink = (nav, beforeElement = null) => {
+    if (!nav || nav.querySelector('a[href="index.html#lab"], a[href="#lab"]')) return;
+
+    const link = document.createElement('a');
+    link.href = 'index.html#lab';
+    link.textContent = 'Cleaning Lab';
+    link.setAttribute('data-cleaning-lab-nav', 'true');
+    nav.insertBefore(link, beforeElement);
+  };
+
+  addCleaningLabLink(desktopNav, desktopNav?.querySelector('.nav-cta') || null);
+
+  const firstSectionLink = mobileNav
+    ? Array.from(mobileNav.querySelectorAll('a')).find(link => link.getAttribute('href')?.startsWith('#'))
+    : null;
+  addCleaningLabLink(mobileNav, firstSectionLink || null);
 
   const closeMenu = () => {
     mobileNav?.classList.remove('is-open');

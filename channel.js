@@ -3,22 +3,34 @@
   const mobileNav = document.getElementById('mobileNav');
   const desktopNav = document.querySelector('.desktop-nav');
 
-  const addCleaningLabLink = (nav, beforeElement = null) => {
-    if (!nav || nav.querySelector('a[href="index.html#lab"], a[href="#lab"]')) return;
+  const hasCleaningLabLink = nav => {
+  if (!nav) return false;
 
-    const link = document.createElement('a');
-    link.href = 'index.html#lab';
-    link.textContent = 'Cleaning Lab';
-    link.setAttribute('data-cleaning-lab-nav', 'true');
-    nav.insertBefore(link, beforeElement);
-  };
+  return Array.from(nav.querySelectorAll('a')).some(link => {
+    const href = (link.getAttribute('href') || '').replace(/^\.\//, '');
+    return href === 'guia-materiales.html'
+      || href === 'index.html#lab'
+      || href === '#lab'
+      || link.hasAttribute('data-cleaning-lab-nav');
+  });
+};
 
-  addCleaningLabLink(desktopNav, desktopNav?.querySelector('.nav-cta') || null);
+const addCleaningLabLink = (nav, beforeElement = null) => {
+  if (!nav || hasCleaningLabLink(nav)) return;
 
-  const firstSectionLink = mobileNav
-    ? Array.from(mobileNav.querySelectorAll('a')).find(link => link.getAttribute('href')?.startsWith('#'))
-    : null;
-  addCleaningLabLink(mobileNav, firstSectionLink || null);
+  const link = document.createElement('a');
+  link.href = 'guia-materiales.html';
+  link.textContent = 'Cleaning Lab';
+  link.setAttribute('data-cleaning-lab-nav', 'true');
+  nav.insertBefore(link, beforeElement);
+};
+
+addCleaningLabLink(desktopNav, desktopNav?.querySelector('.nav-cta') || null);
+
+const firstSectionLink = mobileNav
+  ? Array.from(mobileNav.querySelectorAll('a')).find(link => link.getAttribute('href')?.startsWith('#'))
+  : null;
+addCleaningLabLink(mobileNav, firstSectionLink || null);
 
   const closeMenu = () => {
     mobileNav?.classList.remove('is-open');

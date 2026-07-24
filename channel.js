@@ -36,10 +36,6 @@
     const guideStyles = document.createElement('style');
     guideStyles.setAttribute('data-cleaning-lab-spacing', 'true');
     guideStyles.textContent = `
-      body.guide-page {
-        --container: min(1180px, calc(100% - 56px));
-      }
-
       body.guide-page .guide-hero-layout {
         padding-top: 132px;
         padding-bottom: 72px;
@@ -49,15 +45,19 @@
         margin-top: -26px;
       }
 
-      body.guide-page .guide-library,
+      body.guide-page .guide-library {
+        padding-top: 84px;
+        padding-bottom: 46px;
+      }
+
       body.guide-page .first-steps {
-        padding-top: 96px;
-        padding-bottom: 96px;
+        padding-top: 54px;
+        padding-bottom: 54px;
       }
 
       body.guide-page .channel-cta {
-        padding-top: 72px;
-        padding-bottom: 72px;
+        padding-top: 46px;
+        padding-bottom: 46px;
       }
 
       @media (max-width: 980px) {
@@ -68,10 +68,6 @@
       }
 
       @media (max-width: 640px) {
-        body.guide-page {
-          --container: min(100% - 36px, 1180px);
-        }
-
         body.guide-page .guide-hero-layout {
           padding-top: 104px;
           padding-bottom: 48px;
@@ -81,15 +77,19 @@
           margin-top: 0;
         }
 
-        body.guide-page .guide-library,
+        body.guide-page .guide-library {
+          padding-top: 58px;
+          padding-bottom: 36px;
+        }
+
         body.guide-page .first-steps {
-          padding-top: 64px;
-          padding-bottom: 64px;
+          padding-top: 44px;
+          padding-bottom: 44px;
         }
 
         body.guide-page .channel-cta {
-          padding-top: 56px;
-          padding-bottom: 56px;
+          padding-top: 40px;
+          padding-bottom: 40px;
         }
       }
     `;

@@ -1,0 +1,67 @@
+name: Enable Vercel Web Analytics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/enable-vercel-analytics.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enable-analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add analytics to public website pages
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          pages = [
+              Path('index.html'),
+              Path('hogar.html'),
+              Path('empresas.html'),
+              Path('provider.html'),
+              Path('guia-materiales.html'),
+              Path('sillones.html'),
+          ]
+
+          snippet = '''  <!-- Vercel Web Analytics -->
+          <script>
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+          </script>
+          <script defer src="/_vercel/insights/script.js"></script>
+          '''
+
+          changed = []
+          for page in pages:
+              if not page.exists():
+                  continue
+              text = page.read_text(encoding='utf-8')
+              if '/_vercel/insights/script.js' in text:
+                  continue
+              if '</head>' not in text:
+                  continue
+              page.write_text(text.replace('</head>', snippet + '</head>', 1), encoding='utf-8')
+              changed.append(str(page))
+
+          print('Updated:', ', '.join(changed) if changed else 'nothing')
+          PY
+
+      - name: Commit website change and remove one-time workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/enable-vercel-analytics.yml
+          git add index.html hogar.html empresas.html provider.html guia-materiales.html sillones.html
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git commit -m "feat: add Vercel Web Analytics tracking [skip ci]"
+          git push origin HEAD:main

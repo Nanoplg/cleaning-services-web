@@ -13,31 +13,6 @@
     .theme-hogar .cleaning30-kicker {
       color: #16b9cc !important;
     }
-
-    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
-    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-      left: 50% !important;
-      right: auto !important;
-      transform: translateX(-50%) rotate(-4deg) !important;
-    }
-
-    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
-      top: 25% !important;
-    }
-
-    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-      top: 24% !important;
-    }
-
-    @media (max-width: 860px) {
-      .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
-      .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-        left: 50% !important;
-        right: auto !important;
-        top: 18% !important;
-        transform: translateX(-50%) rotate(-4deg) !important;
-      }
-    }
   `;
   document.head.appendChild(heroStyle);
 
@@ -57,7 +32,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Control final profesional de un sillón claro recién tratado" style="background-image:url('assets/cleaning30-respaldo.svg');background-position:58% 57%;"><div class="cleaning-hero-signature">Hogares más limpios,<br>vidas más tranquilas</div></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Control final profesional de un sillón claro recién tratado" style="background-image:url('assets/cleaning30-respaldo.svg');background-position:58% 57%;"></div>
       </article>
 
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">
@@ -74,7 +49,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-15" role="img" aria-label="Accidente cotidiano con café derramado sobre un sillón claro" style="background-image:url('assets/cleaning15-proteccion-accidental.svg');background-position:58% 57%;"><div class="cleaning-hero-signature">Hogares más limpios,<br>vidas más tranquilas</div></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-15" role="img" aria-label="Accidente cotidiano con café derramado sobre un sillón claro" style="background-image:url('assets/cleaning15-proteccion-accidental.svg');background-position:58% 57%;"></div>
       </article>
     </div>
 

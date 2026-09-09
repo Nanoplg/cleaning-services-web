@@ -96,8 +96,6 @@
     start();
   }));
 
-  hero.addEventListener('mouseenter', stop);
-  hero.addEventListener('mouseleave', start);
   hero.addEventListener('focusin', stop);
   hero.addEventListener('focusout', event => {
     if (!hero.contains(event.relatedTarget)) start();

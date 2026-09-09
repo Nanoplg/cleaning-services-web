@@ -74,7 +74,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-15" role="img" aria-label="Living cálido y luminoso con sillón claro"><div class="cleaning-hero-signature">Hogares más limpios,<br>vidas más tranquilas</div></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-15" role="img" aria-label="Accidente cotidiano con café derramado sobre un sillón claro" style="background-image:url('assets/cleaning15-proteccion-accidental.svg');background-position:58% 57%;"><div class="cleaning-hero-signature">Hogares más limpios,<br>vidas más tranquilas</div></div>
       </article>
     </div>
 

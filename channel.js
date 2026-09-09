@@ -1,35 +1,26 @@
 (() => {
   const currentScript = document.currentScript;
+  const existingHero = document.querySelector('.cleaning30-hero');
+
+  // Evita que el inicializador legacy del hero, todavía presente en channel-core.js,
+  // construya un segundo carrusel antes de cargar la versión refinada.
+  existingHero?.setAttribute('data-cleaning-carousel', 'refined');
+
+  const insertAfter = (script, anchor) => {
+    if (anchor?.parentNode) anchor.parentNode.insertBefore(script, anchor.nextSibling);
+    else document.body.appendChild(script);
+  };
+
   const coreScript = document.createElement('script');
   coreScript.src = 'channel-core.js';
 
   coreScript.addEventListener('load', () => {
-    const hero = document.querySelector('.cleaning30-hero');
-    if (!hero) return;
+    if (!document.body.classList.contains('theme-hogar')) return;
 
-    hero.querySelectorAll('.cleaning30-cta').forEach(button => button.remove());
-
-    let manualTimer = null;
-
-    hero.addEventListener('click', event => {
-      if (event.target.closest('a, button, input, select, textarea, details, summary')) return;
-
-      const slide30 = hero.querySelector('[data-cleaning-slide="30"]');
-      const slide15 = hero.querySelector('[data-cleaning-slide="15"]');
-      if (!slide30 || !slide15) return;
-
-      const showing30 = parseFloat(window.getComputedStyle(slide30).opacity || '0') >= 0.5;
-
-      hero.classList.remove('is-manual-30', 'is-manual-15');
-      hero.classList.add(showing30 ? 'is-manual-15' : 'is-manual-30');
-
-      if (manualTimer) window.clearTimeout(manualTimer);
-      manualTimer = window.setTimeout(() => {
-        hero.classList.remove('is-manual-30', 'is-manual-15');
-      }, 6000);
-    });
+    const heroScript = document.createElement('script');
+    heroScript.src = 'hogar-hero.js';
+    insertAfter(heroScript, coreScript);
   });
 
-  if (currentScript?.parentNode) currentScript.parentNode.insertBefore(coreScript, currentScript.nextSibling);
-  else document.body.appendChild(coreScript);
+  insertAfter(coreScript, currentScript);
 })();

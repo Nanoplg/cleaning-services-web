@@ -111,6 +111,7 @@
   width: min(620px, calc(100% - 64px));
   margin-left: max(54px, calc((100vw - 1180px) / 2));
   padding: 64px 0 54px;
+  transform: translateY(-28px);
 }
 
 .theme-hogar .cleaning30-kicker {
@@ -127,7 +128,7 @@
   margin: 0 0 24px;
   color: #0a2b48;
   font-family: "DM Serif Display", serif;
-  font-size: clamp(78px, 7.4vw, 110px);
+  font-size: clamp(74px, 6.9vw, 104px);
   font-weight: 400;
   line-height: .84;
   letter-spacing: -.04em;
@@ -186,11 +187,11 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 48px;
+  margin-top: 46px;
   color: #0a2b48;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: .22em;
+  letter-spacing: .15em;
   text-transform: uppercase;
 }
 
@@ -210,7 +211,7 @@
   min-height: 714px;
   overflow: hidden;
   background-image:
-    linear-gradient(90deg, rgba(250,249,245,.96) 0%, rgba(250,249,245,.62) 9%, rgba(250,249,245,.18) 22%, rgba(250,249,245,0) 36%),
+    linear-gradient(90deg, rgba(250,249,245,.82) 0%, rgba(250,249,245,.42) 8%, rgba(250,249,245,.12) 17%, rgba(250,249,245,0) 28%),
     url("https://images.unsplash.com/photo-1762529716272-b316f61502e7?auto=format&fit=crop&w=1800&q=82");
   background-repeat: no-repeat;
   background-position: center center;
@@ -228,14 +229,14 @@
 .theme-hogar .cleaning30-signature {
   position: absolute;
   z-index: 2;
-  top: 110px;
-  right: 8%;
+  top: 150px;
+  right: 17%;
   left: auto;
   transform: rotate(-5deg);
-  width: 265px;
+  width: 255px;
   color: #0a2b48;
   font-family: "Segoe Script", "Brush Script MT", cursive;
-  font-size: 31px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 1.08;
   text-align: center;
@@ -256,10 +257,10 @@
 @media (max-width: 1080px) {
   .theme-hogar .cleaning30-copy-wrap { width: 62%; }
   .theme-hogar .cleaning30-visual { width: 55%; background-position: 58% center; }
-  .theme-hogar .cleaning30-copy { width: min(560px, calc(100% - 54px)); margin-left: 34px; }
-  .theme-hogar .cleaning30-title { font-size: clamp(68px, 8vw, 94px); }
+  .theme-hogar .cleaning30-copy { width: min(560px, calc(100% - 54px)); margin-left: 34px; transform: translateY(-22px); }
+  .theme-hogar .cleaning30-title { font-size: clamp(64px, 7.5vw, 88px); }
   .theme-hogar .cleaning30-headline { font-size: clamp(26px, 2.8vw, 33px); }
-  .theme-hogar .cleaning30-signature { right: 5%; width: 230px; font-size: 27px; }
+  .theme-hogar .cleaning30-signature { top: 145px; right: 13%; width: 230px; font-size: 27px; }
 }
 
 @media (max-width: 860px) {
@@ -276,6 +277,7 @@
     width: min(680px, calc(100% - 44px));
     margin-inline: auto;
     padding: 54px 0 42px;
+    transform: translateY(-12px);
   }
 
   .theme-hogar .cleaning30-visual {
@@ -288,8 +290,8 @@
   }
 
   .theme-hogar .cleaning30-signature {
-    top: 58px;
-    right: 8%;
+    top: 110px;
+    right: 10%;
     width: 220px;
     font-size: 26px;
   }
@@ -316,6 +318,7 @@
   .theme-hogar .cleaning30-copy {
     width: calc(100% - 34px);
     padding: 46px 0 36px;
+    transform: translateY(-8px);
   }
 
   .theme-hogar .cleaning30-kicker {
@@ -341,13 +344,18 @@
     min-width: 0;
   }
 
+  .theme-hogar .cleaning30-footline {
+    font-size: 11px;
+    letter-spacing: .14em;
+  }
+
   .theme-hogar .cleaning30-visual {
     min-height: 410px;
     background-position: 58% center;
   }
 
   .theme-hogar .cleaning30-signature {
-    top: 44px;
+    top: 100px;
     right: 7%;
     width: 190px;
     font-size: 23px;

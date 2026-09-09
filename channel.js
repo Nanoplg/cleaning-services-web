@@ -2,8 +2,6 @@
   const currentScript = document.currentScript;
   const existingHero = document.querySelector('.cleaning30-hero');
 
-  // Evita que el inicializador legacy del hero, todavía presente en channel-core.js,
-  // construya un segundo carrusel antes de cargar la versión refinada.
   existingHero?.setAttribute('data-cleaning-carousel', 'refined');
 
   const insertAfter = (script, anchor) => {

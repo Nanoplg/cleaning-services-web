@@ -65,7 +65,7 @@
 
 .theme-hogar .cleaning30-kicker {
   display: block;
-  margin: 0 0 12px;
+  margin: 0 0 22px;
   color: #0a2b48;
   font-size: 10px;
   font-weight: 800;
@@ -121,10 +121,8 @@
 }
 
 .theme-hogar .cleaning-hero-footline {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 30px;
+  display: block;
+  margin-top: 38px;
   color: #0a2b48;
   font-size: 12px;
   line-height: 1;
@@ -134,11 +132,8 @@
 }
 
 .theme-hogar .cleaning-hero-footline::before {
-  content: "";
-  width: 44px;
-  height: 1px;
-  background: currentColor;
-  opacity: .58;
+  display: none;
+  content: none;
 }
 
 .theme-hogar .cleaning-hero-visual {
@@ -189,13 +184,13 @@
 }
 
 .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
-  top: 106px;
-  right: 5%;
+  top: 128px;
+  right: 15%;
 }
 
 .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-  top: 92px;
-  right: 6%;
+  top: 112px;
+  right: 12%;
 }
 
 .theme-hogar .cleaning-hero-signature::after {
@@ -303,6 +298,9 @@
     font-size: 15px;
   }
 
+  .theme-hogar .cleaning30-kicker { margin-bottom: 20px; }
+  .theme-hogar .cleaning-hero-footline { margin-top: 34px; }
+
   .theme-hogar .cleaning-hero-switcher {
     left: 32px;
     bottom: 24px;
@@ -310,13 +308,13 @@
   }
 
   .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
-    top: 94px;
-    right: 4%;
+    top: 118px;
+    right: 12%;
   }
 
   .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-    top: 84px;
-    right: 5%;
+    top: 104px;
+    right: 10%;
   }
 
   .theme-hogar .cleaning-hero-signature {
@@ -390,10 +388,17 @@
     flex: 0 0 24px;
   }
 
-  .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
+  .theme-hogar .cleaning30-kicker { margin-bottom: 18px; }
+  .theme-hogar .cleaning-hero-footline { margin-top: 30px; }
+
+  .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
+    top: 72px;
+    right: 10%;
+  }
+
   .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-    top: 58px;
-    right: 6%;
+    top: 66px;
+    right: 8%;
   }
 
   .theme-hogar .cleaning-hero-signature {
@@ -420,6 +425,7 @@
   .theme-hogar .cleaning30-kicker {
     font-size: 8px;
     letter-spacing: .15em;
+    margin-bottom: 16px;
   }
 
   .theme-hogar .cleaning-hero-product {
@@ -442,7 +448,7 @@
   .theme-hogar .cleaning-hero-footline {
     font-size: 10px;
     letter-spacing: .11em;
-    margin-top: 22px;
+    margin-top: 28px;
   }
 
   .theme-hogar .cleaning-hero-visual {
@@ -469,10 +475,14 @@
     font-size: 10px;
   }
 
-  .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
+  .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
+    top: 58px;
+    right: 7%;
+  }
+
   .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
-    top: 48px;
-    right: 4%;
+    top: 54px;
+    right: 5%;
   }
 
   .theme-hogar .cleaning-hero-signature {

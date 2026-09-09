@@ -5,14 +5,14 @@
   hero.classList.add('cleaning-hero');
   hero.setAttribute('data-cleaning-hero', 'true');
   hero.removeAttribute('aria-labelledby');
-  hero.setAttribute('aria-label', 'Diferenciales Cleaning para hogares');
+  hero.setAttribute('aria-label', 'Diferenciales Cleaning para tapizados');
 
   hero.innerHTML = `
     <div class="cleaning-hero-stage">
       <article class="cleaning30-layout cleaning-hero-slide is-active" data-cleaning-slide="30" aria-hidden="false">
         <div class="cleaning30-copy-wrap cleaning-hero-copy-wrap">
           <div class="cleaning30-copy cleaning-hero-copy">
-            <span class="cleaning30-kicker">Servicio de limpieza profesional para hogares</span>
+            <span class="cleaning30-kicker">Limpieza profesional de tapizados</span>
             <h1 class="cleaning30-title cleaning-hero-title">
               <span class="cleaning-hero-product">Respaldo</span>
               <span class="cleaning-hero-brand">Cleaning <span class="cleaning30-number">30</span></span>
@@ -29,7 +29,7 @@
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">
         <div class="cleaning30-copy-wrap cleaning-hero-copy-wrap">
           <div class="cleaning30-copy cleaning-hero-copy">
-            <span class="cleaning30-kicker">Servicio de limpieza profesional para hogares</span>
+            <span class="cleaning30-kicker">Limpieza profesional de tapizados</span>
             <h2 class="cleaning30-title cleaning-hero-title">
               <span class="cleaning-hero-product">Protección Accidental</span>
               <span class="cleaning-hero-brand">Cleaning <span class="cleaning30-number">15</span></span>

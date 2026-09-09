@@ -7,6 +7,40 @@
   hero.removeAttribute('aria-labelledby');
   hero.setAttribute('aria-label', 'Diferenciales Cleaning para tapizados');
 
+  const heroStyle = document.createElement('style');
+  heroStyle.setAttribute('data-cleaning-hero-adjustments', 'true');
+  heroStyle.textContent = `
+    .theme-hogar .cleaning30-kicker {
+      color: #16b9cc !important;
+    }
+
+    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
+    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) rotate(-4deg) !important;
+    }
+
+    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature {
+      top: 25% !important;
+    }
+
+    .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
+      top: 24% !important;
+    }
+
+    @media (max-width: 860px) {
+      .theme-hogar .cleaning-hero-slide[data-cleaning-slide="30"] .cleaning-hero-signature,
+      .theme-hogar .cleaning-hero-slide[data-cleaning-slide="15"] .cleaning-hero-signature {
+        left: 50% !important;
+        right: auto !important;
+        top: 18% !important;
+        transform: translateX(-50%) rotate(-4deg) !important;
+      }
+    }
+  `;
+  document.head.appendChild(heroStyle);
+
   hero.innerHTML = `
     <div class="cleaning-hero-stage">
       <article class="cleaning30-layout cleaning-hero-slide is-active" data-cleaning-slide="30" aria-hidden="false">

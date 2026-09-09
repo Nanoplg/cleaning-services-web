@@ -32,7 +32,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Control final profesional de un sillón claro recién tratado" style="background-image:url('assets/cleaning30-respaldo.svg?v=20260909-2');background-position:58% 57%;"></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Control final profesional de un sillón claro recién tratado" style="background-image:url('hero-3.png?v=20260909-3');background-position:58% 57%;"></div>
       </article>
 
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">

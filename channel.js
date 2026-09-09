@@ -12,13 +12,13 @@
   };
 
   const coreScript = document.createElement('script');
-  coreScript.src = 'channel-core.js';
+  coreScript.src = 'channel-core.js?v=20260909-3';
 
   coreScript.addEventListener('load', () => {
     if (!document.body.classList.contains('theme-hogar')) return;
 
     const heroScript = document.createElement('script');
-    heroScript.src = 'hogar-hero.js';
+    heroScript.src = 'hogar-hero.js?v=20260909-3';
     insertAfter(heroScript, coreScript);
   });
 

@@ -10,8 +10,14 @@
   const heroStyle = document.createElement('style');
   heroStyle.setAttribute('data-cleaning-hero-adjustments', 'true');
   heroStyle.textContent = `
-    .theme-hogar .cleaning30-kicker {
-      color: #16b9cc !important;
+    .theme-hogar .cleaning30-kicker { color: #16b9cc !important; }
+    .theme-hogar .cleaning-hero-visual-30 { overflow: hidden; }
+    .theme-hogar .cleaning-hero-visual-30 img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 58% 57%;
     }
   `;
   document.head.appendChild(heroStyle);
@@ -32,7 +38,9 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Técnico realizando control final de un sillón claro con tablet de checklist" style="background-position:58% 57%;"></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30">
+          <img src="assets/respaldo-cleaning-30.webp?v=20260910-2" alt="Técnico realizando control final de un sillón claro con tablet de checklist">
+        </div>
       </article>
 
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">
@@ -64,39 +72,6 @@
         <span class="cleaning-hero-tab-label">Protección Accidental Cleaning 15</span>
       </button>
     </div>`;
-
-  const loadCleaning30HQ = async () => {
-    const visual = hero.querySelector('.cleaning-hero-visual-30');
-    if (!visual) return;
-
-    try {
-      const urls = Array.from({ length: 6 }, (_, index) =>
-        `assets/c30hq-v1/part-${String(index + 1).padStart(2, '0')}.txt?v=20260910-1`
-      );
-      const parts = await Promise.all(urls.map(async url => {
-        const response = await fetch(url, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`No se pudo cargar ${url}`);
-        return response.text();
-      }));
-      const base64 = parts.join('').replace(/\s+/g, '');
-      const source = `data:image/webp;base64,${base64}`;
-      const image = new Image();
-      image.onload = () => {
-        visual.style.backgroundImage = `url("${source}")`;
-        visual.setAttribute('data-cleaning30-image', 'loaded');
-      };
-      image.onerror = () => {
-        visual.setAttribute('data-cleaning30-image', 'error');
-        console.error('Cleaning 30 HQ: la imagen reconstruida no pudo decodificarse');
-      };
-      image.src = source;
-    } catch (error) {
-      visual.setAttribute('data-cleaning30-image', 'error');
-      console.error('Cleaning 30 HQ:', error);
-    }
-  };
-
-  loadCleaning30HQ();
 
   const slides = Array.from(hero.querySelectorAll('[data-cleaning-slide]'));
   const tabs = Array.from(hero.querySelectorAll('[data-hero-tab]'));

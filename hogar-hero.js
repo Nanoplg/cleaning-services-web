@@ -32,7 +32,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Técnico realizando control final de un sillón claro con tablet de checklist" style="background-image:url('assets/respaldo-cleaning-30-hq.webp?v=20260909-9');background-position:58% 57%;"></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Técnico realizando control final de un sillón claro con tablet de checklist" style="background-image:url('assets/respaldo-cleaning-30-hq.webp?v=20260909-11');background-position:58% 57%;"></div>
       </article>
 
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">
@@ -64,6 +64,33 @@
         <span class="cleaning-hero-tab-label">Protección Accidental Cleaning 15</span>
       </button>
     </div>`;
+
+  const loadCleaning30HQ = async () => {
+    const visual = hero.querySelector('.cleaning-hero-visual-30');
+    if (!visual) return;
+
+    try {
+      const urls = Array.from({ length: 8 }, (_, index) =>
+        `assets/c30hq-v1/part-${String(index + 1).padStart(2, '0')}.txt?v=20260909-11`
+      );
+      const parts = await Promise.all(urls.map(async url => {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`No se pudo cargar ${url}`);
+        return response.text();
+      }));
+      const base64 = parts.join('').replace(/\s+/g, '');
+      const source = `data:image/webp;base64,${base64}`;
+      const image = new Image();
+      image.onload = () => {
+        visual.style.backgroundImage = `url("${source}")`;
+      };
+      image.src = source;
+    } catch (error) {
+      console.error('Cleaning 30 HQ:', error);
+    }
+  };
+
+  loadCleaning30HQ();
 
   const slides = Array.from(hero.querySelectorAll('[data-cleaning-slide]'));
   const tabs = Array.from(hero.querySelectorAll('[data-hero-tab]'));

@@ -32,7 +32,7 @@
             <div class="cleaning-hero-footline"><span>Más que limpieza, bienestar</span></div>
           </div>
         </div>
-        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Técnico realizando control final de un sillón claro con tablet de checklist" style="background-image:url('assets/respaldo-cleaning-30-hq.webp?v=20260909-11');background-position:58% 57%;"></div>
+        <div class="cleaning30-visual cleaning-hero-visual cleaning-hero-visual-30" role="img" aria-label="Técnico realizando control final de un sillón claro con tablet de checklist" style="background-position:58% 57%;"></div>
       </article>
 
       <article class="cleaning30-layout cleaning-hero-slide" data-cleaning-slide="15" aria-hidden="true">
@@ -70,8 +70,8 @@
     if (!visual) return;
 
     try {
-      const urls = Array.from({ length: 8 }, (_, index) =>
-        `assets/c30hq-v1/part-${String(index + 1).padStart(2, '0')}.txt?v=20260909-11`
+      const urls = Array.from({ length: 6 }, (_, index) =>
+        `assets/c30hq-v1/part-${String(index + 1).padStart(2, '0')}.txt?v=20260910-1`
       );
       const parts = await Promise.all(urls.map(async url => {
         const response = await fetch(url, { cache: 'no-store' });
@@ -83,9 +83,15 @@
       const image = new Image();
       image.onload = () => {
         visual.style.backgroundImage = `url("${source}")`;
+        visual.setAttribute('data-cleaning30-image', 'loaded');
+      };
+      image.onerror = () => {
+        visual.setAttribute('data-cleaning30-image', 'error');
+        console.error('Cleaning 30 HQ: la imagen reconstruida no pudo decodificarse');
       };
       image.src = source;
     } catch (error) {
+      visual.setAttribute('data-cleaning30-image', 'error');
       console.error('Cleaning 30 HQ:', error);
     }
   };

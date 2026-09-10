@@ -16,7 +16,7 @@
     if (!document.body.classList.contains('theme-hogar')) return;
 
     const heroScript = document.createElement('script');
-    heroScript.src = 'hogar-hero.js?v=20260909-11';
+    heroScript.src = 'hogar-hero.js?v=20260910-1';
     insertAfter(heroScript, coreScript);
   });
 

@@ -73,6 +73,35 @@
       </button>
     </div>`;
 
+
+  const loadCleaning30HQIntoImage = async () => {
+    const approvedImage = hero.querySelector('.cleaning-hero-visual-30 img');
+    if (!approvedImage) return;
+
+    try {
+      const urls = Array.from({ length: 6 }, (_, index) =>
+        `assets/c30hq-v1/part-${String(index + 1).padStart(2, '0')}.txt?v=20260913-1`
+      );
+      const parts = await Promise.all(urls.map(async url => {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`No se pudo cargar ${url}`);
+        return response.text();
+      }));
+      const base64 = parts.join('').replace(/\s+/g, '');
+      const source = `data:image/webp;base64,${base64}`;
+      const probe = new Image();
+      probe.onload = () => {
+        approvedImage.src = source;
+        approvedImage.setAttribute('data-cleaning30-image', 'hq');
+      };
+      probe.src = source;
+    } catch (error) {
+      approvedImage.setAttribute('data-cleaning30-image', 'fallback');
+    }
+  };
+
+  loadCleaning30HQIntoImage();
+
   const slides = Array.from(hero.querySelectorAll('[data-cleaning-slide]'));
   const tabs = Array.from(hero.querySelectorAll('[data-hero-tab]'));
   let active = '30';

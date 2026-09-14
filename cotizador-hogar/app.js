@@ -10,8 +10,82 @@ function rowHtml(items,discount=0,includeHeader=true,minRows=0){let html=include
 function update(){const d=date.value;const formatted=d?d.split('-').reverse().join('/'):'—';p1Date.textContent=formatted;p1Client.textContent=(client.value||'—').toUpperCase();p1Zone.textContent=(zone.value||'—').toUpperCase();let items=[];document.querySelectorAll('.service-row').forEach(r=>{const idx=r.querySelector('.srv').value,q=Number(r.querySelector('.qty').value)||0;if(idx!==''&&q>0){const s=SERVICES[idx],sub=calcLine(s,q);items.push({s,q,sub})}});let base=items.reduce((a,x)=>a+x.sub,0),discount=0;if(discType.value==='percent')discount=base*(Number(discValue.value)||0)/100;if(discType.value==='amount')discount=Math.min(base,Number(discValue.value)||0);const total=Math.max(0,base-discount),quota=total*1.30/3;const first=items.slice(0,3),rest=items.slice(3);p1Table.innerHTML=rowHtml(first,rest.length?0:discount,true,3);continueText.style.display=rest.length?'block':'none';moreWrap.style.display=rest.length?'block':'none';p2Table.innerHTML=rest.length?rowHtml(rest,discount,true,0):'';p1Total.textContent=money(total);p1Cash.textContent=money(total);p1Card.textContent=`3 × ${money(quota)}`;scalePages()}
 ['client','zone','date','discType','discValue','discName'].forEach(id=>document.getElementById(id).addEventListener('input',update));addService.onclick=()=>addRow();
 function fileName(){const safe=(client.value||'Cliente').trim().replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_-]+/g,'-').replace(/-+/g,'-');return `Cotizacion-Cleaning-${safe||'Cliente'}.pdf`}
-async function capturePage(source){const host=document.createElement('div');Object.assign(host.style,{position:'fixed',left:'-10000px',top:'0',width:'540px',height:'960px',background:'#fff',zIndex:'-9999'});const clone=source.cloneNode(true);Object.assign(clone.style,{width:'540px',height:'960px',margin:'0',transform:'none',boxShadow:'none'});host.appendChild(clone);document.body.appendChild(host);try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return await html2canvas(clone,{scale:2,useCORS:true,backgroundColor:'#fff',width:540,height:960,windowWidth:540,windowHeight:960,scrollX:0,scrollY:0,logging:false})}finally{host.remove()}}
-async function buildPDF(){update();const c1=await capturePage(page1);const c2=await capturePage(page2);const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:[108,192],compress:true});pdf.addImage(c1.toDataURL('image/jpeg',.96),'JPEG',0,0,108,192,undefined,'FAST');pdf.addPage([108,192],'portrait');pdf.addImage(c2.toDataURL('image/jpeg',.96),'JPEG',0,0,108,192,undefined,'FAST');return pdf}
+
+const PDF_SOURCE_WIDTH=540;
+const PDF_SOURCE_HEIGHT=960;
+const A4_CANVAS_WIDTH=1240;
+const A4_CANVAS_HEIGHT=1754;
+const A4_MARGIN=18;
+
+async function capturePage(source){
+  const host=document.createElement('div');
+  host.className='pdf-capture-root';
+  Object.assign(host.style,{position:'fixed',left:'-10000px',top:'0',width:`${PDF_SOURCE_WIDTH}px`,height:`${PDF_SOURCE_HEIGHT}px`,background:'#fff',zIndex:'-9999',margin:'0',padding:'0',transform:'none',transformOrigin:'top left',zoom:'1',overflow:'hidden'});
+  const clone=source.cloneNode(true);
+  Object.assign(clone.style,{width:`${PDF_SOURCE_WIDTH}px`,height:`${PDF_SOURCE_HEIGHT}px`,margin:'0',transform:'none',transformOrigin:'top left',zoom:'1',boxShadow:'none'});
+  host.appendChild(clone);
+  document.body.appendChild(host);
+  try{
+    if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+    return await html2canvas(clone,{
+      scale:2,
+      useCORS:true,
+      backgroundColor:'#fff',
+      width:PDF_SOURCE_WIDTH,
+      height:PDF_SOURCE_HEIGHT,
+      windowWidth:PDF_SOURCE_WIDTH,
+      windowHeight:PDF_SOURCE_HEIGHT,
+      scrollX:0,
+      scrollY:0,
+      logging:false,
+      onclone:(doc)=>{
+        doc.documentElement.style.zoom='1';
+        doc.documentElement.style.transform='none';
+        doc.body.style.zoom='1';
+        doc.body.style.transform='none';
+        doc.body.style.margin='0';
+        const root=doc.querySelector('.pdf-capture-root');
+        if(root){
+          root.style.zoom='1';
+          root.style.transform='none';
+          root.style.margin='0';
+          root.style.padding='0';
+        }
+      }
+    });
+  }finally{host.remove()}
+}
+
+function placeOnA4(sourceCanvas){
+  const page=document.createElement('canvas');
+  page.width=A4_CANVAS_WIDTH;
+  page.height=A4_CANVAS_HEIGHT;
+  const ctx=page.getContext('2d');
+  ctx.fillStyle='#fff';
+  ctx.fillRect(0,0,page.width,page.height);
+  const availableW=page.width-(A4_MARGIN*2);
+  const availableH=page.height-(A4_MARGIN*2);
+  const scale=Math.min(availableW/sourceCanvas.width,availableH/sourceCanvas.height);
+  const drawW=Math.round(sourceCanvas.width*scale);
+  const drawH=Math.round(sourceCanvas.height*scale);
+  const x=Math.round((page.width-drawW)/2);
+  const y=Math.round((page.height-drawH)/2);
+  ctx.drawImage(sourceCanvas,x,y,drawW,drawH);
+  return page;
+}
+
+async function buildPDF(){
+  update();
+  const c1=placeOnA4(await capturePage(page1));
+  const c2=placeOnA4(await capturePage(page2));
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4',compress:true});
+  pdf.addImage(c1.toDataURL('image/jpeg',.96),'JPEG',0,0,210,297,undefined,'FAST');
+  pdf.addPage('a4','portrait');
+  pdf.addImage(c2.toDataURL('image/jpeg',.96),'JPEG',0,0,210,297,undefined,'FAST');
+  return pdf;
+}
 async function sharePDF(){shareBtn.disabled=true;shareBtn.textContent='Preparando PDF...';try{const pdf=await buildPDF();const file=new File([pdf.output('blob')],fileName(),{type:'application/pdf'});const data={files:[file],title:'Cotización Cleaning Services'};if(navigator.share&&(!navigator.canShare||navigator.canShare(data))){await navigator.share(data)}else{alert('Este dispositivo no permite compartir archivos directamente. Usá el botón Descargar PDF.')}}catch(e){if(e&&e.name!=='AbortError'){console.error(e);alert('No se pudo compartir el PDF.')}}finally{shareBtn.disabled=false;shareBtn.textContent='Compartir PDF'}}
 async function downloadPDF(){pdfBtn.disabled=true;pdfBtn.textContent='Generando PDF...';try{const pdf=await buildPDF();pdf.save(fileName())}catch(e){console.error(e);alert('No se pudo descargar el PDF.')}finally{pdfBtn.disabled=false;pdfBtn.textContent='Descargar PDF'}}
 shareBtn.onclick=sharePDF;
